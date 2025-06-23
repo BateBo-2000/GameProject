@@ -24,19 +24,19 @@
     <ClCompile Include="SourceFiles\App.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\Services\Files\FileReading\BasicFileReader.cpp">
+    <ClCompile Include="SourceFiles\System\Services\Files\FileReading\BasicFileReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\Services\Files\ConfigParsing\TextConfigParser.cpp">
+    <ClCompile Include="SourceFiles\System\Services\Files\ConfigParsing\TextConfigParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\Services\Files\ConfigParsing\ArmorParser.cpp">
+    <ClCompile Include="SourceFiles\System\Services\Files\ConfigParsing\ArmorParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SourceFiles\System\GameEngine\Armor\Armor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\Services\Registers\ArmorRegistry.cpp">
+    <ClCompile Include="SourceFiles\System\Services\Registers\ArmorRegistry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SourceFiles\System\GameEngine\Units\Unit.cpp">
@@ -57,16 +57,16 @@
     <ClCompile Include="SourceFiles\System\GameEngine\Abilities\SummonAbility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\Services\Files\ConfigParsing\AbilityParser.cpp">
+    <ClCompile Include="SourceFiles\System\Services\Files\ConfigParsing\AbilityParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\Services\Files\ConfigParsing\UnitParser.cpp">
+    <ClCompile Include="SourceFiles\System\Services\Files\ConfigParsing\UnitParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\Services\Registers\AbilityRegistry.cpp">
+    <ClCompile Include="SourceFiles\System\Services\Registers\AbilityRegistry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\Services\Registers\UnitRegistry.cpp">
+    <ClCompile Include="SourceFiles\System\Services\Registers\UnitRegistry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SourceFiles\Communication\Logger.cpp">
@@ -75,12 +75,21 @@
     <ClCompile Include="SourceFiles\Communication\UserUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SourceFiles\Communication\RandomAIPlayer.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\System\Control\CommandInvoker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\System\Control\Controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HeaderFiles\System\Controller\Controller.h">
+    <ClInclude Include="HeaderFiles\System\Control\Controller.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\Commands\ICommand.h">
+    <ClInclude Include="HeaderFiles\System\Control\Commands\ICommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
     <ClInclude Include="HeaderFiles\Communication\Loggers\ConsoleLogger.h">
@@ -95,43 +104,43 @@
     <ClInclude Include="HeaderFiles\Communication\UI\IUserInterFace.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\Commands\System\SaveCmd.h">
+    <ClInclude Include="HeaderFiles\System\Control\Commands\System\SaveCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\Commands\System\ExitCmd.h">
+    <ClInclude Include="HeaderFiles\System\Control\Commands\System\ExitCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\Commands\System\LoadCmd.h">
+    <ClInclude Include="HeaderFiles\System\Control\Commands\System\LoadCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\Commands\System\RestartCmd.h">
+    <ClInclude Include="HeaderFiles\System\Control\Commands\System\RestartCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\Commands\Combat\UseAbilityCmd.h">
+    <ClInclude Include="HeaderFiles\System\Control\Commands\Combat\UseAbilityCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\Commands\Combat\TargetCmd.h">
+    <ClInclude Include="HeaderFiles\System\Control\Commands\Combat\TargetCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\Commands\Combat\SkipTurnCmd.h">
+    <ClInclude Include="HeaderFiles\System\Control\Commands\Combat\SkipTurnCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\Commands\System\HelpCmd.h">
+    <ClInclude Include="HeaderFiles\System\Control\Commands\System\HelpCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\Commands\Other\StatusCmd.h">
+    <ClInclude Include="HeaderFiles\System\Control\Commands\Other\StatusCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\Commands\Other\CreateCmd.h">
+    <ClInclude Include="HeaderFiles\System\Control\Commands\Other\CreateCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\Commands\Other\SelectBossCmd.h">
+    <ClInclude Include="HeaderFiles\System\Control\Commands\Other\SelectBossCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\Commands\Other\SelectCmd.h">
+    <ClInclude Include="HeaderFiles\System\Control\Commands\Other\SelectCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\Commands\Other\StartCmd.h">
+    <ClInclude Include="HeaderFiles\System\Control\Commands\Other\StartCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HeaderFiles\System\GameEngine\Units\IUnit.h">
@@ -143,13 +152,13 @@
     <ClInclude Include="HeaderFiles\App.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\IController.h">
+    <ClInclude Include="HeaderFiles\System\Control\IController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\Invoker\IInvoker.h">
+    <ClInclude Include="HeaderFiles\System\Control\Invoker\IInvoker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Controller\Invoker\CommandInvoker.h">
+    <ClInclude Include="HeaderFiles\System\Control\Invoker\CommandInvoker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HeaderFiles\System\Services\Registries\Ability\IAbilityRegistry.h">
@@ -231,6 +240,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\UnitParsing\UnitParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\GameEngine\IGameEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\GameEngine\GameState\GameState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\Communication\UI\RandomAIPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\Faction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

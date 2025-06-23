@@ -3,6 +3,8 @@
 #ifndef I_UNIT_H
 #define I_UNIT_H
 
+#include "../../HeaderFiles/System/Faction.h"
+
 
 #include <string>
 #include <vector>
@@ -10,11 +12,6 @@
 class IArmor;
 class IAbility;
 struct BattleContext;
-
-enum class Faction {
-    Living,
-    Undead
-};
 
 class IUnit {
 public:

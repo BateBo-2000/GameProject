@@ -9,7 +9,7 @@ class ICommand {
 public:
 	virtual ~ICommand() = default;
 	virtual bool isThisMe(const std::vector<std::string>& args) const = 0;
-	virtual void execute(const std::vector<std::string>& args) const = 0;
+	virtual bool execute(const std::vector<std::string>& args) const = 0;
 	virtual ICommand* clone() const =0;
 };
 

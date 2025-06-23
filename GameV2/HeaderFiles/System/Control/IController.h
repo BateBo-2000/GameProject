@@ -11,7 +11,6 @@ public:
 	virtual ~IController() = default;
 
 	virtual void run() = 0;
-
 };
 
 
