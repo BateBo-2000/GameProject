@@ -134,6 +134,8 @@
     <ClCompile Include="SourceFiles\GameV2.cpp" />
     <ClCompile Include="SourceFiles\System\Control\CommandInvoker.cpp" />
     <ClCompile Include="SourceFiles\System\Control\Controller.cpp" />
+    <ClCompile Include="SourceFiles\System\GameEngine\GameStateStructure\BaseState.cpp" />
+    <ClCompile Include="SourceFiles\System\GameEngine\GameStateStructure\GameState.cpp" />
     <ClCompile Include="SourceFiles\System\Services\Files\ConfigParsing\AbilityParser.cpp" />
     <ClCompile Include="SourceFiles\System\Services\Files\ConfigParsing\ArmorParser.cpp" />
     <ClCompile Include="SourceFiles\System\Services\Files\ConfigParsing\TextConfigParser.cpp" />
@@ -186,7 +188,11 @@
     <ClInclude Include="HeaderFiles\System\GameEngine\Armor\Armor.h" />
     <ClInclude Include="HeaderFiles\System\GameEngine\Armor\IArmor.h" />
     <ClInclude Include="HeaderFiles\System\GameEngine\GameEngine.h" />
-    <ClInclude Include="HeaderFiles\System\GameEngine\GameState\GameState.h" />
+    <ClInclude Include="HeaderFiles\System\GameEngine\GameStateStructure\BaseState\BaseState.h" />
+    <ClInclude Include="HeaderFiles\System\GameEngine\GameStateStructure\BaseState\IBaseSate.h" />
+    <ClInclude Include="HeaderFiles\System\GameEngine\GameStateStructure\EngineConfig.h" />
+    <ClInclude Include="HeaderFiles\System\GameEngine\GameStateStructure\GameState\GameState.h" />
+    <ClInclude Include="HeaderFiles\System\GameEngine\GameStateStructure\GameState\IGameState.h" />
     <ClInclude Include="HeaderFiles\System\GameEngine\IGameEngine.h" />
     <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\AbilityParsing\AbilityParser.h" />
     <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\AbilityParsing\IAbilityParser.h" />

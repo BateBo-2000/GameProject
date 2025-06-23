@@ -84,6 +84,12 @@
     <ClCompile Include="SourceFiles\System\Control\Controller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SourceFiles\System\GameEngine\GameStateStructure\BaseState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\System\GameEngine\GameStateStructure\GameState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HeaderFiles\System\Control\Controller.h">
@@ -245,13 +251,25 @@
     <ClInclude Include="HeaderFiles\System\GameEngine\IGameEngine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\GameEngine\GameState\GameState.h">
+    <ClInclude Include="HeaderFiles\System\GameEngine\GameStateStructure\GameState\GameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HeaderFiles\Communication\UI\RandomAIPlayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HeaderFiles\System\Faction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\GameEngine\GameStateStructure\BaseState\BaseState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\GameEngine\GameStateStructure\EngineConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\GameEngine\GameStateStructure\GameState\IGameState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\GameEngine\GameStateStructure\BaseState\IBaseSate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
