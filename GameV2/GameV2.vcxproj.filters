@@ -57,7 +57,22 @@
     <ClCompile Include="SourceFiles\System\GameEngine\Abilities\SummonAbility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\System\GameEngine\Abilities\BattleContext.cpp">
+    <ClCompile Include="SourceFiles\Services\Files\ConfigParsing\AbilityParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\Services\Files\ConfigParsing\UnitParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\Services\Registers\AbilityRegistry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\Services\Registers\UnitRegistry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\Communication\Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\Communication\UserUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -152,7 +167,7 @@
     <ClInclude Include="HeaderFiles\System\Services\Registries\Unit\IUnitRegistry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Services\Registries\Unit\BasicUnitRegistry.h">
+    <ClInclude Include="HeaderFiles\System\Services\Registries\Unit\UnitRegistry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\ICongifgParser.h">
@@ -204,6 +219,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HeaderFiles\System\GameEngine\Abilities\BattleContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\AbilityParsing\IAbilityParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\AbilityParsing\AbilityParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\UnitParsing\IUnitParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\UnitParsing\UnitParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

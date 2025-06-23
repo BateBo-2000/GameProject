@@ -139,7 +139,7 @@ void App::parseArmors(std::vector<IArmor*>& dest, const std::vector<std::string>
 	IArmor* armor;
 	for (size_t i = 0; i < armors.size(); i++)
 	{
-		armor = p.parseLine(armors[i]);
+		armor = p.parse(armors[i]);
 		if (!armor) {
 			logger->error("Failed to parse armor: " + armors[i]);
 			continue;

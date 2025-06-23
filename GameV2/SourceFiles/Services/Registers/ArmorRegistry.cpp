@@ -1,6 +1,6 @@
 #include "../../HeaderFiles/System/Services/Registries/Armor/ArmorRegistry.h"
 #include "../../HeaderFiles/System/GameEngine/Armor/Armor.h"
-
+#include <stdexcept>
 
 ArmorRegistry::ArmorRegistry() = default;
 
@@ -31,9 +31,19 @@ ArmorRegistry::~ArmorRegistry() {
 }
 
 void ArmorRegistry::registerPrototype(IArmor* armor) {
-    if (armor) {
-        prototypes.push_back(armor);
+    if (!armor)
+        return;
+
+    const std::string& name = armor->getName();
+
+    for (size_t i = 0; i < prototypes.size(); ++i) {
+        if (prototypes[i]->getName() == name) {
+            delete armor;
+            throw std::invalid_argument("ArmorRegistry: duplicate armor name '" + name + "'");
+        }
     }
+
+    prototypes.push_back(armor);
 }
 
 IArmor* ArmorRegistry::createByName(const std::string& name, unsigned durability) const {

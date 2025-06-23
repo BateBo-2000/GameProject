@@ -9,7 +9,7 @@
 //Armor format in config: # Armor - Format: <ArmorName (text)> <MitigationPercentage (positive number 0-100)>
 
 
-IArmor* ArmorParser::parseLine(const std::string& raw) {
+IArmor* ArmorParser::parse(const std::string& raw) {
 	std::vector<std::string> args = split(raw, ' ');
 
 	if (args.size() != 3) return nullptr;

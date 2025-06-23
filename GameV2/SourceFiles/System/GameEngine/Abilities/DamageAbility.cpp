@@ -1,5 +1,6 @@
 #include "../../HeaderFiles/System/GameEngine/Abilities/DamageAbility.h"
 #include "../../HeaderFiles/System/GameEngine/Units/IUnit.h"
+#include "../../HeaderFiles/System/GameEngine/Abilities/BattleContext.h"
 
 #include <stdexcept>
 

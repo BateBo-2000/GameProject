@@ -1,5 +1,6 @@
 #include "../../HeaderFiles/System/GameEngine/Abilities/HealAbility.h"
 #include "../../HeaderFiles/System/GameEngine/Units/IUnit.h"
+#include "../../HeaderFiles/System/GameEngine/Abilities/BattleContext.h"
 
 #include <stdexcept>
 

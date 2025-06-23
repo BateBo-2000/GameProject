@@ -1,5 +1,6 @@
 #include "../../HeaderFiles/System/GameEngine/Abilities/ResurrectAbilit.h"
 #include "../../HeaderFiles/System/GameEngine/Units/IUnit.h"
+#include "../../HeaderFiles/System/GameEngine/Abilities/BattleContext.h"
 
 #include <stdexcept>
 
@@ -34,9 +35,20 @@ void ResurrectAbility::apply(IUnit* user, const std::vector<IUnit*>& targets, Ba
 
     if (!targets[0]) throw std::invalid_argument(name + ": target is undefined");
 
-    if (user->getFaction() == targets[0]->getFaction()) throw std::invalid_argument(name + ": cannot ressurect from the same faction");
+    if (user->getFaction() == targets[0]->getFaction()) throw std::invalid_argument(name + ": cannot resurrect from the same faction");
 
     if (targets[0]->isAlive()) throw std::invalid_argument(name + ": target is not dead");
 
+    if (targets[0]->getType() != targetType) throw std::invalid_argument(name + ": can only work on " + targetType);
 
+    user->useMana(manaCost);
+
+    IUnit* newUnit = ctx.unitRegistry.createByName(resultType);
+
+    if (!newUnit) {
+        user->regenerateMana(manaCost);
+        throw std::runtime_error(name + ": Something went wrong while resurrecting " + targetType + " to " + resultType);
+    }
+
+    ctx.spawnedUnitsToBeAdded.push_back(newUnit);
 }

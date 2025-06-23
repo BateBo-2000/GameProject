@@ -8,7 +8,7 @@ class IArmor;
 
 class ArmorParser : public IArmorParser {
 public:
-    IArmor* parseLine(const std::string& line) override;
+    IArmor* parse(const std::string& line) override;
 };
 
 #endif // ARMOR_PARSER_H
