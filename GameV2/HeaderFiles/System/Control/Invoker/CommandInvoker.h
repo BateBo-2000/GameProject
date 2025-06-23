@@ -20,6 +20,9 @@ public:
 
     void registerCommand(ICommand* c) override;
     bool executeCommandLine(const std::string& line) override;
+
+    const std::vector<ICommand*> getCommands() override;
+
     Faction getCurrentFaction() const override;
     bool shouldExit() override;
     void requestExit() override;

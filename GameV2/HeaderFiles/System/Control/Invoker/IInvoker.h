@@ -5,6 +5,7 @@
 #include "../../HeaderFiles/System/Faction.h"
 
 #include <string>
+#include <vector>
 
 class ICommand;
 
@@ -14,9 +15,14 @@ public:
 	virtual ~IInvoker() = default;
 	virtual void registerCommand(ICommand* c) = 0;
 	virtual bool executeCommandLine(const std::string& line) = 0;
+	
+	//used to get the description
+	virtual const std::vector<ICommand*> getCommands() = 0; 
+
 	virtual Faction getCurrentFaction() const = 0;
 	virtual bool shouldExit() = 0;
 	virtual void requestExit() = 0;
+
 };
 
 

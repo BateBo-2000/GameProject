@@ -7,9 +7,9 @@
 
 #include <stdexcept>
 
-CommandInvoker::CommandInvoker(IGameEngine& engine):receiver(engine) {}
+CommandInvoker::CommandInvoker(IGameEngine& engine):receiver(engine), exitRequested(false) {}
 
-CommandInvoker::CommandInvoker(const CommandInvoker& other) :receiver(other.receiver) {
+CommandInvoker::CommandInvoker(const CommandInvoker& other) :receiver(other.receiver), exitRequested(other.exitRequested) {
     for (size_t i = 0; i < other.commands.size(); ++i) {
         commands.push_back(other.commands[i]->clone());
     }
@@ -58,6 +58,11 @@ bool CommandInvoker::executeCommandLine(const std::string& line) {
         }
     }
     throw std::runtime_error("Unknown command: " + args[0]);
+}
+
+const std::vector<ICommand*> CommandInvoker::getCommands()
+{
+    return commands;
 }
 
 Faction CommandInvoker::getCurrentFaction() const {

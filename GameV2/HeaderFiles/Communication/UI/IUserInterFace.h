@@ -14,6 +14,7 @@ public:
 	virtual void inform(const std::string& msg) const = 0;
 	virtual void warn(const std::string& msg) const = 0;
 	virtual void printInvalidArg(const std::string& msg) const = 0;
+	virtual void error(const std::string& msg) const = 0;
 
 	virtual bool confirm(const std::string& q) const = 0;
 	virtual int askForNumber(const std::string& q) const = 0;

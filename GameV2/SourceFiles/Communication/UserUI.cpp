@@ -20,13 +20,18 @@ void ConsoleUI::printInvalidArg(const string& msg) const
 	std::cout << "\033[31m[INVALID] " << msg << "\033[0m" << std::endl;
 }
 
+void ConsoleUI::error(const std::string& msg) const
+{
+	std::cout << "\033[31m[ERROR] " << msg << "\033[0m" << std::endl;
+}
+
 bool ConsoleUI::confirm(const string& q) const
 {
 	std::cout << "\033[35m[CONFIRM]\033[0m " << q << " (y/n): ";
 	char input;
 	std::cin >> input;
 	std::cin.ignore();  // clear newline
-	return input == 'y' || input == 'Y';
+	return input == 'y' || input == 'Y' || input == '1';
 }
 
 int ConsoleUI::askForNumber(const string& q) const

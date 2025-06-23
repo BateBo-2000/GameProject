@@ -99,6 +99,27 @@
     <ClCompile Include="SourceFiles\System\Control\Commands\System\Exit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SourceFiles\System\Control\Commands\System\Help.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\System\Control\Commands\System\SaveCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\System\Control\Commands\System\LoadCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\System\Control\Commands\System\RestartCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\System\Control\Commands\Combat\SkipTurn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\System\Control\Commands\Combat\AttackTarget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\System\Control\Commands\Combat\UseAbility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HeaderFiles\System\Control\Controller.h">
@@ -134,7 +155,7 @@
     <ClInclude Include="HeaderFiles\System\Control\Commands\Combat\UseAbilityCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Control\Commands\Combat\TargetCmd.h">
+    <ClInclude Include="HeaderFiles\System\Control\Commands\Combat\AttackTargetCmd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HeaderFiles\System\Control\Commands\Combat\SkipTurnCmd.h">
@@ -296,7 +317,7 @@
     <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\IGameLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\BasicFstreamFileHadnler.h">
+    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\GameSaveFileHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

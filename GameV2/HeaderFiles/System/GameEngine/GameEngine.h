@@ -30,6 +30,9 @@ public:
 
     Faction getWhoseTurnItIsNow() const override;
     bool isGameWon() const override;
+
+    void restartTheGame() override;
+
 private:
     void goNextTurnOrStageFighting();
     void cleanUpAfterCompletion();

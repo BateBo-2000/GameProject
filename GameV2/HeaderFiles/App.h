@@ -58,7 +58,6 @@ private:
 private:
 	IUserInterface* ui;
 	ILogger* logger;
-	IController* controller;
 };
 
 #endif 

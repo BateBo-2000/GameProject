@@ -5,7 +5,8 @@
 #include "../../HeaderFiles/Communication/Loggers/ConsoleLogger.h"
 
 //Controller
-#include "../../HeaderFiles/System/Controller/Controller.h"
+#include "../../HeaderFiles/System/Control/Controller.h"
+#include "../../HeaderFiles/System/Control/Commands/ICommand.h"
 
 #include <stdexcept>
 
@@ -20,90 +21,18 @@ App::App()
 		delete logger;
 		throw std::runtime_error("Failed to initialized logger or user interface.");
 	}
-
-	this->controller = new(std::nothrow) Controller(*logger, *ui);
-
-	if (!controller) {
-		delete ui;
-		delete logger;
-		throw std::runtime_error("Failed to initialized controller.");
-	}
 }
 
 App::~App()
 {
+	ui->inform("Goodbye cruel world! T_T");
 	delete ui;
 	delete logger;
-	delete controller;
-	std::cout << "Goodbye cruel world";
 }
 
 void App::run()
 {
-	try
-	{
-		IGameEngine* gameEngine = createGameEngineFromConfig();
-	}
-	catch (const std::exception&e)
-	{
-		logger->error(e.what());
-	}
-}
-
-IGameEngine* App::createGameEngineFromConfig()
-{
-	std::string path = getConfigLocation();
-
-	std::string fileContents;
-	ReadConfigFile(path, fileContents);
-
-	ConfigData fileData;
-	ParseConfigFile(fileContents, fileData);
-
-	fileContents.clear(); // to save memory
-
-	if (fileData.unknown.size() > 0) {
-		std::string unknowns;
-		for (size_t i = 0; i < fileData.unknown.size(); i++)
-		{
-			unknowns += (fileData.unknown[i] + '\n');
-		}
-		logger->error("Lines from the configuration that couldnt be parsed:\n" + unknowns);
-	}
-
-	if (fileData.units.size() == 0 || fileData.settings.size() < 3) {
-		throw std::runtime_error("Cannot create a game without settings or units.");
-	}
-		
-	IArmorRegistry* armReg = nullptr;
-	IAbilityRegistry* abiReg = nullptr;
-	IUnitRegistry* unitReg = nullptr;
-	IGameEngine* game = nullptr;
-
-	try
-	{
-		armReg = RegisterArmor(fileData.armors);
-		abiReg = RegisterAbilities(fileData.abilities);
-
-		unitReg = RegisterUnits(fileData.units, armReg, abiReg);
-
-		delete armReg;
-		armReg = nullptr;
-		delete abiReg;
-		abiReg = nullptr;
-
-		//gameEngine takes the ownership
-		game = initGameEngine(unitReg, fileData.settings);
-	}
-	catch (...)
-	{
-		delete armReg;
-		delete abiReg;
-		delete unitReg;
-
-		throw;
-	}
-	return game;	
+	//Config and run the game engine
 }
 
 std::string App::getConfigLocation()
@@ -152,10 +81,12 @@ void App::parseArmors(std::vector<IArmor*>& dest, const std::vector<std::string>
 
 void App::parseAbilities(std::vector<IAbility*>& dest, const std::vector<std::string>& abilities)
 {
+	//TODO
 }
 
 void App::parseUnits(std::vector<IUnit*>& dest, std::vector<std::string>& units, const IArmorRegistry* armorReg, const IAbilityRegistry* abilityReg)
 {
+	//TODO
 }
 
 

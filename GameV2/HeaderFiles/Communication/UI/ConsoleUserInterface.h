@@ -13,6 +13,7 @@ public:
 	virtual void inform(const string& msg)const override;
 	virtual void warn(const string& msg)const override;
 	virtual void printInvalidArg(const string& msg)const override;
+	virtual void error(const std::string& msg) const override;
 	virtual bool confirm(const string& q)const override;
 	virtual int askForNumber(const string& q)const override;
 	virtual string askQuestion(const string& q)const override;

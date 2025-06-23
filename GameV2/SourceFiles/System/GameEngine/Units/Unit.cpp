@@ -51,8 +51,8 @@ Unit::Unit(const Unit& other)
     , mana(other.mana)
     , commander(other.commander)
 {
-    for (auto* ab : other.abilities) {
-        abilities.push_back(ab->clone());   //not taking ownership
+    for (size_t i = 0; i < other.abilities.size(); ++i) {
+        this->abilities.push_back(other.abilities[i]->clone());   //not taking ownership
     }
 }
 

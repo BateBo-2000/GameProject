@@ -39,11 +39,11 @@ void Controller::run() {
         }
         catch (const std::exception& e)
         {
-            ui.warn(e.what());
+            ui.error(string("Something went wrong executing this command:") + e.what());
         }
           
         if (!ok) {
-            ui.printInvalidArg("Command not succesfull: " + line);
+            ui.error("Command not succesfull: " + line);
         }
 
         logger.log("Command: " + line + (ok ? " [ok]" : " [fail]"));

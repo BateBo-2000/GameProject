@@ -5,9 +5,9 @@
 #include "IGameLoader.h"
 #include "IGameSaverFile.h"
 
-class IGamePersistence : public IGameSaver, public IGameLoader {
+class IGameSaveFileHandler : public IGameSaver, public IGameLoader {
 public:
-    virtual ~IGamePersistence() = default;
+    virtual ~IGameSaveFileHandler() = default;
 };
 
 #endif // I_GAMESTATE_PERSISTENCE_H

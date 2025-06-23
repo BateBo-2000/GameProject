@@ -2,24 +2,34 @@
 #ifndef LOAD_COMMAND_H
 #define LOAD_COMMAND_H
 
+#include "../ICommand.h"
 #include <vector>
 #include <string>
 
-#include "../ICommand.h"
-
+class IGameSaveFileHandler;
 class IUserInterface;
+class IGameEngine;
 
-class LoadCmd : public ICommand {
+class LoadCommand : public ICommand {
 public:
-	LoadCmd(IUserInterface& ui);
-	virtual bool isThisMe(const std::vector<std::string>& args) const override;
-	virtual void execute(const std::vector<std::string>& args) const override;
-	virtual ICommand* clone() const override;
+    LoadCommand(IGameSaveFileHandler& handler, IUserInterface& ui, IGameEngine& gameEngine);
+    ~LoadCommand() override = default;
+
+    ICommand* clone() const override;
+
+    bool isThisMe(const std::vector<std::string>& args) const override;
+    bool execute(const std::vector<std::string>& args) const override;
+
+    const std::string& getDescription() const override;
+    const std::string& getName() const override;
+
 private:
-	static constexpr const char* myName = "Load";
-	IUserInterface& ui;
+    static const std::string NAME;
+    static const std::string DESCRIPTION;
+
+    IGameSaveFileHandler& handler;
+    IUserInterface& ui;
+    IGameEngine& gameEngine;
 };
 
-
-
-#endif // !LOAD_COMMAND_H
+#endif // LOAD_COMMAND_H

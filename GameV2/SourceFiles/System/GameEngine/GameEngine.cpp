@@ -264,6 +264,11 @@ bool GameEngine::isGameWon() const
     return gameState.getStage() == DuelStage::GameFinished;
 }
 
+void GameEngine::restartTheGame()
+{
+    //TODO
+}
+
    
 
 void GameEngine::goNextTurnOrStageFighting()

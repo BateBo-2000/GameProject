@@ -34,6 +34,8 @@ public:
     // turns
     virtual Faction getWhoseTurnItIsNow() const = 0;
     virtual bool isGameWon() const = 0;
+
+    virtual void restartTheGame() = 0;
 };
 
 

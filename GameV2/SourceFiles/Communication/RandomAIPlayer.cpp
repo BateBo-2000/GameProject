@@ -29,6 +29,11 @@ void RandomUserInterface::printInvalidArg(const std::string& msg) const {
     (void)msg;
 }
 
+void RandomUserInterface::error(const std::string& msg) const
+{
+    (void)msg;
+}
+
 bool RandomUserInterface::confirm(const std::string& q) const {
     (void)q;
     return (std::rand() % 2) == 0;

@@ -17,6 +17,8 @@ public:
     void inform(const std::string& msg) const override;
     void warn(const std::string& msg) const override;
     void printInvalidArg(const std::string& msg) const override;
+    virtual void error(const std::string& msg) const override;
+
     bool confirm(const std::string& q) const override;
     int askForNumber(const std::string& q) const override;
     std::string askQuestion(const std::string& q) const override;

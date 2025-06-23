@@ -1,23 +1,33 @@
 #pragma once
-#ifndef SKIP_TURN_COMMAND_H
-#define SKIP_TURN_COMMAND_H
+#ifndef SKIP_TURN_CMD_H
+#define SKIP_TURN_CMD_H
 
+#include "../ICommand.h"
 #include <vector>
 #include <string>
 
-#include "../ICommand.h"
-
+class IGameEngine;
 class IUserInterface;
 
 class SkipTurnCmd : public ICommand {
 public:
-    SkipTurnCmd(IUserInterface& ui);
-    virtual bool isThisMe(const std::vector<std::string>& args) const override;
-    virtual void execute(const std::vector<std::string>& args) const override;
-    virtual ICommand* clone() const override;
+    SkipTurnCmd(IGameEngine& engine, IUserInterface& ui);
+    ~SkipTurnCmd() override = default;
+
+    ICommand* clone() const override;
+
+    bool isThisMe(const std::vector<std::string>& args) const override;
+    bool execute(const std::vector<std::string>& args) const override;
+
+    const std::string& getName() const override;
+    const std::string& getDescription() const override;
+
 private:
-    static constexpr const char* myName = "skip";
+    static const std::string NAME;
+    static const std::string DESCRIPTION;
+        
+    IGameEngine& engine;
     IUserInterface& ui;
 };
 
-#endif // !SKIP_TURN_COMMAND_H
+#endif // SKIP_TURN_CMD_H
