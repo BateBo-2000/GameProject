@@ -1,0 +1,73 @@
+\doxysection{Heal\+Ability Class Reference}
+\hypertarget{class_heal_ability}{}\label{class_heal_ability}\index{HealAbility@{HealAbility}}
+Inheritance diagram for Heal\+Ability\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_heal_ability}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_heal_ability_ac97a319e4b0f5bf98766d749ab9d452c}\label{class_heal_ability_ac97a319e4b0f5bf98766d749ab9d452c} 
+{\bfseries Heal\+Ability} (const std\+::string \&name, unsigned mana\+Cost, unsigned heal\+Amount)
+\item 
+\mbox{\hyperlink{class_i_ability}{IAbility}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_heal_ability_a1caf78b92cb70cfed79ebf6b860883f9}{clone}} () const override
+\item 
+const std\+::string \& \mbox{\hyperlink{class_heal_ability_a3ffe89a3140b01043144d0ac936a2c0b}{get\+Name}} () const override
+\item 
+unsigned \mbox{\hyperlink{class_heal_ability_ab3ec82bb4c2b15d0ba0366dc6197553f}{get\+Mana\+Cost}} () const override
+\item 
+void \mbox{\hyperlink{class_heal_ability_a328c822621696cf342e5395984f0625f}{apply}} (\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*}user, const std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \&targets, \mbox{\hyperlink{class_battle_context}{Battle\+Context}} \&ctx) override
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_heal_ability_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_heal_ability_a328c822621696cf342e5395984f0625f}\index{HealAbility@{HealAbility}!apply@{apply}}
+\index{apply@{apply}!HealAbility@{HealAbility}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily \label{class_heal_ability_a328c822621696cf342e5395984f0625f} 
+void Heal\+Ability\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*}}]{user}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \&}]{targets}{, }\item[{\mbox{\hyperlink{class_battle_context}{Battle\+Context}} \&}]{ctx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_ability}{IAbility}}.
+
+\Hypertarget{class_heal_ability_a1caf78b92cb70cfed79ebf6b860883f9}\index{HealAbility@{HealAbility}!clone@{clone}}
+\index{clone@{clone}!HealAbility@{HealAbility}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_heal_ability_a1caf78b92cb70cfed79ebf6b860883f9} 
+\mbox{\hyperlink{class_i_ability}{IAbility}} \texorpdfstring{$\ast$}{*} Heal\+Ability\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_ability}{IAbility}}.
+
+\Hypertarget{class_heal_ability_ab3ec82bb4c2b15d0ba0366dc6197553f}\index{HealAbility@{HealAbility}!getManaCost@{getManaCost}}
+\index{getManaCost@{getManaCost}!HealAbility@{HealAbility}}
+\doxysubsubsection{\texorpdfstring{getManaCost()}{getManaCost()}}
+{\footnotesize\ttfamily \label{class_heal_ability_ab3ec82bb4c2b15d0ba0366dc6197553f} 
+unsigned Heal\+Ability\+::get\+Mana\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_ability}{IAbility}}.
+
+\Hypertarget{class_heal_ability_a3ffe89a3140b01043144d0ac936a2c0b}\index{HealAbility@{HealAbility}!getName@{getName}}
+\index{getName@{getName}!HealAbility@{HealAbility}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_heal_ability_a3ffe89a3140b01043144d0ac936a2c0b} 
+const std\+::string \& Heal\+Ability\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_ability}{IAbility}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Header\+Files/\+System/\+Game\+Engine/\+Abilities/Heal\+Ability.\+h\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Source\+Files/\+System/\+Game\+Engine/\+Abilities/Heal\+Ability.\+cpp\end{DoxyCompactItemize}

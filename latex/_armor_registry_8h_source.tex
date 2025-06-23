@@ -1,0 +1,34 @@
+\doxysection{Armor\+Registry.\+h}
+\hypertarget{_armor_registry_8h_source}{}\label{_armor_registry_8h_source}\index{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/Services/Registries/Armor/ArmorRegistry.h@{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/Services/Registries/Armor/ArmorRegistry.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ ARMOR\_REGISTRY\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ ARMOR\_REGISTRY\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}IArmorRegistry.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_armor}{IArmor}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }ArmorRegistry\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_armor_registry}{IArmorRegistry}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ ArmorRegistry();}
+\DoxyCodeLine{00015\ \ \ \ \ ArmorRegistry(\textcolor{keyword}{const}\ ArmorRegistry\&\ other);}
+\DoxyCodeLine{00016\ \ \ \ \ ArmorRegistry\&\ operator=(\textcolor{keyword}{const}\ ArmorRegistry\&\ other);}
+\DoxyCodeLine{00017\ \ \ \ \ \string~ArmorRegistry()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ registerPrototype(\mbox{\hyperlink{class_i_armor}{IArmor}}*\ armor)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_i_armor}{IArmor}}*\ createByName(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{unsigned}\ durability)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<IArmor*>\ prototypes;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ clear();}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ARMOR\_REGISTRY\_H}}
+
+\end{DoxyCode}

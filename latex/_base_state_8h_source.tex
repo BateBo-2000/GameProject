@@ -1,0 +1,58 @@
+\doxysection{Base\+State.\+h}
+\hypertarget{_base_state_8h_source}{}\label{_base_state_8h_source}\index{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/GameEngine/GameStateStructure/BaseState/BaseState.h@{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/GameEngine/GameStateStructure/BaseState/BaseState.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ BASE\_STATE\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ BASE\_STATE\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../../HeaderFiles/System/GameEngine/GameStateStructure/BaseState/IBaseSate.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../../HeaderFiles/System/GameEngine/Units/IUnit.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }BaseState\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_base_state}{IBaseState}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ BaseState(\textcolor{keywordtype}{unsigned}\ maxCommandersPerType);}
+\DoxyCodeLine{00012\ \ \ \ \ BaseState(\textcolor{keyword}{const}\ BaseState\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00013\ \ \ \ \ BaseState\&\ operator=(\textcolor{keyword}{const}\ BaseState\&\ other)\ =\ delete\ ;}
+\DoxyCodeLine{00014\ \ \ \ \ \string~BaseState()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ getGoldReserve()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ setGoldReserve(\textcolor{keywordtype}{unsigned}\ gold)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ getWins()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ win()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<IUnit*>\&\ getUnits()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<IUnit*>\&\ getUnits()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ addUnit(\mbox{\hyperlink{class_i_unit}{IUnit}}*\ u)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//removes\ its\ pointer}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ removeUnit(\mbox{\hyperlink{class_i_unit}{IUnit}}*\ u)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_i_unit}{IUnit}}*\ getUnit(\textcolor{keywordtype}{size\_t}\ index)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ getUnitCount()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<IUnit*>\&\ getCommanders()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ \ \ \ \ std::vector<IUnit*>\&\ getCommanders()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ addCommander(\mbox{\hyperlink{class_i_unit}{IUnit}}*\ c)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//removes\ its\ pointer}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ removeCommander(\mbox{\hyperlink{class_i_unit}{IUnit}}*\ c)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_i_unit}{IUnit}}*\ getCommander(\textcolor{keywordtype}{size\_t}\ index)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ getCommanderCount()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ MAX\_COMMANDERS\_FROM\_THE\_SAME\_TYPE;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ \ \ \ \ \ \ \ TODO\ MAKE\ A\ PROXY\ FOR\ THE\ NON\ CONST\ RETURNING\ -\/\ in\ the\ future}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00044\ \ \ \ \ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ goldReserve\ =\ 0;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ wins\ =\ 0;}
+\DoxyCodeLine{00048\ \ \ \ \ std::vector<IUnit*>\ units;}
+\DoxyCodeLine{00049\ \ \ \ \ std::vector<IUnit*>\ commanders;}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BASE\_STATE\_H}}
+
+\end{DoxyCode}

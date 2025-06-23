@@ -1,0 +1,79 @@
+\doxysection{Console\+UI Class Reference}
+\hypertarget{class_console_u_i}{}\label{class_console_u_i}\index{ConsoleUI@{ConsoleUI}}
+Inheritance diagram for Console\+UI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_console_u_i}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_console_u_i}{Console\+UI}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_console_u_i_aa463888972cffccf60a0aa173f79599e}{clone}} () const override
+\item 
+\Hypertarget{class_console_u_i_acc5da7df04ff22c8f913cdcc8dcc4271}\label{class_console_u_i_acc5da7df04ff22c8f913cdcc8dcc4271} 
+virtual void {\bfseries inform} (const string \&msg) const override
+\item 
+\Hypertarget{class_console_u_i_ad34b12c05c2043148e3b5957cd2aeb41}\label{class_console_u_i_ad34b12c05c2043148e3b5957cd2aeb41} 
+virtual void {\bfseries warn} (const string \&msg) const override
+\item 
+\Hypertarget{class_console_u_i_a93f4e610075070dfec6e07e4b208ea8e}\label{class_console_u_i_a93f4e610075070dfec6e07e4b208ea8e} 
+virtual void {\bfseries print\+Invalid\+Arg} (const string \&msg) const override
+\item 
+virtual void \mbox{\hyperlink{class_console_u_i_a8863739e55332b34b9584845b4e3b1d8}{error}} (const std\+::string \&msg) const override
+\item 
+\Hypertarget{class_console_u_i_aaee655e222fe5c4a3baf58f24915b65c}\label{class_console_u_i_aaee655e222fe5c4a3baf58f24915b65c} 
+virtual bool {\bfseries confirm} (const string \&q) const override
+\item 
+\Hypertarget{class_console_u_i_a7a73fffe49f297d051cac7a01f0cd8eb}\label{class_console_u_i_a7a73fffe49f297d051cac7a01f0cd8eb} 
+virtual int {\bfseries ask\+For\+Number} (const string \&q) const override
+\item 
+\Hypertarget{class_console_u_i_a351843a0a3b9c789b3e71989ce978c87}\label{class_console_u_i_a351843a0a3b9c789b3e71989ce978c87} 
+virtual string {\bfseries ask\+Question} (const string \&q) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_user_interface}{IUser\+Interface}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries inform} (const std\+::string \&msg) const =0
+\item 
+virtual void {\bfseries warn} (const std\+::string \&msg) const =0
+\item 
+virtual void {\bfseries print\+Invalid\+Arg} (const std\+::string \&msg) const =0
+\item 
+virtual bool {\bfseries confirm} (const std\+::string \&q) const =0
+\item 
+virtual int {\bfseries ask\+For\+Number} (const std\+::string \&q) const =0
+\item 
+virtual std\+::string {\bfseries ask\+Question} (const std\+::string \&q) const =0
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_console_u_i_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_console_u_i_aa463888972cffccf60a0aa173f79599e}\index{ConsoleUI@{ConsoleUI}!clone@{clone}}
+\index{clone@{clone}!ConsoleUI@{ConsoleUI}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_console_u_i_aa463888972cffccf60a0aa173f79599e} 
+\mbox{\hyperlink{class_i_user_interface}{IUser\+Interface}} \texorpdfstring{$\ast$}{*} Console\+UI\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_user_interface}{IUser\+Interface}}.
+
+\Hypertarget{class_console_u_i_a8863739e55332b34b9584845b4e3b1d8}\index{ConsoleUI@{ConsoleUI}!error@{error}}
+\index{error@{error}!ConsoleUI@{ConsoleUI}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily \label{class_console_u_i_a8863739e55332b34b9584845b4e3b1d8} 
+void Console\+UI\+::error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_user_interface}{IUser\+Interface}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Header\+Files/\+Communication/\+UI/Console\+User\+Interface.\+h\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Source\+Files/\+Communication/User\+UI.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,103 @@
+\doxysection{Command\+Invoker Class Reference}
+\hypertarget{class_command_invoker}{}\label{class_command_invoker}\index{CommandInvoker@{CommandInvoker}}
+Inheritance diagram for Command\+Invoker\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_command_invoker}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_command_invoker_a98b00216104056869673d3d1ccd6ae5b}\label{class_command_invoker_a98b00216104056869673d3d1ccd6ae5b} 
+{\bfseries Command\+Invoker} (\mbox{\hyperlink{class_i_game_engine}{IGame\+Engine}} \&engine)
+\item 
+\Hypertarget{class_command_invoker_a8c0de5a6388525bb1250eae70bf1bcf9}\label{class_command_invoker_a8c0de5a6388525bb1250eae70bf1bcf9} 
+{\bfseries Command\+Invoker} (const \mbox{\hyperlink{class_command_invoker}{Command\+Invoker}} \&other)
+\item 
+\Hypertarget{class_command_invoker_ac5b35eba751933375659c2e2cfaaec8a}\label{class_command_invoker_ac5b35eba751933375659c2e2cfaaec8a} 
+\mbox{\hyperlink{class_command_invoker}{Command\+Invoker}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_command_invoker}{Command\+Invoker}} \&other)
+\item 
+void \mbox{\hyperlink{class_command_invoker_ad1a788fe9d09391571f4b943ecd08b56}{register\+Command}} (\mbox{\hyperlink{class_i_command}{ICommand}} \texorpdfstring{$\ast$}{*}c) override
+\item 
+bool \mbox{\hyperlink{class_command_invoker_ac9fdccb38dab7b20a2f8bee45844258a}{execute\+Command\+Line}} (const std\+::string \&line) override
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_i_command}{ICommand}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_command_invoker_a381a2a4279665f4a061440b4c9a94e15}{get\+Commands}} () override
+\item 
+Faction \mbox{\hyperlink{class_command_invoker_a34de9df18dc2c39cf73697580c1c24b9}{get\+Current\+Faction}} () const override
+\item 
+bool \mbox{\hyperlink{class_command_invoker_abf048651c82df0692ac417efd03ba93e}{should\+Exit}} () override
+\item 
+void \mbox{\hyperlink{class_command_invoker_aefb735e8ee06e76cb22676adeae73fe1}{request\+Exit}} () override
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_command_invoker_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_command_invoker_ac9fdccb38dab7b20a2f8bee45844258a}\index{CommandInvoker@{CommandInvoker}!executeCommandLine@{executeCommandLine}}
+\index{executeCommandLine@{executeCommandLine}!CommandInvoker@{CommandInvoker}}
+\doxysubsubsection{\texorpdfstring{executeCommandLine()}{executeCommandLine()}}
+{\footnotesize\ttfamily \label{class_command_invoker_ac9fdccb38dab7b20a2f8bee45844258a} 
+bool Command\+Invoker\+::execute\+Command\+Line (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{line}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_invoker}{IInvoker}}.
+
+\Hypertarget{class_command_invoker_a381a2a4279665f4a061440b4c9a94e15}\index{CommandInvoker@{CommandInvoker}!getCommands@{getCommands}}
+\index{getCommands@{getCommands}!CommandInvoker@{CommandInvoker}}
+\doxysubsubsection{\texorpdfstring{getCommands()}{getCommands()}}
+{\footnotesize\ttfamily \label{class_command_invoker_a381a2a4279665f4a061440b4c9a94e15} 
+const std\+::vector$<$ \mbox{\hyperlink{class_i_command}{ICommand}} \texorpdfstring{$\ast$}{*} $>$ Command\+Invoker\+::get\+Commands (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_invoker}{IInvoker}}.
+
+\Hypertarget{class_command_invoker_a34de9df18dc2c39cf73697580c1c24b9}\index{CommandInvoker@{CommandInvoker}!getCurrentFaction@{getCurrentFaction}}
+\index{getCurrentFaction@{getCurrentFaction}!CommandInvoker@{CommandInvoker}}
+\doxysubsubsection{\texorpdfstring{getCurrentFaction()}{getCurrentFaction()}}
+{\footnotesize\ttfamily \label{class_command_invoker_a34de9df18dc2c39cf73697580c1c24b9} 
+Faction Command\+Invoker\+::get\+Current\+Faction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_invoker}{IInvoker}}.
+
+\Hypertarget{class_command_invoker_ad1a788fe9d09391571f4b943ecd08b56}\index{CommandInvoker@{CommandInvoker}!registerCommand@{registerCommand}}
+\index{registerCommand@{registerCommand}!CommandInvoker@{CommandInvoker}}
+\doxysubsubsection{\texorpdfstring{registerCommand()}{registerCommand()}}
+{\footnotesize\ttfamily \label{class_command_invoker_ad1a788fe9d09391571f4b943ecd08b56} 
+void Command\+Invoker\+::register\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_command}{ICommand}} \texorpdfstring{$\ast$}{*}}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_invoker}{IInvoker}}.
+
+\Hypertarget{class_command_invoker_aefb735e8ee06e76cb22676adeae73fe1}\index{CommandInvoker@{CommandInvoker}!requestExit@{requestExit}}
+\index{requestExit@{requestExit}!CommandInvoker@{CommandInvoker}}
+\doxysubsubsection{\texorpdfstring{requestExit()}{requestExit()}}
+{\footnotesize\ttfamily \label{class_command_invoker_aefb735e8ee06e76cb22676adeae73fe1} 
+void Command\+Invoker\+::request\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_invoker}{IInvoker}}.
+
+\Hypertarget{class_command_invoker_abf048651c82df0692ac417efd03ba93e}\index{CommandInvoker@{CommandInvoker}!shouldExit@{shouldExit}}
+\index{shouldExit@{shouldExit}!CommandInvoker@{CommandInvoker}}
+\doxysubsubsection{\texorpdfstring{shouldExit()}{shouldExit()}}
+{\footnotesize\ttfamily \label{class_command_invoker_abf048651c82df0692ac417efd03ba93e} 
+bool Command\+Invoker\+::should\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_invoker}{IInvoker}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Header\+Files/\+System/\+Control/\+Invoker/Command\+Invoker.\+h\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Source\+Files/\+System/\+Control/Command\+Invoker.\+cpp\end{DoxyCompactItemize}

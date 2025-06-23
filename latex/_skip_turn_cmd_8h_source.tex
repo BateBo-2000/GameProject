@@ -1,0 +1,39 @@
+\doxysection{Skip\+Turn\+Cmd.\+h}
+\hypertarget{_skip_turn_cmd_8h_source}{}\label{_skip_turn_cmd_8h_source}\index{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/Control/Commands/Combat/SkipTurnCmd.h@{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/Control/Commands/Combat/SkipTurnCmd.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ SKIP\_TURN\_CMD\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ SKIP\_TURN\_CMD\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../ICommand.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_game_engine}{IGameEngine}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_user_interface}{IUserInterface}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }SkipTurnCmd\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_command}{ICommand}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ SkipTurnCmd(\mbox{\hyperlink{class_i_game_engine}{IGameEngine}}\&\ engine,\ \mbox{\hyperlink{class_i_user_interface}{IUserInterface}}\&\ ui);}
+\DoxyCodeLine{00015\ \ \ \ \ \string~SkipTurnCmd()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_i_command}{ICommand}}*\ clone()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ isThisMe(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ execute(\textcolor{keyword}{const}\ std::vector<std::string>\&\ args)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ getName()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ getDescription()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::string\ NAME;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::string\ DESCRIPTION;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_i_game_engine}{IGameEngine}}\&\ engine;}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_i_user_interface}{IUserInterface}}\&\ ui;}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SKIP\_TURN\_CMD\_H}}
+
+\end{DoxyCode}

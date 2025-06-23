@@ -1,0 +1,51 @@
+\doxysection{Game\+Engine.\+h}
+\hypertarget{_game_engine_8h_source}{}\label{_game_engine_8h_source}\index{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/GameEngine/GameEngine.h@{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/GameEngine/GameEngine.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ GAME\_ENGINE\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ GAME\_ENGINE\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}IGameEngine.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_game_state}{IGameState}};}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_unit_registry}{IUnitRegistry}};}
+\DoxyCodeLine{00009\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_engine_config}{EngineConfig}};}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }IStatePersistence;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }GameEngine\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_game_engine}{IGameEngine}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ GameEngine(\mbox{\hyperlink{class_i_unit_registry}{IUnitRegistry}}\&\ unitFactory,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_engine_config}{EngineConfig}}\&\ settings,\ \mbox{\hyperlink{class_i_game_state}{IGameState}}\&\ state);}
+\DoxyCodeLine{00015\ \ \ \ \ GameEngine(\textcolor{keyword}{const}\ GameEngine\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00016\ \ \ \ \ GameEngine\&\ operator=(\textcolor{keyword}{const}\ GameEngine\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00017\ \ \ \ \ \string~GameEngine()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ create(\textcolor{keyword}{const}\ std::string\&\ unitType)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ selectBoss(\textcolor{keyword}{const}\ std::string\&\ bossType)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ selectUnits(\textcolor{keyword}{const}\ std::string\&\ unitType,\ \textcolor{keywordtype}{unsigned}\ count)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ startDuel()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ skipTurn()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ attackTarget(\textcolor{keyword}{const}\ std::string\&\ targetName)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ useAbility(\textcolor{keyword}{const}\ std::vector<std::string>\&\ targetNames,\ \textcolor{keywordtype}{size\_t}\ abilityIndex\ =\ 0)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_i_game_state}{IGameState}}\&\ getGameState()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_i_game_state}{IGameState}}\&\ getGameState()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ Faction\ getWhoseTurnItIsNow()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ isGameWon()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ restartTheGame()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ goNextTurnOrStageFighting();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ cleanUpAfterCompletion();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_engine_config}{EngineConfig}}\&\ settings;}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_i_unit_registry}{IUnitRegistry}}\&\ unitRegister;}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_i_game_state}{IGameState}}\&\ gameState;}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GAME\_ENGINE\_H}}
+
+\end{DoxyCode}

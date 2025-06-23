@@ -1,0 +1,31 @@
+\doxysection{Split.\+h}
+\hypertarget{_split_8h_source}{}\label{_split_8h_source}\index{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/Util/Split.h@{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/Util/Split.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ UTILITY}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ UTILITY}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ std::vector<std::string>\ split(\textcolor{keyword}{const}\ std::string\&\ input,\ \textcolor{keywordtype}{char}\ delim)\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ std::vector<std::string>\ result;}
+\DoxyCodeLine{00010\ \ \ \ \ std::string\ current;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{char}\ c\ :\ input)\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c\ ==\ delim)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!current.empty())}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(current);}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ current.clear();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ current.push\_back(c);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ result.push\_back(current);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

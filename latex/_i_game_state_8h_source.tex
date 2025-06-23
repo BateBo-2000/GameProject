@@ -1,0 +1,62 @@
+\doxysection{IGame\+State.\+h}
+\hypertarget{_i_game_state_8h_source}{}\label{_i_game_state_8h_source}\index{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/GameEngine/GameStateStructure/GameState/IGameState.h@{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/GameEngine/GameStateStructure/GameState/IGameState.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ I\_GAME\_STATE\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ I\_GAME\_STATE\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../EngineConfig.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{enum\ class}\ DuelStage\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ LivingSetup,\ \ \ \textcolor{comment}{//\ Living\ picks\ team\ for\ duel}}
+\DoxyCodeLine{00011\ \ \ \ \ UndeadSetup,\ \ \ \textcolor{comment}{//\ Undead\ picks\ team}}
+\DoxyCodeLine{00012\ \ \ \ \ UndeadAttack,\ \ \textcolor{comment}{//\ Undead\ initial\ attack}}
+\DoxyCodeLine{00013\ \ \ \ \ LivingAttack,\ \textcolor{comment}{//\ Living\ counter-\/attack}}
+\DoxyCodeLine{00014\ \ \ \ \ Completed,\ \ \ \ \ \ \textcolor{comment}{//\ Duel\ finished}}
+\DoxyCodeLine{00015\ \ \ \ \ GameFinished}
+\DoxyCodeLine{00016\ \};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_base_state}{IBaseState}};}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_unit}{IUnit}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_game_state}{IGameState}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_game_state}{\string~IGameState}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//access\ bases}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_base_state}{IBaseState}}\&\ getLivingBase()\ =\ 0;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_base_state}{IBaseState}}\&\ getUndeadBase()\ =\ 0;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//game\ settings}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_engine_config}{EngineConfig}}\&\ getConfig()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{//\ all\ units\ in\ the\ game}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ countAllUnits()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//duel\ stage}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ DuelStage\ getStage()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setStage(DuelStage\ stage)\ =\ 0;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//duel\ units\ chosen\ for\ duel}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::vector<IUnit*>\&\ getLivingTeam()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<IUnit*>\&\ getLivingTeam()\ =\ 0;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ std::vector<IUnit*>\&\ getUndeadTeam()\ \textcolor{keyword}{const}\ =0;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<IUnit*>\&\ getUndeadTeam()\ =0;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//who\ from\ living\ team\ has\ to\ act\ next}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ getLivingTurnIndex()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ LivingTurnIndexIncrement()\ =\ 0;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ resetLivingTurnIndex()\ =\ 0;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//who\ from\ undead\ team\ has\ to\ act\ next}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ getUndeadTurnIndex()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ UndeadTurnIndexIncrement()\ =\ 0;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ resetUndeadTurnIndex()\ =\ 0;}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ I\_GAME\_STATE\_H}}
+
+\end{DoxyCode}

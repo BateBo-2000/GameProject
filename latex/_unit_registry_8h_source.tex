@@ -1,0 +1,33 @@
+\doxysection{Unit\+Registry.\+h}
+\hypertarget{_unit_registry_8h_source}{}\label{_unit_registry_8h_source}\index{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/Services/Registries/Unit/UnitRegistry.h@{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/Services/Registries/Unit/UnitRegistry.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ UNIT\_REGISTRY\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ UNIT\_REGISTRY\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}IUnitRegistry.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_unit}{IUnit}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }UnitRegistry\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_unit_registry}{IUnitRegistry}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ UnitRegistry();}
+\DoxyCodeLine{00014\ \ \ \ \ UnitRegistry(\textcolor{keyword}{const}\ UnitRegistry\&\ other);}
+\DoxyCodeLine{00015\ \ \ \ \ UnitRegistry\&\ operator=(\textcolor{keyword}{const}\ UnitRegistry\&\ other);}
+\DoxyCodeLine{00016\ \ \ \ \ \string~UnitRegistry()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ registerPrototype(\mbox{\hyperlink{class_i_unit}{IUnit}}*\ unit)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_i_unit}{IUnit}}*\ createByName(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<IUnit*>\ prototypes;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ clear();}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UNIT\_REGISTRY\_H}}
+
+\end{DoxyCode}

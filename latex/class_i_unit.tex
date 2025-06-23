@@ -1,0 +1,67 @@
+\doxysection{IUnit Class Reference}
+\hypertarget{class_i_unit}{}\label{class_i_unit}\index{IUnit@{IUnit}}
+Inheritance diagram for IUnit\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_unit}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_i_unit_aa5b5dabc4f4855d96d49542a19fc65ff}\label{class_i_unit_aa5b5dabc4f4855d96d49542a19fc65ff} 
+virtual \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} {\bfseries clone} () const =0
+\item 
+\Hypertarget{class_i_unit_adcef8e9802dd9823d35ddf95aa7f6eac}\label{class_i_unit_adcef8e9802dd9823d35ddf95aa7f6eac} 
+virtual const std\+::string \& {\bfseries get\+Type} () const =0
+\item 
+\Hypertarget{class_i_unit_a34048b272f954dcabccf16097e12c076}\label{class_i_unit_a34048b272f954dcabccf16097e12c076} 
+virtual unsigned {\bfseries get\+Health} () const =0
+\item 
+\Hypertarget{class_i_unit_a935ab709ab9ea72b313c1cdca073de54}\label{class_i_unit_a935ab709ab9ea72b313c1cdca073de54} 
+virtual unsigned {\bfseries get\+Attack} () const =0
+\item 
+\Hypertarget{class_i_unit_ad8f6d3ae04cc55146c32eb09306e0c65}\label{class_i_unit_ad8f6d3ae04cc55146c32eb09306e0c65} 
+virtual unsigned {\bfseries get\+Gold\+Cost} () const =0
+\item 
+\Hypertarget{class_i_unit_a75f680217c4b75ea56dfb76d6586faa7}\label{class_i_unit_a75f680217c4b75ea56dfb76d6586faa7} 
+virtual bool {\bfseries is\+Commander} () const =0
+\item 
+\Hypertarget{class_i_unit_a8439789aaca40977ad27ac7128bf741f}\label{class_i_unit_a8439789aaca40977ad27ac7128bf741f} 
+virtual Faction {\bfseries get\+Faction} () const =0
+\item 
+\Hypertarget{class_i_unit_a208347b8a252418a9954278f94ac586b}\label{class_i_unit_a208347b8a252418a9954278f94ac586b} 
+virtual const \mbox{\hyperlink{class_i_armor}{IArmor}} \& {\bfseries get\+Armor} () const =0
+\item 
+\Hypertarget{class_i_unit_adeb6bc4cc069e745bcaa8a94be7eaf20}\label{class_i_unit_adeb6bc4cc069e745bcaa8a94be7eaf20} 
+virtual const std\+::vector$<$ \mbox{\hyperlink{class_i_ability}{IAbility}} \texorpdfstring{$\ast$}{*} $>$ \& {\bfseries get\+Abilities} () const =0
+\item 
+\Hypertarget{class_i_unit_aeb7910d874c770da20c19df939bac571}\label{class_i_unit_aeb7910d874c770da20c19df939bac571} 
+virtual unsigned {\bfseries get\+Mana} () const =0
+\item 
+\Hypertarget{class_i_unit_a71015de37e18ddedf8c0092a02b73105}\label{class_i_unit_a71015de37e18ddedf8c0092a02b73105} 
+virtual void {\bfseries use\+Mana} (unsigned mana)=0
+\item 
+\Hypertarget{class_i_unit_a2b8818dbffb17de6d28c9bfb4f4de72f}\label{class_i_unit_a2b8818dbffb17de6d28c9bfb4f4de72f} 
+virtual void {\bfseries take\+Damage} (unsigned raw\+Damage)=0
+\item 
+\Hypertarget{class_i_unit_aa2b3032e14bb1c23e9b23c63048f3afd}\label{class_i_unit_aa2b3032e14bb1c23e9b23c63048f3afd} 
+virtual void {\bfseries attack} (\mbox{\hyperlink{class_i_unit}{IUnit}} \&target)=0
+\item 
+\Hypertarget{class_i_unit_a06db76c8cb6a28d719df61a018b8ae57}\label{class_i_unit_a06db76c8cb6a28d719df61a018b8ae57} 
+virtual void {\bfseries use\+Ability} (std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ targets, \mbox{\hyperlink{class_battle_context}{Battle\+Context}} \&ctx, size\+\_\+t ability\+Index=0)=0
+\item 
+\Hypertarget{class_i_unit_a5ad552bd46d96444f405bbeb0e319e49}\label{class_i_unit_a5ad552bd46d96444f405bbeb0e319e49} 
+virtual bool {\bfseries is\+Alive} () const =0
+\item 
+\Hypertarget{class_i_unit_a96dacc82649d659bd2fde2991194895a}\label{class_i_unit_a96dacc82649d659bd2fde2991194895a} 
+virtual void {\bfseries regenerate\+Health} (unsigned amount)=0
+\item 
+\Hypertarget{class_i_unit_ad1d1506203c844b6228ff3925f4565fd}\label{class_i_unit_ad1d1506203c844b6228ff3925f4565fd} 
+virtual void {\bfseries regenerate\+Mana} (unsigned amount)=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Header\+Files/\+System/\+Game\+Engine/\+Units/IUnit.\+h\end{DoxyCompactItemize}

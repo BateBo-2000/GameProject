@@ -1,0 +1,23 @@
+\doxysection{Console\+Logger.\+h}
+\hypertarget{_console_logger_8h_source}{}\label{_console_logger_8h_source}\index{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/Communication/Loggers/ConsoleLogger.h@{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/Communication/Loggers/ConsoleLogger.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CONSOLE\_LOGGER}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CONSOLE\_LOGGER}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ILogger.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_console_logger}{ConsoleLogger}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_logger}{ILogger}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_console_logger}{ConsoleLogger}}*\ clone()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ log(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ msg);}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ warn(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ msg);}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ error(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ msg);}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !LOGGER}}
+
+\end{DoxyCode}

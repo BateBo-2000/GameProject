@@ -1,0 +1,128 @@
+\doxysection{Random\+User\+Interface Class Reference}
+\hypertarget{class_random_user_interface}{}\label{class_random_user_interface}\index{RandomUserInterface@{RandomUserInterface}}
+
+
+{\ttfamily \#include $<$Random\+AIPlayer.\+h$>$}
+
+Inheritance diagram for Random\+User\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_random_user_interface}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_random_user_interface_a29be8de4d61d34a04bcdb2b80604266c}\label{class_random_user_interface_a29be8de4d61d34a04bcdb2b80604266c} 
+{\bfseries Random\+User\+Interface} (const std\+::vector$<$ std\+::string $>$ \&commands)
+\item 
+\mbox{\hyperlink{class_random_user_interface}{Random\+User\+Interface}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_random_user_interface_ab3199143f4430bfa8a58b34f71363cb3}{clone}} () const override
+\item 
+void \mbox{\hyperlink{class_random_user_interface_a19c63f85831b6a91834554d45952b950}{inform}} (const std\+::string \&msg) const override
+\item 
+void \mbox{\hyperlink{class_random_user_interface_a3eca3f5d2dc56b0e2ee6654816d90990}{warn}} (const std\+::string \&msg) const override
+\item 
+void \mbox{\hyperlink{class_random_user_interface_afa4fd793af1870c3e43fd999415769bd}{print\+Invalid\+Arg}} (const std\+::string \&msg) const override
+\item 
+virtual void \mbox{\hyperlink{class_random_user_interface_aef37650ebbc3cb15c40a81c9c249cc76}{error}} (const std\+::string \&msg) const override
+\item 
+bool \mbox{\hyperlink{class_random_user_interface_a5eeab3bdbe35e7ccaba17d57f22e5a35}{confirm}} (const std\+::string \&q) const override
+\item 
+int \mbox{\hyperlink{class_random_user_interface_a9b27a13873d2fc9a5e17918b6f028fc2}{ask\+For\+Number}} (const std\+::string \&q) const override
+\item 
+std\+::string \mbox{\hyperlink{class_random_user_interface_aaafe503e6f4645458c90addd3aaa3af5}{ask\+Question}} (const std\+::string \&q) const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is "{}\+AIPLayer"{} acting as the computer. just answers with random stuff 
+
+\label{doc-func-members}
+\Hypertarget{class_random_user_interface_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_random_user_interface_a9b27a13873d2fc9a5e17918b6f028fc2}\index{RandomUserInterface@{RandomUserInterface}!askForNumber@{askForNumber}}
+\index{askForNumber@{askForNumber}!RandomUserInterface@{RandomUserInterface}}
+\doxysubsubsection{\texorpdfstring{askForNumber()}{askForNumber()}}
+{\footnotesize\ttfamily \label{class_random_user_interface_a9b27a13873d2fc9a5e17918b6f028fc2} 
+int Random\+User\+Interface\+::ask\+For\+Number (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{q}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_user_interface}{IUser\+Interface}}.
+
+\Hypertarget{class_random_user_interface_aaafe503e6f4645458c90addd3aaa3af5}\index{RandomUserInterface@{RandomUserInterface}!askQuestion@{askQuestion}}
+\index{askQuestion@{askQuestion}!RandomUserInterface@{RandomUserInterface}}
+\doxysubsubsection{\texorpdfstring{askQuestion()}{askQuestion()}}
+{\footnotesize\ttfamily \label{class_random_user_interface_aaafe503e6f4645458c90addd3aaa3af5} 
+std\+::string Random\+User\+Interface\+::ask\+Question (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{q}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_user_interface}{IUser\+Interface}}.
+
+\Hypertarget{class_random_user_interface_ab3199143f4430bfa8a58b34f71363cb3}\index{RandomUserInterface@{RandomUserInterface}!clone@{clone}}
+\index{clone@{clone}!RandomUserInterface@{RandomUserInterface}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_random_user_interface_ab3199143f4430bfa8a58b34f71363cb3} 
+\mbox{\hyperlink{class_random_user_interface}{Random\+User\+Interface}} \texorpdfstring{$\ast$}{*} Random\+User\+Interface\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_user_interface}{IUser\+Interface}}.
+
+\Hypertarget{class_random_user_interface_a5eeab3bdbe35e7ccaba17d57f22e5a35}\index{RandomUserInterface@{RandomUserInterface}!confirm@{confirm}}
+\index{confirm@{confirm}!RandomUserInterface@{RandomUserInterface}}
+\doxysubsubsection{\texorpdfstring{confirm()}{confirm()}}
+{\footnotesize\ttfamily \label{class_random_user_interface_a5eeab3bdbe35e7ccaba17d57f22e5a35} 
+bool Random\+User\+Interface\+::confirm (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{q}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_user_interface}{IUser\+Interface}}.
+
+\Hypertarget{class_random_user_interface_aef37650ebbc3cb15c40a81c9c249cc76}\index{RandomUserInterface@{RandomUserInterface}!error@{error}}
+\index{error@{error}!RandomUserInterface@{RandomUserInterface}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily \label{class_random_user_interface_aef37650ebbc3cb15c40a81c9c249cc76} 
+void Random\+User\+Interface\+::error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_user_interface}{IUser\+Interface}}.
+
+\Hypertarget{class_random_user_interface_a19c63f85831b6a91834554d45952b950}\index{RandomUserInterface@{RandomUserInterface}!inform@{inform}}
+\index{inform@{inform}!RandomUserInterface@{RandomUserInterface}}
+\doxysubsubsection{\texorpdfstring{inform()}{inform()}}
+{\footnotesize\ttfamily \label{class_random_user_interface_a19c63f85831b6a91834554d45952b950} 
+void Random\+User\+Interface\+::inform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_user_interface}{IUser\+Interface}}.
+
+\Hypertarget{class_random_user_interface_afa4fd793af1870c3e43fd999415769bd}\index{RandomUserInterface@{RandomUserInterface}!printInvalidArg@{printInvalidArg}}
+\index{printInvalidArg@{printInvalidArg}!RandomUserInterface@{RandomUserInterface}}
+\doxysubsubsection{\texorpdfstring{printInvalidArg()}{printInvalidArg()}}
+{\footnotesize\ttfamily \label{class_random_user_interface_afa4fd793af1870c3e43fd999415769bd} 
+void Random\+User\+Interface\+::print\+Invalid\+Arg (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_user_interface}{IUser\+Interface}}.
+
+\Hypertarget{class_random_user_interface_a3eca3f5d2dc56b0e2ee6654816d90990}\index{RandomUserInterface@{RandomUserInterface}!warn@{warn}}
+\index{warn@{warn}!RandomUserInterface@{RandomUserInterface}}
+\doxysubsubsection{\texorpdfstring{warn()}{warn()}}
+{\footnotesize\ttfamily \label{class_random_user_interface_a3eca3f5d2dc56b0e2ee6654816d90990} 
+void Random\+User\+Interface\+::warn (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_user_interface}{IUser\+Interface}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Header\+Files/\+Communication/\+UI/Random\+AIPlayer.\+h\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Source\+Files/\+Communication/Random\+AIPlayer.\+cpp\end{DoxyCompactItemize}

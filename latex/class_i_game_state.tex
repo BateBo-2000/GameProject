@@ -1,0 +1,64 @@
+\doxysection{IGame\+State Class Reference}
+\hypertarget{class_i_game_state}{}\label{class_i_game_state}\index{IGameState@{IGameState}}
+Inheritance diagram for IGame\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_game_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_i_game_state_ac9113eaf46998c3ba8bdf7692266755a}\label{class_i_game_state_ac9113eaf46998c3ba8bdf7692266755a} 
+virtual \mbox{\hyperlink{class_i_base_state}{IBase\+State}} \& {\bfseries get\+Living\+Base} ()=0
+\item 
+\Hypertarget{class_i_game_state_a88ad4dd4efb07e9de2691d982a4a0425}\label{class_i_game_state_a88ad4dd4efb07e9de2691d982a4a0425} 
+virtual \mbox{\hyperlink{class_i_base_state}{IBase\+State}} \& {\bfseries get\+Undead\+Base} ()=0
+\item 
+\Hypertarget{class_i_game_state_ae7c1510f937db0a00c8732cd051a1972}\label{class_i_game_state_ae7c1510f937db0a00c8732cd051a1972} 
+virtual const \mbox{\hyperlink{struct_engine_config}{Engine\+Config}} \& {\bfseries get\+Config} () const =0
+\item 
+\Hypertarget{class_i_game_state_a897b65f5360f676a9c13812cf455a243}\label{class_i_game_state_a897b65f5360f676a9c13812cf455a243} 
+virtual size\+\_\+t {\bfseries count\+All\+Units} () const =0
+\item 
+\Hypertarget{class_i_game_state_aae9cbf424ee1ff1f939567a7a58159f9}\label{class_i_game_state_aae9cbf424ee1ff1f939567a7a58159f9} 
+virtual Duel\+Stage {\bfseries get\+Stage} () const =0
+\item 
+\Hypertarget{class_i_game_state_a2cd422918d2c0bce42e6c15c2553c185}\label{class_i_game_state_a2cd422918d2c0bce42e6c15c2553c185} 
+virtual void {\bfseries set\+Stage} (Duel\+Stage stage)=0
+\item 
+\Hypertarget{class_i_game_state_ad30332a77644356dc90b2694cfa513ea}\label{class_i_game_state_ad30332a77644356dc90b2694cfa513ea} 
+virtual const std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& {\bfseries get\+Living\+Team} () const =0
+\item 
+\Hypertarget{class_i_game_state_a3bfa5af5a0cb2ac2dec055d0a857fe3a}\label{class_i_game_state_a3bfa5af5a0cb2ac2dec055d0a857fe3a} 
+virtual std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& {\bfseries get\+Living\+Team} ()=0
+\item 
+\Hypertarget{class_i_game_state_a54524cd7643fc6f38c0aa8c4c135888d}\label{class_i_game_state_a54524cd7643fc6f38c0aa8c4c135888d} 
+virtual const std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& {\bfseries get\+Undead\+Team} () const =0
+\item 
+\Hypertarget{class_i_game_state_af0807b9e483b8f36185e8b7a6460c3f3}\label{class_i_game_state_af0807b9e483b8f36185e8b7a6460c3f3} 
+virtual std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& {\bfseries get\+Undead\+Team} ()=0
+\item 
+\Hypertarget{class_i_game_state_a68189c543594a3e9a316987b2f519808}\label{class_i_game_state_a68189c543594a3e9a316987b2f519808} 
+virtual size\+\_\+t {\bfseries get\+Living\+Turn\+Index} () const =0
+\item 
+\Hypertarget{class_i_game_state_af9a5cf948a1def925216b2dae5a61879}\label{class_i_game_state_af9a5cf948a1def925216b2dae5a61879} 
+virtual void {\bfseries Living\+Turn\+Index\+Increment} ()=0
+\item 
+\Hypertarget{class_i_game_state_aa820bffa5469dbfdbb8c630cde9b23a0}\label{class_i_game_state_aa820bffa5469dbfdbb8c630cde9b23a0} 
+virtual void {\bfseries reset\+Living\+Turn\+Index} ()=0
+\item 
+\Hypertarget{class_i_game_state_a8b9ffdc5e398610e2934823c481f9572}\label{class_i_game_state_a8b9ffdc5e398610e2934823c481f9572} 
+virtual size\+\_\+t {\bfseries get\+Undead\+Turn\+Index} () const =0
+\item 
+\Hypertarget{class_i_game_state_a912c52fe7af5d96d1c8ea2953ce81ce7}\label{class_i_game_state_a912c52fe7af5d96d1c8ea2953ce81ce7} 
+virtual void {\bfseries Undead\+Turn\+Index\+Increment} ()=0
+\item 
+\Hypertarget{class_i_game_state_a26a0b8a060350d8a703cfd2a52e5e949}\label{class_i_game_state_a26a0b8a060350d8a703cfd2a52e5e949} 
+virtual void {\bfseries reset\+Undead\+Turn\+Index} ()=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Header\+Files/\+System/\+Game\+Engine/\+Game\+State\+Structure/\+Game\+State/IGame\+State.\+h\end{DoxyCompactItemize}

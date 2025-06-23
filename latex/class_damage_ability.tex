@@ -1,0 +1,73 @@
+\doxysection{Damage\+Ability Class Reference}
+\hypertarget{class_damage_ability}{}\label{class_damage_ability}\index{DamageAbility@{DamageAbility}}
+Inheritance diagram for Damage\+Ability\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_damage_ability}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_damage_ability_ab6c8155a692c84c97f5f65f683a5c658}\label{class_damage_ability_ab6c8155a692c84c97f5f65f683a5c658} 
+{\bfseries Damage\+Ability} (const std\+::string \&name, unsigned mana\+Cost, unsigned damage)
+\item 
+\mbox{\hyperlink{class_i_ability}{IAbility}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_damage_ability_af2ffb8c2d17799888b2f81505d9e7e17}{clone}} () const override
+\item 
+const std\+::string \& \mbox{\hyperlink{class_damage_ability_a68a7cc11d554c5f1fafc7317cc070fa2}{get\+Name}} () const override
+\item 
+unsigned \mbox{\hyperlink{class_damage_ability_aee44768d857edb48acefb22790682aed}{get\+Mana\+Cost}} () const override
+\item 
+void \mbox{\hyperlink{class_damage_ability_a7adcfdd9d38afc72d3e90a59cde7cb34}{apply}} (\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*}user, const std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \&targets, \mbox{\hyperlink{class_battle_context}{Battle\+Context}} \&ctx) override
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_damage_ability_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_damage_ability_a7adcfdd9d38afc72d3e90a59cde7cb34}\index{DamageAbility@{DamageAbility}!apply@{apply}}
+\index{apply@{apply}!DamageAbility@{DamageAbility}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily \label{class_damage_ability_a7adcfdd9d38afc72d3e90a59cde7cb34} 
+void Damage\+Ability\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*}}]{user}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \&}]{targets}{, }\item[{\mbox{\hyperlink{class_battle_context}{Battle\+Context}} \&}]{ctx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_ability}{IAbility}}.
+
+\Hypertarget{class_damage_ability_af2ffb8c2d17799888b2f81505d9e7e17}\index{DamageAbility@{DamageAbility}!clone@{clone}}
+\index{clone@{clone}!DamageAbility@{DamageAbility}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_damage_ability_af2ffb8c2d17799888b2f81505d9e7e17} 
+\mbox{\hyperlink{class_i_ability}{IAbility}} \texorpdfstring{$\ast$}{*} Damage\+Ability\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_ability}{IAbility}}.
+
+\Hypertarget{class_damage_ability_aee44768d857edb48acefb22790682aed}\index{DamageAbility@{DamageAbility}!getManaCost@{getManaCost}}
+\index{getManaCost@{getManaCost}!DamageAbility@{DamageAbility}}
+\doxysubsubsection{\texorpdfstring{getManaCost()}{getManaCost()}}
+{\footnotesize\ttfamily \label{class_damage_ability_aee44768d857edb48acefb22790682aed} 
+unsigned Damage\+Ability\+::get\+Mana\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_ability}{IAbility}}.
+
+\Hypertarget{class_damage_ability_a68a7cc11d554c5f1fafc7317cc070fa2}\index{DamageAbility@{DamageAbility}!getName@{getName}}
+\index{getName@{getName}!DamageAbility@{DamageAbility}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_damage_ability_a68a7cc11d554c5f1fafc7317cc070fa2} 
+const std\+::string \& Damage\+Ability\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_ability}{IAbility}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Header\+Files/\+System/\+Game\+Engine/\+Abilities/Damage\+Ability.\+h\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Source\+Files/\+System/\+Game\+Engine/\+Abilities/Damage\+Ability.\+cpp\end{DoxyCompactItemize}

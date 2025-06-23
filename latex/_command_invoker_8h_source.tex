@@ -1,0 +1,41 @@
+\doxysection{Command\+Invoker.\+h}
+\hypertarget{_command_invoker_8h_source}{}\label{_command_invoker_8h_source}\index{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/Control/Invoker/CommandInvoker.h@{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/Control/Invoker/CommandInvoker.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ COMMAND\_INVOKER\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ COMMAND\_INVOKER\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}IInvoker.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_command}{ICommand}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_game_engine}{IGameEngine}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }CommandInvoker\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_invoker}{IInvoker}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ CommandInvoker(\mbox{\hyperlink{class_i_game_engine}{IGameEngine}}\&\ engine);}
+\DoxyCodeLine{00017\ \ \ \ \ CommandInvoker(\textcolor{keyword}{const}\ CommandInvoker\&\ other);}
+\DoxyCodeLine{00018\ \ \ \ \ CommandInvoker\&\ operator=(\textcolor{keyword}{const}\ CommandInvoker\&\ other);}
+\DoxyCodeLine{00019\ \ \ \ \ \string~CommandInvoker()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ registerCommand(\mbox{\hyperlink{class_i_command}{ICommand}}*\ c)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ executeCommandLine(\textcolor{keyword}{const}\ std::string\&\ line)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<ICommand*>\ getCommands()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ Faction\ getCurrentFaction()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ shouldExit()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ requestExit()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ std::vector<ICommand*>\ commands;}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_i_game_engine}{IGameEngine}}\&\ receiver;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ exitRequested;}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COMMAND\_INVOKER\_H}}
+
+\end{DoxyCode}

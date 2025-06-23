@@ -1,0 +1,33 @@
+\doxysection{Armor.\+h}
+\hypertarget{_armor_8h_source}{}\label{_armor_8h_source}\index{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/GameEngine/Armor/Armor.h@{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/GameEngine/Armor/Armor.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ ARMOR\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ ARMOR\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}IArmor.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }Armor\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_armor}{IArmor}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ Armor(std::string\ name,\ \textcolor{keywordtype}{int}\ defense);}
+\DoxyCodeLine{00011\ \ \ \ \ Armor*\ clone()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ getName()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ getDefense()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ getDurability()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ setDurability(\textcolor{keywordtype}{unsigned}\ dur)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ use()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ calculateMitigatedDamage(\textcolor{keywordtype}{unsigned}\ rawDamage)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ defensePercentage;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ usesLeft;}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ARMOR\_H}}
+
+\end{DoxyCode}

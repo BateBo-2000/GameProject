@@ -1,0 +1,73 @@
+\doxysection{Summon\+Ability Class Reference}
+\hypertarget{class_summon_ability}{}\label{class_summon_ability}\index{SummonAbility@{SummonAbility}}
+Inheritance diagram for Summon\+Ability\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_summon_ability}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_summon_ability_ad7731747643f7264c771fd8b8d4ffd9f}\label{class_summon_ability_ad7731747643f7264c771fd8b8d4ffd9f} 
+{\bfseries Summon\+Ability} (const std\+::string \&name, unsigned mana\+Cost, const std\+::string \&unit\+Type, unsigned count)
+\item 
+\mbox{\hyperlink{class_i_ability}{IAbility}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_summon_ability_ad14129338bb76ba9c29182e5117ea95c}{clone}} () const override
+\item 
+const std\+::string \& \mbox{\hyperlink{class_summon_ability_ac15f16ee43b4d45a19c9392ea83a10ce}{get\+Name}} () const override
+\item 
+unsigned \mbox{\hyperlink{class_summon_ability_a5ae5a6f0fae142259742e162faa94b66}{get\+Mana\+Cost}} () const override
+\item 
+void \mbox{\hyperlink{class_summon_ability_a7c630ce9c744e464379c49ed42bd7056}{apply}} (\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*}user, const std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \&targets, \mbox{\hyperlink{class_battle_context}{Battle\+Context}} \&ctx) override
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_summon_ability_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_summon_ability_a7c630ce9c744e464379c49ed42bd7056}\index{SummonAbility@{SummonAbility}!apply@{apply}}
+\index{apply@{apply}!SummonAbility@{SummonAbility}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily \label{class_summon_ability_a7c630ce9c744e464379c49ed42bd7056} 
+void Summon\+Ability\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*}}]{user}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \&}]{targets}{, }\item[{\mbox{\hyperlink{class_battle_context}{Battle\+Context}} \&}]{ctx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_ability}{IAbility}}.
+
+\Hypertarget{class_summon_ability_ad14129338bb76ba9c29182e5117ea95c}\index{SummonAbility@{SummonAbility}!clone@{clone}}
+\index{clone@{clone}!SummonAbility@{SummonAbility}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_summon_ability_ad14129338bb76ba9c29182e5117ea95c} 
+\mbox{\hyperlink{class_i_ability}{IAbility}} \texorpdfstring{$\ast$}{*} Summon\+Ability\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_ability}{IAbility}}.
+
+\Hypertarget{class_summon_ability_a5ae5a6f0fae142259742e162faa94b66}\index{SummonAbility@{SummonAbility}!getManaCost@{getManaCost}}
+\index{getManaCost@{getManaCost}!SummonAbility@{SummonAbility}}
+\doxysubsubsection{\texorpdfstring{getManaCost()}{getManaCost()}}
+{\footnotesize\ttfamily \label{class_summon_ability_a5ae5a6f0fae142259742e162faa94b66} 
+unsigned Summon\+Ability\+::get\+Mana\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_ability}{IAbility}}.
+
+\Hypertarget{class_summon_ability_ac15f16ee43b4d45a19c9392ea83a10ce}\index{SummonAbility@{SummonAbility}!getName@{getName}}
+\index{getName@{getName}!SummonAbility@{SummonAbility}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_summon_ability_ac15f16ee43b4d45a19c9392ea83a10ce} 
+const std\+::string \& Summon\+Ability\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_ability}{IAbility}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Header\+Files/\+System/\+Game\+Engine/\+Abilities/Summon\+Ability.\+h\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Source\+Files/\+System/\+Game\+Engine/\+Abilities/Summon\+Ability.\+cpp\end{DoxyCompactItemize}

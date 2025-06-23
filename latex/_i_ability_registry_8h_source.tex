@@ -1,0 +1,23 @@
+\doxysection{IAbility\+Registry.\+h}
+\hypertarget{_i_ability_registry_8h_source}{}\label{_i_ability_registry_8h_source}\index{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/Services/Registries/Ability/IAbilityRegistry.h@{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/Services/Registries/Ability/IAbilityRegistry.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ I\_ABILITY\_REGISTRY\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ I\_ABILITY\_REGISTRY\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_ability}{IAbility}};}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_ability_registry}{IAbilityRegistry}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_ability_registry}{\string~IAbilityRegistry}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{//takes\ ownership}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ registerPrototype(\mbox{\hyperlink{class_i_ability}{IAbility}}*\ armor)\ =\ 0;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//gives\ ownership}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_ability}{IAbility}}*\ createByName(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ I\_ABILITY\_REGISTRY\_H}}
+
+\end{DoxyCode}

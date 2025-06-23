@@ -1,0 +1,85 @@
+\doxysection{Save\+Command Class Reference}
+\hypertarget{class_save_command}{}\label{class_save_command}\index{SaveCommand@{SaveCommand}}
+Inheritance diagram for Save\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_save_command}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_save_command_a10aa4f860381bf6eadc14a0ad62e4d41}\label{class_save_command_a10aa4f860381bf6eadc14a0ad62e4d41} 
+{\bfseries Save\+Command} (\mbox{\hyperlink{class_i_game_save_file_handler}{IGame\+Save\+File\+Handler}} \&handler, \mbox{\hyperlink{class_i_user_interface}{IUser\+Interface}} \&ui, \mbox{\hyperlink{class_i_game_engine}{IGame\+Engine}} \&game\+Engine)
+\item 
+\mbox{\hyperlink{class_i_command}{ICommand}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_save_command_a12a57ec3e657c2b028ee56221f0b07e0}{clone}} () const override
+\item 
+bool \mbox{\hyperlink{class_save_command_ade9536d7ba84a3a02b6ecff531bb490a}{is\+This\+Me}} (const std\+::vector$<$ std\+::string $>$ \&args) const override
+\item 
+bool \mbox{\hyperlink{class_save_command_a7e3e8dd75304d0061cbc74e8b1fcfeaf}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) const override
+\item 
+const std\+::string \& \mbox{\hyperlink{class_save_command_a194da63f5858bc11b6b897832866ac42}{get\+Description}} () const override
+\item 
+const std\+::string \& \mbox{\hyperlink{class_save_command_ae92597e4b67a89f7c3d9636555e1178d}{get\+Name}} () const override
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_save_command_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_save_command_a12a57ec3e657c2b028ee56221f0b07e0}\index{SaveCommand@{SaveCommand}!clone@{clone}}
+\index{clone@{clone}!SaveCommand@{SaveCommand}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_save_command_a12a57ec3e657c2b028ee56221f0b07e0} 
+\mbox{\hyperlink{class_i_command}{ICommand}} \texorpdfstring{$\ast$}{*} Save\+Command\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_command}{ICommand}}.
+
+\Hypertarget{class_save_command_a7e3e8dd75304d0061cbc74e8b1fcfeaf}\index{SaveCommand@{SaveCommand}!execute@{execute}}
+\index{execute@{execute}!SaveCommand@{SaveCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_save_command_a7e3e8dd75304d0061cbc74e8b1fcfeaf} 
+bool Save\+Command\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_command}{ICommand}}.
+
+\Hypertarget{class_save_command_a194da63f5858bc11b6b897832866ac42}\index{SaveCommand@{SaveCommand}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!SaveCommand@{SaveCommand}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{class_save_command_a194da63f5858bc11b6b897832866ac42} 
+const std\+::string \& Save\+Command\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_command}{ICommand}}.
+
+\Hypertarget{class_save_command_ae92597e4b67a89f7c3d9636555e1178d}\index{SaveCommand@{SaveCommand}!getName@{getName}}
+\index{getName@{getName}!SaveCommand@{SaveCommand}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_save_command_ae92597e4b67a89f7c3d9636555e1178d} 
+const std\+::string \& Save\+Command\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_command}{ICommand}}.
+
+\Hypertarget{class_save_command_ade9536d7ba84a3a02b6ecff531bb490a}\index{SaveCommand@{SaveCommand}!isThisMe@{isThisMe}}
+\index{isThisMe@{isThisMe}!SaveCommand@{SaveCommand}}
+\doxysubsubsection{\texorpdfstring{isThisMe()}{isThisMe()}}
+{\footnotesize\ttfamily \label{class_save_command_ade9536d7ba84a3a02b6ecff531bb490a} 
+bool Save\+Command\+::is\+This\+Me (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_command}{ICommand}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Header\+Files/\+System/\+Control/\+Commands/\+System/Save\+Cmd.\+h\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Source\+Files/\+System/\+Control/\+Commands/\+System/Save\+Command.\+cpp\end{DoxyCompactItemize}

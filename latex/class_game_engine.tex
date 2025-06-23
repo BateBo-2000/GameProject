@@ -1,0 +1,175 @@
+\doxysection{Game\+Engine Class Reference}
+\hypertarget{class_game_engine}{}\label{class_game_engine}\index{GameEngine@{GameEngine}}
+Inheritance diagram for Game\+Engine\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game_engine}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_game_engine_a81b297fdc26f3a56b0892806b68d5818}\label{class_game_engine_a81b297fdc26f3a56b0892806b68d5818} 
+{\bfseries Game\+Engine} (\mbox{\hyperlink{class_i_unit_registry}{IUnit\+Registry}} \&unit\+Factory, const \mbox{\hyperlink{struct_engine_config}{Engine\+Config}} \&settings, \mbox{\hyperlink{class_i_game_state}{IGame\+State}} \&state)
+\item 
+\Hypertarget{class_game_engine_adf9ae35f184a6bae2a49434c74b24425}\label{class_game_engine_adf9ae35f184a6bae2a49434c74b24425} 
+{\bfseries Game\+Engine} (const \mbox{\hyperlink{class_game_engine}{Game\+Engine}} \&other)=delete
+\item 
+\Hypertarget{class_game_engine_ad9e254eeb11696994f2a61d39ffc6a5d}\label{class_game_engine_ad9e254eeb11696994f2a61d39ffc6a5d} 
+\mbox{\hyperlink{class_game_engine}{Game\+Engine}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_game_engine}{Game\+Engine}} \&other)=delete
+\item 
+void \mbox{\hyperlink{class_game_engine_a4a767cee54e558ed696dc144859783a1}{create}} (const std\+::string \&unit\+Type) override
+\item 
+void \mbox{\hyperlink{class_game_engine_a6e27be6c4cf6d932eb3519e0e2bbbd05}{select\+Boss}} (const std\+::string \&boss\+Type) override
+\item 
+void \mbox{\hyperlink{class_game_engine_a0ffafa59902da71c022f8be53a915ee3}{select\+Units}} (const std\+::string \&unit\+Type, unsigned count) override
+\item 
+void \mbox{\hyperlink{class_game_engine_a0b173ca248a7f33a0f265970af93035f}{start\+Duel}} () override
+\item 
+void \mbox{\hyperlink{class_game_engine_a0f743a8dff6f611e8a2400d906fb7f28}{skip\+Turn}} () override
+\item 
+void \mbox{\hyperlink{class_game_engine_afaba0c93ce8699eb0540731a27a1c5ef}{attack\+Target}} (const std\+::string \&target\+Name) override
+\item 
+void \mbox{\hyperlink{class_game_engine_a309c1645070ca3fe5e72aa383f0afa58}{use\+Ability}} (const std\+::vector$<$ std\+::string $>$ \&target\+Names, size\+\_\+t ability\+Index=0) override
+\item 
+virtual const \mbox{\hyperlink{class_i_game_state}{IGame\+State}} \& \mbox{\hyperlink{class_game_engine_afa6279ecdde362c52d24ffb6db15f230}{get\+Game\+State}} () const override
+\item 
+\mbox{\hyperlink{class_i_game_state}{IGame\+State}} \& \mbox{\hyperlink{class_game_engine_ac87d529afdc81f0a7895b776c49e7dc8}{get\+Game\+State}} () override
+\item 
+Faction \mbox{\hyperlink{class_game_engine_a75dfc005f1b256b47d27117e8cbdc24e}{get\+Whose\+Turn\+It\+Is\+Now}} () const override
+\item 
+bool \mbox{\hyperlink{class_game_engine_a3b56b71271cfdb5bb718242186500695}{is\+Game\+Won}} () const override
+\item 
+void \mbox{\hyperlink{class_game_engine_a2616463d0f42030d05db8209f67b6156}{restart\+The\+Game}} () override
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_game_engine_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_game_engine_afaba0c93ce8699eb0540731a27a1c5ef}\index{GameEngine@{GameEngine}!attackTarget@{attackTarget}}
+\index{attackTarget@{attackTarget}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{attackTarget()}{attackTarget()}}
+{\footnotesize\ttfamily \label{class_game_engine_afaba0c93ce8699eb0540731a27a1c5ef} 
+void Game\+Engine\+::attack\+Target (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{target\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_engine}{IGame\+Engine}}.
+
+\Hypertarget{class_game_engine_a4a767cee54e558ed696dc144859783a1}\index{GameEngine@{GameEngine}!create@{create}}
+\index{create@{create}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{class_game_engine_a4a767cee54e558ed696dc144859783a1} 
+void Game\+Engine\+::create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{unit\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_engine}{IGame\+Engine}}.
+
+\Hypertarget{class_game_engine_afa6279ecdde362c52d24ffb6db15f230}\index{GameEngine@{GameEngine}!getGameState@{getGameState}}
+\index{getGameState@{getGameState}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{getGameState()}{getGameState()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_game_engine_afa6279ecdde362c52d24ffb6db15f230} 
+const \mbox{\hyperlink{class_i_game_state}{IGame\+State}} \& Game\+Engine\+::get\+Game\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_engine}{IGame\+Engine}}.
+
+\Hypertarget{class_game_engine_ac87d529afdc81f0a7895b776c49e7dc8}\index{GameEngine@{GameEngine}!getGameState@{getGameState}}
+\index{getGameState@{getGameState}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{getGameState()}{getGameState()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_game_engine_ac87d529afdc81f0a7895b776c49e7dc8} 
+\mbox{\hyperlink{class_i_game_state}{IGame\+State}} \& Game\+Engine\+::get\+Game\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_engine}{IGame\+Engine}}.
+
+\Hypertarget{class_game_engine_a75dfc005f1b256b47d27117e8cbdc24e}\index{GameEngine@{GameEngine}!getWhoseTurnItIsNow@{getWhoseTurnItIsNow}}
+\index{getWhoseTurnItIsNow@{getWhoseTurnItIsNow}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{getWhoseTurnItIsNow()}{getWhoseTurnItIsNow()}}
+{\footnotesize\ttfamily \label{class_game_engine_a75dfc005f1b256b47d27117e8cbdc24e} 
+Faction Game\+Engine\+::get\+Whose\+Turn\+It\+Is\+Now (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_engine}{IGame\+Engine}}.
+
+\Hypertarget{class_game_engine_a3b56b71271cfdb5bb718242186500695}\index{GameEngine@{GameEngine}!isGameWon@{isGameWon}}
+\index{isGameWon@{isGameWon}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{isGameWon()}{isGameWon()}}
+{\footnotesize\ttfamily \label{class_game_engine_a3b56b71271cfdb5bb718242186500695} 
+bool Game\+Engine\+::is\+Game\+Won (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_engine}{IGame\+Engine}}.
+
+\Hypertarget{class_game_engine_a2616463d0f42030d05db8209f67b6156}\index{GameEngine@{GameEngine}!restartTheGame@{restartTheGame}}
+\index{restartTheGame@{restartTheGame}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{restartTheGame()}{restartTheGame()}}
+{\footnotesize\ttfamily \label{class_game_engine_a2616463d0f42030d05db8209f67b6156} 
+void Game\+Engine\+::restart\+The\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_engine}{IGame\+Engine}}.
+
+\Hypertarget{class_game_engine_a6e27be6c4cf6d932eb3519e0e2bbbd05}\index{GameEngine@{GameEngine}!selectBoss@{selectBoss}}
+\index{selectBoss@{selectBoss}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{selectBoss()}{selectBoss()}}
+{\footnotesize\ttfamily \label{class_game_engine_a6e27be6c4cf6d932eb3519e0e2bbbd05} 
+void Game\+Engine\+::select\+Boss (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{boss\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_engine}{IGame\+Engine}}.
+
+\Hypertarget{class_game_engine_a0ffafa59902da71c022f8be53a915ee3}\index{GameEngine@{GameEngine}!selectUnits@{selectUnits}}
+\index{selectUnits@{selectUnits}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{selectUnits()}{selectUnits()}}
+{\footnotesize\ttfamily \label{class_game_engine_a0ffafa59902da71c022f8be53a915ee3} 
+void Game\+Engine\+::select\+Units (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{unit\+Type}{, }\item[{unsigned}]{count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_engine}{IGame\+Engine}}.
+
+\Hypertarget{class_game_engine_a0f743a8dff6f611e8a2400d906fb7f28}\index{GameEngine@{GameEngine}!skipTurn@{skipTurn}}
+\index{skipTurn@{skipTurn}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{skipTurn()}{skipTurn()}}
+{\footnotesize\ttfamily \label{class_game_engine_a0f743a8dff6f611e8a2400d906fb7f28} 
+void Game\+Engine\+::skip\+Turn (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_engine}{IGame\+Engine}}.
+
+\Hypertarget{class_game_engine_a0b173ca248a7f33a0f265970af93035f}\index{GameEngine@{GameEngine}!startDuel@{startDuel}}
+\index{startDuel@{startDuel}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{startDuel()}{startDuel()}}
+{\footnotesize\ttfamily \label{class_game_engine_a0b173ca248a7f33a0f265970af93035f} 
+void Game\+Engine\+::start\+Duel (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_engine}{IGame\+Engine}}.
+
+\Hypertarget{class_game_engine_a309c1645070ca3fe5e72aa383f0afa58}\index{GameEngine@{GameEngine}!useAbility@{useAbility}}
+\index{useAbility@{useAbility}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{useAbility()}{useAbility()}}
+{\footnotesize\ttfamily \label{class_game_engine_a309c1645070ca3fe5e72aa383f0afa58} 
+void Game\+Engine\+::use\+Ability (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{target\+Names}{, }\item[{size\+\_\+t}]{ability\+Index}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_engine}{IGame\+Engine}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Header\+Files/\+System/\+Game\+Engine/Game\+Engine.\+h\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Source\+Files/\+System/\+Game\+Engine/Game\+Engine.\+cpp\end{DoxyCompactItemize}

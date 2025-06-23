@@ -1,0 +1,29 @@
+\doxysection{Console\+User\+Interface.\+h}
+\hypertarget{_console_user_interface_8h_source}{}\label{_console_user_interface_8h_source}\index{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/Communication/UI/ConsoleUserInterface.h@{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/Communication/UI/ConsoleUserInterface.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ CONSOLE\_USER\_INTERFACE}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ CONSOLE\_USER\_INTERFACE}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}IUserInterface.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_console_u_i}{ConsoleUI}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_user_interface}{IUserInterface}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_console_u_i}{ConsoleUI}}*\ clone()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ inform(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ msg)\textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ warn(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ msg)\textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ printInvalidArg(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ msg)\textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ error(\textcolor{keyword}{const}\ std::string\&\ msg)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ confirm(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ q)\textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ askForNumber(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ q)\textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{string}\ askQuestion(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ q)\textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !CONSOLE\_USER\_INTERFACE}}
+
+\end{DoxyCode}

@@ -1,0 +1,30 @@
+\doxysection{Random\+AIPlayer.\+h}
+\hypertarget{_random_a_i_player_8h_source}{}\label{_random_a_i_player_8h_source}\index{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/Communication/UI/RandomAIPlayer.h@{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/Communication/UI/RandomAIPlayer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}IUserInterface.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }RandomUserInterface\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_user_interface}{IUserInterface}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//list\ of\ commands\ for\ the\ askQuestion\ function}}
+\DoxyCodeLine{00014\ \ \ \ \ RandomUserInterface(\textcolor{keyword}{const}\ std::vector<std::string>\&\ commands);}
+\DoxyCodeLine{00015\ \ \ \ \ RandomUserInterface*\ clone()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ inform(\textcolor{keyword}{const}\ std::string\&\ msg)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ warn(\textcolor{keyword}{const}\ std::string\&\ msg)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ printInvalidArg(\textcolor{keyword}{const}\ std::string\&\ msg)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ error(\textcolor{keyword}{const}\ std::string\&\ msg)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ confirm(\textcolor{keyword}{const}\ std::string\&\ q)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ askForNumber(\textcolor{keyword}{const}\ std::string\&\ q)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00024\ \ \ \ \ std::string\ askQuestion(\textcolor{keyword}{const}\ std::string\&\ q)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ std::vector<std::string>\ commands;}
+\DoxyCodeLine{00028\ \};}
+
+\end{DoxyCode}

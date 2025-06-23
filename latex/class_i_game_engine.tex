@@ -1,0 +1,52 @@
+\doxysection{IGame\+Engine Class Reference}
+\hypertarget{class_i_game_engine}{}\label{class_i_game_engine}\index{IGameEngine@{IGameEngine}}
+Inheritance diagram for IGame\+Engine\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_game_engine}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_i_game_engine_a600d13648c63429bf54aad0bc273eb64}\label{class_i_game_engine_a600d13648c63429bf54aad0bc273eb64} 
+virtual void {\bfseries create} (const std\+::string \&unit\+Type)=0
+\item 
+\Hypertarget{class_i_game_engine_a571d53d83f8b130cc4270830da797210}\label{class_i_game_engine_a571d53d83f8b130cc4270830da797210} 
+virtual void {\bfseries select\+Boss} (const std\+::string \&boss\+Type)=0
+\item 
+\Hypertarget{class_i_game_engine_ad96dbf4b7dede034e6edc676ad5bfa99}\label{class_i_game_engine_ad96dbf4b7dede034e6edc676ad5bfa99} 
+virtual void {\bfseries select\+Units} (const std\+::string \&unit\+Type, unsigned count)=0
+\item 
+\Hypertarget{class_i_game_engine_a1ecf6a233149d3a2a0da0c8ad88215ed}\label{class_i_game_engine_a1ecf6a233149d3a2a0da0c8ad88215ed} 
+virtual void {\bfseries start\+Duel} ()=0
+\item 
+\Hypertarget{class_i_game_engine_a48c3ce5396ae0cd2aae9c5ee73d4875a}\label{class_i_game_engine_a48c3ce5396ae0cd2aae9c5ee73d4875a} 
+virtual void {\bfseries skip\+Turn} ()=0
+\item 
+\Hypertarget{class_i_game_engine_a50fec0075fcf6b3f3df1a9703a34d983}\label{class_i_game_engine_a50fec0075fcf6b3f3df1a9703a34d983} 
+virtual void {\bfseries attack\+Target} (const std\+::string \&target\+Name)=0
+\item 
+\Hypertarget{class_i_game_engine_a17c23ba2456686758dbf88d05f749127}\label{class_i_game_engine_a17c23ba2456686758dbf88d05f749127} 
+virtual void {\bfseries use\+Ability} (const std\+::vector$<$ std\+::string $>$ \&target\+Names, size\+\_\+t ability\+Index=0)=0
+\item 
+\Hypertarget{class_i_game_engine_a34982825b8e3a69dff98f19d4c7f241e}\label{class_i_game_engine_a34982825b8e3a69dff98f19d4c7f241e} 
+virtual const \mbox{\hyperlink{class_i_game_state}{IGame\+State}} \& {\bfseries get\+Game\+State} () const =0
+\item 
+\Hypertarget{class_i_game_engine_a5ab195487124089cd3a69f343e0d1014}\label{class_i_game_engine_a5ab195487124089cd3a69f343e0d1014} 
+virtual \mbox{\hyperlink{class_i_game_state}{IGame\+State}} \& {\bfseries get\+Game\+State} ()=0
+\item 
+\Hypertarget{class_i_game_engine_ac7e64368f9605c3c60cb2a1eba7d50ba}\label{class_i_game_engine_ac7e64368f9605c3c60cb2a1eba7d50ba} 
+virtual Faction {\bfseries get\+Whose\+Turn\+It\+Is\+Now} () const =0
+\item 
+\Hypertarget{class_i_game_engine_a98f4c60436c1b03ab8831c748922c683}\label{class_i_game_engine_a98f4c60436c1b03ab8831c748922c683} 
+virtual bool {\bfseries is\+Game\+Won} () const =0
+\item 
+\Hypertarget{class_i_game_engine_a4127dd9ab62cee57a778312ea8d7c6e4}\label{class_i_game_engine_a4127dd9ab62cee57a778312ea8d7c6e4} 
+virtual void {\bfseries restart\+The\+Game} ()=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Header\+Files/\+System/\+Game\+Engine/IGame\+Engine.\+h\end{DoxyCompactItemize}

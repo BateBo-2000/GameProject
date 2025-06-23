@@ -1,0 +1,85 @@
+\doxysection{Help\+Cmd Class Reference}
+\hypertarget{class_help_cmd}{}\label{class_help_cmd}\index{HelpCmd@{HelpCmd}}
+Inheritance diagram for Help\+Cmd\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_help_cmd}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_help_cmd_aa2a7efb9b450a4c6b595bb6b6640f2ba}\label{class_help_cmd_aa2a7efb9b450a4c6b595bb6b6640f2ba} 
+{\bfseries Help\+Cmd} (\mbox{\hyperlink{class_i_user_interface}{IUser\+Interface}} \&ui, \mbox{\hyperlink{class_i_invoker}{IInvoker}} \&invoker)
+\item 
+bool \mbox{\hyperlink{class_help_cmd_a3bca4cdc24412514639516e257326089}{is\+This\+Me}} (const std\+::vector$<$ std\+::string $>$ \&args) const override
+\item 
+bool \mbox{\hyperlink{class_help_cmd_a30e88f10d80df1323ef75fdd282cc667}{execute}} (const std\+::vector$<$ std\+::string $>$ \&args) const override
+\item 
+const std\+::string \& \mbox{\hyperlink{class_help_cmd_abb25d2e3b6cce7f31f902eff1d8f7a1e}{get\+Description}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{class_help_cmd_a4bec52ebf4cc04580b3e63b09daa1c69}{get\+Name}} () const override
+\item 
+virtual \mbox{\hyperlink{class_i_command}{ICommand}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_help_cmd_a972c349ac4dfd5a805cefe8f1b2e10de}{clone}} () const override
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_help_cmd_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_help_cmd_a972c349ac4dfd5a805cefe8f1b2e10de}\index{HelpCmd@{HelpCmd}!clone@{clone}}
+\index{clone@{clone}!HelpCmd@{HelpCmd}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_help_cmd_a972c349ac4dfd5a805cefe8f1b2e10de} 
+\mbox{\hyperlink{class_i_command}{ICommand}} \texorpdfstring{$\ast$}{*} Help\+Cmd\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_command}{ICommand}}.
+
+\Hypertarget{class_help_cmd_a30e88f10d80df1323ef75fdd282cc667}\index{HelpCmd@{HelpCmd}!execute@{execute}}
+\index{execute@{execute}!HelpCmd@{HelpCmd}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{class_help_cmd_a30e88f10d80df1323ef75fdd282cc667} 
+bool Help\+Cmd\+::execute (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_command}{ICommand}}.
+
+\Hypertarget{class_help_cmd_abb25d2e3b6cce7f31f902eff1d8f7a1e}\index{HelpCmd@{HelpCmd}!getDescription@{getDescription}}
+\index{getDescription@{getDescription}!HelpCmd@{HelpCmd}}
+\doxysubsubsection{\texorpdfstring{getDescription()}{getDescription()}}
+{\footnotesize\ttfamily \label{class_help_cmd_abb25d2e3b6cce7f31f902eff1d8f7a1e} 
+const std\+::string \& Help\+Cmd\+::get\+Description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_command}{ICommand}}.
+
+\Hypertarget{class_help_cmd_a4bec52ebf4cc04580b3e63b09daa1c69}\index{HelpCmd@{HelpCmd}!getName@{getName}}
+\index{getName@{getName}!HelpCmd@{HelpCmd}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_help_cmd_a4bec52ebf4cc04580b3e63b09daa1c69} 
+const std\+::string \& Help\+Cmd\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_command}{ICommand}}.
+
+\Hypertarget{class_help_cmd_a3bca4cdc24412514639516e257326089}\index{HelpCmd@{HelpCmd}!isThisMe@{isThisMe}}
+\index{isThisMe@{isThisMe}!HelpCmd@{HelpCmd}}
+\doxysubsubsection{\texorpdfstring{isThisMe()}{isThisMe()}}
+{\footnotesize\ttfamily \label{class_help_cmd_a3bca4cdc24412514639516e257326089} 
+bool Help\+Cmd\+::is\+This\+Me (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_command}{ICommand}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Header\+Files/\+System/\+Control/\+Commands/\+System/Help\+Cmd.\+h\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Source\+Files/\+System/\+Control/\+Commands/\+System/Help.\+cpp\end{DoxyCompactItemize}

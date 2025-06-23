@@ -1,0 +1,109 @@
+\doxysection{Armor Class Reference}
+\hypertarget{class_armor}{}\label{class_armor}\index{Armor@{Armor}}
+Inheritance diagram for Armor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_armor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_armor_a0a3d606ff755ea30a6304391e22521e5}\label{class_armor_a0a3d606ff755ea30a6304391e22521e5} 
+{\bfseries Armor} (std\+::string name, int defense)
+\item 
+\mbox{\hyperlink{class_armor}{Armor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_armor_a841372dae45ccb30c41ed3b2d8b88c0b}{clone}} () const override
+\item 
+const std\+::string \& \mbox{\hyperlink{class_armor_a9ca918307e155e19d74a399a1870c6e7}{get\+Name}} () const override
+\item 
+unsigned \mbox{\hyperlink{class_armor_a383839598ca64de32caae0e684bdf2b2}{get\+Defense}} () const override
+\item 
+unsigned \mbox{\hyperlink{class_armor_ae3b3c84a289a76f4e43500225cd577ad}{get\+Durability}} () const override
+\item 
+void \mbox{\hyperlink{class_armor_a20a9dca50f4b2477c10f1dbd39c46e0b}{set\+Durability}} (unsigned dur) override
+\item 
+void \mbox{\hyperlink{class_armor_a993b9f57bfe8b5f132b489ecf6403714}{use}} () override
+\item 
+unsigned \mbox{\hyperlink{class_armor_ab97b4b49b4ddb439d9e9451447bd765d}{calculate\+Mitigated\+Damage}} (unsigned raw\+Damage) const override
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_armor_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_armor_ab97b4b49b4ddb439d9e9451447bd765d}\index{Armor@{Armor}!calculateMitigatedDamage@{calculateMitigatedDamage}}
+\index{calculateMitigatedDamage@{calculateMitigatedDamage}!Armor@{Armor}}
+\doxysubsubsection{\texorpdfstring{calculateMitigatedDamage()}{calculateMitigatedDamage()}}
+{\footnotesize\ttfamily \label{class_armor_ab97b4b49b4ddb439d9e9451447bd765d} 
+unsigned Armor\+::calculate\+Mitigated\+Damage (\begin{DoxyParamCaption}\item[{unsigned}]{raw\+Damage}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_armor}{IArmor}}.
+
+\Hypertarget{class_armor_a841372dae45ccb30c41ed3b2d8b88c0b}\index{Armor@{Armor}!clone@{clone}}
+\index{clone@{clone}!Armor@{Armor}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_armor_a841372dae45ccb30c41ed3b2d8b88c0b} 
+\mbox{\hyperlink{class_armor}{Armor}} \texorpdfstring{$\ast$}{*} Armor\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_armor}{IArmor}}.
+
+\Hypertarget{class_armor_a383839598ca64de32caae0e684bdf2b2}\index{Armor@{Armor}!getDefense@{getDefense}}
+\index{getDefense@{getDefense}!Armor@{Armor}}
+\doxysubsubsection{\texorpdfstring{getDefense()}{getDefense()}}
+{\footnotesize\ttfamily \label{class_armor_a383839598ca64de32caae0e684bdf2b2} 
+unsigned Armor\+::get\+Defense (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_armor}{IArmor}}.
+
+\Hypertarget{class_armor_ae3b3c84a289a76f4e43500225cd577ad}\index{Armor@{Armor}!getDurability@{getDurability}}
+\index{getDurability@{getDurability}!Armor@{Armor}}
+\doxysubsubsection{\texorpdfstring{getDurability()}{getDurability()}}
+{\footnotesize\ttfamily \label{class_armor_ae3b3c84a289a76f4e43500225cd577ad} 
+unsigned Armor\+::get\+Durability (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_armor}{IArmor}}.
+
+\Hypertarget{class_armor_a9ca918307e155e19d74a399a1870c6e7}\index{Armor@{Armor}!getName@{getName}}
+\index{getName@{getName}!Armor@{Armor}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_armor_a9ca918307e155e19d74a399a1870c6e7} 
+const std\+::string \& Armor\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_armor}{IArmor}}.
+
+\Hypertarget{class_armor_a20a9dca50f4b2477c10f1dbd39c46e0b}\index{Armor@{Armor}!setDurability@{setDurability}}
+\index{setDurability@{setDurability}!Armor@{Armor}}
+\doxysubsubsection{\texorpdfstring{setDurability()}{setDurability()}}
+{\footnotesize\ttfamily \label{class_armor_a20a9dca50f4b2477c10f1dbd39c46e0b} 
+void Armor\+::set\+Durability (\begin{DoxyParamCaption}\item[{unsigned}]{dur}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_armor}{IArmor}}.
+
+\Hypertarget{class_armor_a993b9f57bfe8b5f132b489ecf6403714}\index{Armor@{Armor}!use@{use}}
+\index{use@{use}!Armor@{Armor}}
+\doxysubsubsection{\texorpdfstring{use()}{use()}}
+{\footnotesize\ttfamily \label{class_armor_a993b9f57bfe8b5f132b489ecf6403714} 
+void Armor\+::use (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_armor}{IArmor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Header\+Files/\+System/\+Game\+Engine/\+Armor/Armor.\+h\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Source\+Files/\+System/\+Game\+Engine/\+Armor/Armor.\+cpp\end{DoxyCompactItemize}

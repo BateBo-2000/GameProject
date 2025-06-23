@@ -1,0 +1,36 @@
+\doxysection{Controller.\+h}
+\hypertarget{_controller_8h_source}{}\label{_controller_8h_source}\index{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/Control/Controller.h@{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/Control/Controller.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ CONTROLLER\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ CONTROLLER\_H}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}IController.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Invoker/IInvoker.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//Comunication}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_logger}{ILogger}};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_user_interface}{IUserInterface}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_invoker}{IInvoker}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }Controller:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_controller}{IController}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ Controller(\mbox{\hyperlink{class_i_logger}{ILogger}}\&\ logger,\ \mbox{\hyperlink{class_i_user_interface}{IUserInterface}}\&\ livingUi,\ \mbox{\hyperlink{class_i_user_interface}{IUserInterface}}\&\ undeadUi,\ \mbox{\hyperlink{class_i_invoker}{IInvoker}}\&\ invoker);}
+\DoxyCodeLine{00018\ \ \ \ \ Controller(\textcolor{keyword}{const}\ Controller\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00019\ \ \ \ \ Controller\&\ operator=(\textcolor{keyword}{const}\ Controller\&\ other)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00020\ \ \ \ \ \string~Controller()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ run()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_i_logger}{ILogger}}\&\ logger;}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_i_user_interface}{IUserInterface}}\&\ livingUi;}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_i_user_interface}{IUserInterface}}\&\ undeadUi;}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_i_invoker}{IInvoker}}\&\ invoker;}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//CONTROLLER\_H}}
+
+\end{DoxyCode}

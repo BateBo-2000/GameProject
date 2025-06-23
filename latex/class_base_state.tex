@@ -1,0 +1,223 @@
+\doxysection{Base\+State Class Reference}
+\hypertarget{class_base_state}{}\label{class_base_state}\index{BaseState@{BaseState}}
+Inheritance diagram for Base\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_base_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_base_state_a58db3ebfab73120be59ab13d232ed2cb}\label{class_base_state_a58db3ebfab73120be59ab13d232ed2cb} 
+{\bfseries Base\+State} (unsigned max\+Commanders\+Per\+Type)
+\item 
+\Hypertarget{class_base_state_a4012d5824311b36dc4eadc4ee4a1be69}\label{class_base_state_a4012d5824311b36dc4eadc4ee4a1be69} 
+{\bfseries Base\+State} (const \mbox{\hyperlink{class_base_state}{Base\+State}} \&other)=delete
+\item 
+\Hypertarget{class_base_state_add5ddd445c74be0802cb1f56e8be8782}\label{class_base_state_add5ddd445c74be0802cb1f56e8be8782} 
+\mbox{\hyperlink{class_base_state}{Base\+State}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_base_state}{Base\+State}} \&other)=delete
+\item 
+unsigned \mbox{\hyperlink{class_base_state_a99281a0f562981c17ea47252e859b733}{get\+Gold\+Reserve}} () const override
+\item 
+void \mbox{\hyperlink{class_base_state_ab1debb5e9ee2c730f850240b02aa3fe2}{set\+Gold\+Reserve}} (unsigned gold) override
+\item 
+unsigned \mbox{\hyperlink{class_base_state_aba5c0a216357b629f5e27f7d631c981d}{get\+Wins}} () const override
+\item 
+void \mbox{\hyperlink{class_base_state_a7128c1e8929140a459065113b44e5553}{win}} () override
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_base_state_a06d123a27e30434160929638511f5e2f}{get\+Units}} () const override
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_base_state_a5ee30a4f56a9ba37e392cbf704d39324}{get\+Units}} () override
+\item 
+void \mbox{\hyperlink{class_base_state_a360b013498cdd2becae93d8020501e7f}{add\+Unit}} (\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*}u) override
+\item 
+void \mbox{\hyperlink{class_base_state_a464a229bf51e6498d6aeb07e3e5cb812}{remove\+Unit}} (\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*}u) override
+\item 
+\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_base_state_a56e8b7c3cac545fb3c7e22e5d3fd9c9f}{get\+Unit}} (size\+\_\+t index) override
+\item 
+size\+\_\+t \mbox{\hyperlink{class_base_state_a32009cf39fadd26a3f627bfab189cc15}{get\+Unit\+Count}} () const override
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_base_state_ac91eae0767bea4451e2e962fcd30a581}{get\+Commanders}} () const override
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_base_state_a47c2d52c2cf6f0f472e7c0ed6af64a6c}{get\+Commanders}} () override
+\item 
+void \mbox{\hyperlink{class_base_state_a3f7bd17fe1fa81bf876efeb37f698020}{add\+Commander}} (\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*}c) override
+\item 
+void \mbox{\hyperlink{class_base_state_a7552cf9163de41f53c460e2fa3793564}{remove\+Commander}} (\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*}c) override
+\item 
+\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_base_state_ac9d65747da9f218adf246f789128e494}{get\+Commander}} (size\+\_\+t index) override
+\item 
+size\+\_\+t \mbox{\hyperlink{class_base_state_a058e7306cb7ec3e3216f7e9ae51fcd71}{get\+Commander\+Count}} () const override
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_base_state_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_base_state_a3f7bd17fe1fa81bf876efeb37f698020}\index{BaseState@{BaseState}!addCommander@{addCommander}}
+\index{addCommander@{addCommander}!BaseState@{BaseState}}
+\doxysubsubsection{\texorpdfstring{addCommander()}{addCommander()}}
+{\footnotesize\ttfamily \label{class_base_state_a3f7bd17fe1fa81bf876efeb37f698020} 
+void Base\+State\+::add\+Commander (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*}}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_base_state}{IBase\+State}}.
+
+\Hypertarget{class_base_state_a360b013498cdd2becae93d8020501e7f}\index{BaseState@{BaseState}!addUnit@{addUnit}}
+\index{addUnit@{addUnit}!BaseState@{BaseState}}
+\doxysubsubsection{\texorpdfstring{addUnit()}{addUnit()}}
+{\footnotesize\ttfamily \label{class_base_state_a360b013498cdd2becae93d8020501e7f} 
+void Base\+State\+::add\+Unit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*}}]{u}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_base_state}{IBase\+State}}.
+
+\Hypertarget{class_base_state_ac9d65747da9f218adf246f789128e494}\index{BaseState@{BaseState}!getCommander@{getCommander}}
+\index{getCommander@{getCommander}!BaseState@{BaseState}}
+\doxysubsubsection{\texorpdfstring{getCommander()}{getCommander()}}
+{\footnotesize\ttfamily \label{class_base_state_ac9d65747da9f218adf246f789128e494} 
+\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} Base\+State\+::get\+Commander (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_base_state}{IBase\+State}}.
+
+\Hypertarget{class_base_state_a058e7306cb7ec3e3216f7e9ae51fcd71}\index{BaseState@{BaseState}!getCommanderCount@{getCommanderCount}}
+\index{getCommanderCount@{getCommanderCount}!BaseState@{BaseState}}
+\doxysubsubsection{\texorpdfstring{getCommanderCount()}{getCommanderCount()}}
+{\footnotesize\ttfamily \label{class_base_state_a058e7306cb7ec3e3216f7e9ae51fcd71} 
+size\+\_\+t Base\+State\+::get\+Commander\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_base_state}{IBase\+State}}.
+
+\Hypertarget{class_base_state_ac91eae0767bea4451e2e962fcd30a581}\index{BaseState@{BaseState}!getCommanders@{getCommanders}}
+\index{getCommanders@{getCommanders}!BaseState@{BaseState}}
+\doxysubsubsection{\texorpdfstring{getCommanders()}{getCommanders()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_base_state_ac91eae0767bea4451e2e962fcd30a581} 
+const std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& Base\+State\+::get\+Commanders (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_base_state}{IBase\+State}}.
+
+\Hypertarget{class_base_state_a47c2d52c2cf6f0f472e7c0ed6af64a6c}\index{BaseState@{BaseState}!getCommanders@{getCommanders}}
+\index{getCommanders@{getCommanders}!BaseState@{BaseState}}
+\doxysubsubsection{\texorpdfstring{getCommanders()}{getCommanders()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_base_state_a47c2d52c2cf6f0f472e7c0ed6af64a6c} 
+std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& Base\+State\+::get\+Commanders (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_base_state}{IBase\+State}}.
+
+\Hypertarget{class_base_state_a99281a0f562981c17ea47252e859b733}\index{BaseState@{BaseState}!getGoldReserve@{getGoldReserve}}
+\index{getGoldReserve@{getGoldReserve}!BaseState@{BaseState}}
+\doxysubsubsection{\texorpdfstring{getGoldReserve()}{getGoldReserve()}}
+{\footnotesize\ttfamily \label{class_base_state_a99281a0f562981c17ea47252e859b733} 
+unsigned Base\+State\+::get\+Gold\+Reserve (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_base_state}{IBase\+State}}.
+
+\Hypertarget{class_base_state_a56e8b7c3cac545fb3c7e22e5d3fd9c9f}\index{BaseState@{BaseState}!getUnit@{getUnit}}
+\index{getUnit@{getUnit}!BaseState@{BaseState}}
+\doxysubsubsection{\texorpdfstring{getUnit()}{getUnit()}}
+{\footnotesize\ttfamily \label{class_base_state_a56e8b7c3cac545fb3c7e22e5d3fd9c9f} 
+\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} Base\+State\+::get\+Unit (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_base_state}{IBase\+State}}.
+
+\Hypertarget{class_base_state_a32009cf39fadd26a3f627bfab189cc15}\index{BaseState@{BaseState}!getUnitCount@{getUnitCount}}
+\index{getUnitCount@{getUnitCount}!BaseState@{BaseState}}
+\doxysubsubsection{\texorpdfstring{getUnitCount()}{getUnitCount()}}
+{\footnotesize\ttfamily \label{class_base_state_a32009cf39fadd26a3f627bfab189cc15} 
+size\+\_\+t Base\+State\+::get\+Unit\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_base_state}{IBase\+State}}.
+
+\Hypertarget{class_base_state_a06d123a27e30434160929638511f5e2f}\index{BaseState@{BaseState}!getUnits@{getUnits}}
+\index{getUnits@{getUnits}!BaseState@{BaseState}}
+\doxysubsubsection{\texorpdfstring{getUnits()}{getUnits()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_base_state_a06d123a27e30434160929638511f5e2f} 
+const std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& Base\+State\+::get\+Units (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_base_state}{IBase\+State}}.
+
+\Hypertarget{class_base_state_a5ee30a4f56a9ba37e392cbf704d39324}\index{BaseState@{BaseState}!getUnits@{getUnits}}
+\index{getUnits@{getUnits}!BaseState@{BaseState}}
+\doxysubsubsection{\texorpdfstring{getUnits()}{getUnits()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_base_state_a5ee30a4f56a9ba37e392cbf704d39324} 
+std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& Base\+State\+::get\+Units (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_base_state}{IBase\+State}}.
+
+\Hypertarget{class_base_state_aba5c0a216357b629f5e27f7d631c981d}\index{BaseState@{BaseState}!getWins@{getWins}}
+\index{getWins@{getWins}!BaseState@{BaseState}}
+\doxysubsubsection{\texorpdfstring{getWins()}{getWins()}}
+{\footnotesize\ttfamily \label{class_base_state_aba5c0a216357b629f5e27f7d631c981d} 
+unsigned Base\+State\+::get\+Wins (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_base_state}{IBase\+State}}.
+
+\Hypertarget{class_base_state_a7552cf9163de41f53c460e2fa3793564}\index{BaseState@{BaseState}!removeCommander@{removeCommander}}
+\index{removeCommander@{removeCommander}!BaseState@{BaseState}}
+\doxysubsubsection{\texorpdfstring{removeCommander()}{removeCommander()}}
+{\footnotesize\ttfamily \label{class_base_state_a7552cf9163de41f53c460e2fa3793564} 
+void Base\+State\+::remove\+Commander (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*}}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_base_state}{IBase\+State}}.
+
+\Hypertarget{class_base_state_a464a229bf51e6498d6aeb07e3e5cb812}\index{BaseState@{BaseState}!removeUnit@{removeUnit}}
+\index{removeUnit@{removeUnit}!BaseState@{BaseState}}
+\doxysubsubsection{\texorpdfstring{removeUnit()}{removeUnit()}}
+{\footnotesize\ttfamily \label{class_base_state_a464a229bf51e6498d6aeb07e3e5cb812} 
+void Base\+State\+::remove\+Unit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*}}]{u}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_base_state}{IBase\+State}}.
+
+\Hypertarget{class_base_state_ab1debb5e9ee2c730f850240b02aa3fe2}\index{BaseState@{BaseState}!setGoldReserve@{setGoldReserve}}
+\index{setGoldReserve@{setGoldReserve}!BaseState@{BaseState}}
+\doxysubsubsection{\texorpdfstring{setGoldReserve()}{setGoldReserve()}}
+{\footnotesize\ttfamily \label{class_base_state_ab1debb5e9ee2c730f850240b02aa3fe2} 
+void Base\+State\+::set\+Gold\+Reserve (\begin{DoxyParamCaption}\item[{unsigned}]{gold}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_base_state}{IBase\+State}}.
+
+\Hypertarget{class_base_state_a7128c1e8929140a459065113b44e5553}\index{BaseState@{BaseState}!win@{win}}
+\index{win@{win}!BaseState@{BaseState}}
+\doxysubsubsection{\texorpdfstring{win()}{win()}}
+{\footnotesize\ttfamily \label{class_base_state_a7128c1e8929140a459065113b44e5553} 
+void Base\+State\+::win (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_base_state}{IBase\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Header\+Files/\+System/\+Game\+Engine/\+Game\+State\+Structure/\+Base\+State/Base\+State.\+h\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Source\+Files/\+System/\+Game\+Engine/\+Game\+State\+Structure/Base\+State.\+cpp\end{DoxyCompactItemize}

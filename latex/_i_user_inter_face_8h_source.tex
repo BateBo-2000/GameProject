@@ -1,0 +1,30 @@
+\doxysection{IUser\+Inter\+Face.\+h}
+\hypertarget{_i_user_inter_face_8h_source}{}\label{_i_user_inter_face_8h_source}\index{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/Communication/UI/IUserInterFace.h@{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/Communication/UI/IUserInterFace.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ I\_USER\_INTERFACE}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ I\_USER\_INTERFACE}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ }std::string;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_user_interface}{IUserInterface}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_user_interface}{\string~IUserInterface}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_user_interface}{IUserInterface}}*\ clone()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ inform(\textcolor{keyword}{const}\ std::string\&\ msg)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ warn(\textcolor{keyword}{const}\ std::string\&\ msg)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ printInvalidArg(\textcolor{keyword}{const}\ std::string\&\ msg)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ error(\textcolor{keyword}{const}\ std::string\&\ msg)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ confirm(\textcolor{keyword}{const}\ std::string\&\ q)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ askForNumber(\textcolor{keyword}{const}\ std::string\&\ q)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ askQuestion(\textcolor{keyword}{const}\ std::string\&\ q)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !I\_USER\_INTERFACE}}
+
+\end{DoxyCode}

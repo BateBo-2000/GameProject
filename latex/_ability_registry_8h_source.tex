@@ -1,0 +1,33 @@
+\doxysection{Ability\+Registry.\+h}
+\hypertarget{_ability_registry_8h_source}{}\label{_ability_registry_8h_source}\index{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/Services/Registries/Ability/AbilityRegistry.h@{C:/Users/boian/source/repos/GameV2/GameV2/HeaderFiles/System/Services/Registries/Ability/AbilityRegistry.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ ABILITY\_REGISTRY\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ ABILITY\_REGISTRY\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}IAbilityRegistry.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_ability}{IAbility}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }AbilityRegistry\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_ability_registry}{IAbilityRegistry}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ AbilityRegistry();}
+\DoxyCodeLine{00014\ \ \ \ \ AbilityRegistry(\textcolor{keyword}{const}\ AbilityRegistry\&\ other);}
+\DoxyCodeLine{00015\ \ \ \ \ AbilityRegistry\&\ operator=(\textcolor{keyword}{const}\ AbilityRegistry\&\ other);}
+\DoxyCodeLine{00016\ \ \ \ \ \string~AbilityRegistry()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ registerPrototype(\mbox{\hyperlink{class_i_ability}{IAbility}}*\ ability)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_i_ability}{IAbility}}*\ createByName(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ std::vector<IAbility*>\ prototypes;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ clear();}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ABILITY\_REGISTRY\_H}}
+
+\end{DoxyCode}

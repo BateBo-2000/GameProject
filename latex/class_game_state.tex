@@ -1,0 +1,217 @@
+\doxysection{Game\+State Class Reference}
+\hypertarget{class_game_state}{}\label{class_game_state}\index{GameState@{GameState}}
+Inheritance diagram for Game\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_game_state_a96eecd78c1270477b93d06a1ff11fd93}\label{class_game_state_a96eecd78c1270477b93d06a1ff11fd93} 
+{\bfseries Game\+State} (const \mbox{\hyperlink{struct_engine_config}{Engine\+Config}} \&cfg, \mbox{\hyperlink{class_i_base_state}{IBase\+State}} \&living\+Base, \mbox{\hyperlink{class_i_base_state}{IBase\+State}} \&undead\+Base)
+\item 
+\mbox{\hyperlink{class_i_base_state}{IBase\+State}} \& \mbox{\hyperlink{class_game_state_a5ed9707b46b7bc264076c89f20ee13a8}{get\+Living\+Base}} () override
+\item 
+\mbox{\hyperlink{class_i_base_state}{IBase\+State}} \& \mbox{\hyperlink{class_game_state_aea9119ecc51f887ef74073184b9c7bc3}{get\+Undead\+Base}} () override
+\item 
+const \mbox{\hyperlink{struct_engine_config}{Engine\+Config}} \& \mbox{\hyperlink{class_game_state_a2049f8ce00dc7d4158b806950c6b3483}{get\+Config}} () const override
+\item 
+size\+\_\+t \mbox{\hyperlink{class_game_state_a53911afec346a15e4a55877c863a9b38}{count\+All\+Units}} () const override
+\item 
+Duel\+Stage \mbox{\hyperlink{class_game_state_a57800054898fe702273f6614b2a00fae}{get\+Stage}} () const override
+\item 
+void \mbox{\hyperlink{class_game_state_acb2e77a37b834c17ad6389100789cfaf}{set\+Stage}} (Duel\+Stage stage) override
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_game_state_a8f9ec7440123e51e7113599538100e95}{get\+Living\+Team}} () const override
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_game_state_aa45275404661836d95efa0c2cf283c14}{get\+Living\+Team}} () override
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_game_state_a6221daa2035677ebae5561fa375ccc07}{get\+Undead\+Team}} () const override
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_game_state_ab80501089a8fbf0dd2827c1ad199060d}{get\+Undead\+Team}} () override
+\item 
+size\+\_\+t \mbox{\hyperlink{class_game_state_a20b56513050f72e523b26147461f26ba}{get\+Living\+Turn\+Index}} () const override
+\item 
+void \mbox{\hyperlink{class_game_state_ad2dbe347edd48f496a4fe77b33ee7e68}{Living\+Turn\+Index\+Increment}} () override
+\item 
+void \mbox{\hyperlink{class_game_state_a4554f98c048ef68dc3c797fe2e5b57c0}{reset\+Living\+Turn\+Index}} () override
+\item 
+size\+\_\+t \mbox{\hyperlink{class_game_state_aa578d69ba1f6fe477477d122c6ae5c39}{get\+Undead\+Turn\+Index}} () const override
+\item 
+void \mbox{\hyperlink{class_game_state_ad17c1ecfbeabbc9298deddc58f2d6a94}{Undead\+Turn\+Index\+Increment}} () override
+\item 
+void \mbox{\hyperlink{class_game_state_ad743b0582c2ff1c493ff7b79a1587f3b}{reset\+Undead\+Turn\+Index}} () override
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_game_state_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_game_state_a53911afec346a15e4a55877c863a9b38}\index{GameState@{GameState}!countAllUnits@{countAllUnits}}
+\index{countAllUnits@{countAllUnits}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{countAllUnits()}{countAllUnits()}}
+{\footnotesize\ttfamily \label{class_game_state_a53911afec346a15e4a55877c863a9b38} 
+size\+\_\+t Game\+State\+::count\+All\+Units (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_state}{IGame\+State}}.
+
+\Hypertarget{class_game_state_a2049f8ce00dc7d4158b806950c6b3483}\index{GameState@{GameState}!getConfig@{getConfig}}
+\index{getConfig@{getConfig}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{getConfig()}{getConfig()}}
+{\footnotesize\ttfamily \label{class_game_state_a2049f8ce00dc7d4158b806950c6b3483} 
+const \mbox{\hyperlink{struct_engine_config}{Engine\+Config}} \& Game\+State\+::get\+Config (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_state}{IGame\+State}}.
+
+\Hypertarget{class_game_state_a5ed9707b46b7bc264076c89f20ee13a8}\index{GameState@{GameState}!getLivingBase@{getLivingBase}}
+\index{getLivingBase@{getLivingBase}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{getLivingBase()}{getLivingBase()}}
+{\footnotesize\ttfamily \label{class_game_state_a5ed9707b46b7bc264076c89f20ee13a8} 
+\mbox{\hyperlink{class_i_base_state}{IBase\+State}} \& Game\+State\+::get\+Living\+Base (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_state}{IGame\+State}}.
+
+\Hypertarget{class_game_state_a8f9ec7440123e51e7113599538100e95}\index{GameState@{GameState}!getLivingTeam@{getLivingTeam}}
+\index{getLivingTeam@{getLivingTeam}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{getLivingTeam()}{getLivingTeam()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_game_state_a8f9ec7440123e51e7113599538100e95} 
+const std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& Game\+State\+::get\+Living\+Team (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_state}{IGame\+State}}.
+
+\Hypertarget{class_game_state_aa45275404661836d95efa0c2cf283c14}\index{GameState@{GameState}!getLivingTeam@{getLivingTeam}}
+\index{getLivingTeam@{getLivingTeam}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{getLivingTeam()}{getLivingTeam()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_game_state_aa45275404661836d95efa0c2cf283c14} 
+std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& Game\+State\+::get\+Living\+Team (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_state}{IGame\+State}}.
+
+\Hypertarget{class_game_state_a20b56513050f72e523b26147461f26ba}\index{GameState@{GameState}!getLivingTurnIndex@{getLivingTurnIndex}}
+\index{getLivingTurnIndex@{getLivingTurnIndex}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{getLivingTurnIndex()}{getLivingTurnIndex()}}
+{\footnotesize\ttfamily \label{class_game_state_a20b56513050f72e523b26147461f26ba} 
+size\+\_\+t Game\+State\+::get\+Living\+Turn\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_state}{IGame\+State}}.
+
+\Hypertarget{class_game_state_a57800054898fe702273f6614b2a00fae}\index{GameState@{GameState}!getStage@{getStage}}
+\index{getStage@{getStage}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{getStage()}{getStage()}}
+{\footnotesize\ttfamily \label{class_game_state_a57800054898fe702273f6614b2a00fae} 
+Duel\+Stage Game\+State\+::get\+Stage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_state}{IGame\+State}}.
+
+\Hypertarget{class_game_state_aea9119ecc51f887ef74073184b9c7bc3}\index{GameState@{GameState}!getUndeadBase@{getUndeadBase}}
+\index{getUndeadBase@{getUndeadBase}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{getUndeadBase()}{getUndeadBase()}}
+{\footnotesize\ttfamily \label{class_game_state_aea9119ecc51f887ef74073184b9c7bc3} 
+\mbox{\hyperlink{class_i_base_state}{IBase\+State}} \& Game\+State\+::get\+Undead\+Base (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_state}{IGame\+State}}.
+
+\Hypertarget{class_game_state_a6221daa2035677ebae5561fa375ccc07}\index{GameState@{GameState}!getUndeadTeam@{getUndeadTeam}}
+\index{getUndeadTeam@{getUndeadTeam}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{getUndeadTeam()}{getUndeadTeam()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_game_state_a6221daa2035677ebae5561fa375ccc07} 
+const std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& Game\+State\+::get\+Undead\+Team (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_state}{IGame\+State}}.
+
+\Hypertarget{class_game_state_ab80501089a8fbf0dd2827c1ad199060d}\index{GameState@{GameState}!getUndeadTeam@{getUndeadTeam}}
+\index{getUndeadTeam@{getUndeadTeam}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{getUndeadTeam()}{getUndeadTeam()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_game_state_ab80501089a8fbf0dd2827c1ad199060d} 
+std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ \& Game\+State\+::get\+Undead\+Team (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_state}{IGame\+State}}.
+
+\Hypertarget{class_game_state_aa578d69ba1f6fe477477d122c6ae5c39}\index{GameState@{GameState}!getUndeadTurnIndex@{getUndeadTurnIndex}}
+\index{getUndeadTurnIndex@{getUndeadTurnIndex}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{getUndeadTurnIndex()}{getUndeadTurnIndex()}}
+{\footnotesize\ttfamily \label{class_game_state_aa578d69ba1f6fe477477d122c6ae5c39} 
+size\+\_\+t Game\+State\+::get\+Undead\+Turn\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_state}{IGame\+State}}.
+
+\Hypertarget{class_game_state_ad2dbe347edd48f496a4fe77b33ee7e68}\index{GameState@{GameState}!LivingTurnIndexIncrement@{LivingTurnIndexIncrement}}
+\index{LivingTurnIndexIncrement@{LivingTurnIndexIncrement}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{LivingTurnIndexIncrement()}{LivingTurnIndexIncrement()}}
+{\footnotesize\ttfamily \label{class_game_state_ad2dbe347edd48f496a4fe77b33ee7e68} 
+void Game\+State\+::\+Living\+Turn\+Index\+Increment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_state}{IGame\+State}}.
+
+\Hypertarget{class_game_state_a4554f98c048ef68dc3c797fe2e5b57c0}\index{GameState@{GameState}!resetLivingTurnIndex@{resetLivingTurnIndex}}
+\index{resetLivingTurnIndex@{resetLivingTurnIndex}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{resetLivingTurnIndex()}{resetLivingTurnIndex()}}
+{\footnotesize\ttfamily \label{class_game_state_a4554f98c048ef68dc3c797fe2e5b57c0} 
+void Game\+State\+::reset\+Living\+Turn\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_state}{IGame\+State}}.
+
+\Hypertarget{class_game_state_ad743b0582c2ff1c493ff7b79a1587f3b}\index{GameState@{GameState}!resetUndeadTurnIndex@{resetUndeadTurnIndex}}
+\index{resetUndeadTurnIndex@{resetUndeadTurnIndex}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{resetUndeadTurnIndex()}{resetUndeadTurnIndex()}}
+{\footnotesize\ttfamily \label{class_game_state_ad743b0582c2ff1c493ff7b79a1587f3b} 
+void Game\+State\+::reset\+Undead\+Turn\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_state}{IGame\+State}}.
+
+\Hypertarget{class_game_state_acb2e77a37b834c17ad6389100789cfaf}\index{GameState@{GameState}!setStage@{setStage}}
+\index{setStage@{setStage}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{setStage()}{setStage()}}
+{\footnotesize\ttfamily \label{class_game_state_acb2e77a37b834c17ad6389100789cfaf} 
+void Game\+State\+::set\+Stage (\begin{DoxyParamCaption}\item[{Duel\+Stage}]{stage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_state}{IGame\+State}}.
+
+\Hypertarget{class_game_state_ad17c1ecfbeabbc9298deddc58f2d6a94}\index{GameState@{GameState}!UndeadTurnIndexIncrement@{UndeadTurnIndexIncrement}}
+\index{UndeadTurnIndexIncrement@{UndeadTurnIndexIncrement}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{UndeadTurnIndexIncrement()}{UndeadTurnIndexIncrement()}}
+{\footnotesize\ttfamily \label{class_game_state_ad17c1ecfbeabbc9298deddc58f2d6a94} 
+void Game\+State\+::\+Undead\+Turn\+Index\+Increment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_game_state}{IGame\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Header\+Files/\+System/\+Game\+Engine/\+Game\+State\+Structure/\+Game\+State/Game\+State.\+h\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Source\+Files/\+System/\+Game\+Engine/\+Game\+State\+Structure/Game\+State.\+cpp\end{DoxyCompactItemize}

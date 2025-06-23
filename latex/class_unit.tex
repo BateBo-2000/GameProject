@@ -1,0 +1,223 @@
+\doxysection{Unit Class Reference}
+\hypertarget{class_unit}{}\label{class_unit}\index{Unit@{Unit}}
+Inheritance diagram for Unit\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_unit}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \mbox{\hyperlink{class_unit_abdb6475bf3f00d6d8ee1ce847efe5745}{get\+Type}} () const override
+\item 
+unsigned \mbox{\hyperlink{class_unit_a4df2484e85cce06a7ef7cb7b5a7e6f85}{get\+Health}} () const override
+\item 
+unsigned \mbox{\hyperlink{class_unit_ac5aa4f86b32a620212c0a62e585ecab5}{get\+Attack}} () const override
+\item 
+unsigned \mbox{\hyperlink{class_unit_aab73a0dfc3bdd48b56a2ceb5889f7f7a}{get\+Gold\+Cost}} () const override
+\item 
+bool \mbox{\hyperlink{class_unit_aa6c8c5a22d839052d2d73ab28342435a}{is\+Commander}} () const override
+\item 
+Faction \mbox{\hyperlink{class_unit_a6ad14da191cd8062fea4272e078610e3}{get\+Faction}} () const override
+\item 
+const \mbox{\hyperlink{class_i_armor}{IArmor}} \& \mbox{\hyperlink{class_unit_a2432c806fd5a59a62ad007e0c48348e5}{get\+Armor}} () const override
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_i_ability}{IAbility}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_unit_a88a7c3293f80ae16f0532cce24832440}{get\+Abilities}} () const override
+\item 
+unsigned \mbox{\hyperlink{class_unit_a145ba42ae7eee61e66ec849ea5a8e1f5}{get\+Mana}} () const override
+\item 
+void \mbox{\hyperlink{class_unit_a43f62e7a46cc7cdc757499d0c1ededc9}{use\+Mana}} (unsigned mana) override
+\item 
+void \mbox{\hyperlink{class_unit_ab99139ef56fb2df2898f28ecb9fbc15e}{take\+Damage}} (unsigned raw\+Damage) override
+\item 
+void \mbox{\hyperlink{class_unit_a7c40ea99e5f0d6e3682591e5016d4b82}{attack}} (\mbox{\hyperlink{class_i_unit}{IUnit}} \&target) override
+\item 
+void \mbox{\hyperlink{class_unit_a2960cb2fc5f641374b15b1b65d70d74e}{use\+Ability}} (std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$ targets, \mbox{\hyperlink{class_battle_context}{Battle\+Context}} \&ctx, size\+\_\+t ability\+Index=0) override
+\item 
+bool \mbox{\hyperlink{class_unit_afc96af8ad83d9086f58d2d26d61c5300}{is\+Alive}} () const override
+\item 
+void \mbox{\hyperlink{class_unit_a4d1fa0012e437d32af3cff4edf955d05}{regenerate\+Health}} (unsigned amount) override
+\item 
+void \mbox{\hyperlink{class_unit_a7efa0eacfb017a0b9dc384009af4fac0}{regenerate\+Mana}} (unsigned amount) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_unit_a9f72f63bda33f95dfe9288b3f2e31504}\label{class_unit_a9f72f63bda33f95dfe9288b3f2e31504} 
+class {\bfseries Unit\+Parser}
+\item 
+\Hypertarget{class_unit_a81536fa4931b485139429a1e980757fc}\label{class_unit_a81536fa4931b485139429a1e980757fc} 
+class {\bfseries Unit\+Registry}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_unit_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_unit_a7c40ea99e5f0d6e3682591e5016d4b82}\index{Unit@{Unit}!attack@{attack}}
+\index{attack@{attack}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{attack()}{attack()}}
+{\footnotesize\ttfamily \label{class_unit_a7c40ea99e5f0d6e3682591e5016d4b82} 
+void Unit\+::attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_unit}{IUnit}} \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_unit}{IUnit}}.
+
+\Hypertarget{class_unit_a88a7c3293f80ae16f0532cce24832440}\index{Unit@{Unit}!getAbilities@{getAbilities}}
+\index{getAbilities@{getAbilities}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{getAbilities()}{getAbilities()}}
+{\footnotesize\ttfamily \label{class_unit_a88a7c3293f80ae16f0532cce24832440} 
+const std\+::vector$<$ \mbox{\hyperlink{class_i_ability}{IAbility}} \texorpdfstring{$\ast$}{*} $>$ \& Unit\+::get\+Abilities (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_unit}{IUnit}}.
+
+\Hypertarget{class_unit_a2432c806fd5a59a62ad007e0c48348e5}\index{Unit@{Unit}!getArmor@{getArmor}}
+\index{getArmor@{getArmor}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{getArmor()}{getArmor()}}
+{\footnotesize\ttfamily \label{class_unit_a2432c806fd5a59a62ad007e0c48348e5} 
+const \mbox{\hyperlink{class_i_armor}{IArmor}} \& Unit\+::get\+Armor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_unit}{IUnit}}.
+
+\Hypertarget{class_unit_ac5aa4f86b32a620212c0a62e585ecab5}\index{Unit@{Unit}!getAttack@{getAttack}}
+\index{getAttack@{getAttack}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{getAttack()}{getAttack()}}
+{\footnotesize\ttfamily \label{class_unit_ac5aa4f86b32a620212c0a62e585ecab5} 
+unsigned Unit\+::get\+Attack (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_unit}{IUnit}}.
+
+\Hypertarget{class_unit_a6ad14da191cd8062fea4272e078610e3}\index{Unit@{Unit}!getFaction@{getFaction}}
+\index{getFaction@{getFaction}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{getFaction()}{getFaction()}}
+{\footnotesize\ttfamily \label{class_unit_a6ad14da191cd8062fea4272e078610e3} 
+Faction Unit\+::get\+Faction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_unit}{IUnit}}.
+
+\Hypertarget{class_unit_aab73a0dfc3bdd48b56a2ceb5889f7f7a}\index{Unit@{Unit}!getGoldCost@{getGoldCost}}
+\index{getGoldCost@{getGoldCost}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{getGoldCost()}{getGoldCost()}}
+{\footnotesize\ttfamily \label{class_unit_aab73a0dfc3bdd48b56a2ceb5889f7f7a} 
+unsigned Unit\+::get\+Gold\+Cost (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_unit}{IUnit}}.
+
+\Hypertarget{class_unit_a4df2484e85cce06a7ef7cb7b5a7e6f85}\index{Unit@{Unit}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily \label{class_unit_a4df2484e85cce06a7ef7cb7b5a7e6f85} 
+unsigned Unit\+::get\+Health (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_unit}{IUnit}}.
+
+\Hypertarget{class_unit_a145ba42ae7eee61e66ec849ea5a8e1f5}\index{Unit@{Unit}!getMana@{getMana}}
+\index{getMana@{getMana}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{getMana()}{getMana()}}
+{\footnotesize\ttfamily \label{class_unit_a145ba42ae7eee61e66ec849ea5a8e1f5} 
+unsigned Unit\+::get\+Mana (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_unit}{IUnit}}.
+
+\Hypertarget{class_unit_abdb6475bf3f00d6d8ee1ce847efe5745}\index{Unit@{Unit}!getType@{getType}}
+\index{getType@{getType}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{class_unit_abdb6475bf3f00d6d8ee1ce847efe5745} 
+const std\+::string \& Unit\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_unit}{IUnit}}.
+
+\Hypertarget{class_unit_afc96af8ad83d9086f58d2d26d61c5300}\index{Unit@{Unit}!isAlive@{isAlive}}
+\index{isAlive@{isAlive}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{isAlive()}{isAlive()}}
+{\footnotesize\ttfamily \label{class_unit_afc96af8ad83d9086f58d2d26d61c5300} 
+bool Unit\+::is\+Alive (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_unit}{IUnit}}.
+
+\Hypertarget{class_unit_aa6c8c5a22d839052d2d73ab28342435a}\index{Unit@{Unit}!isCommander@{isCommander}}
+\index{isCommander@{isCommander}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{isCommander()}{isCommander()}}
+{\footnotesize\ttfamily \label{class_unit_aa6c8c5a22d839052d2d73ab28342435a} 
+bool Unit\+::is\+Commander (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_unit}{IUnit}}.
+
+\Hypertarget{class_unit_a4d1fa0012e437d32af3cff4edf955d05}\index{Unit@{Unit}!regenerateHealth@{regenerateHealth}}
+\index{regenerateHealth@{regenerateHealth}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{regenerateHealth()}{regenerateHealth()}}
+{\footnotesize\ttfamily \label{class_unit_a4d1fa0012e437d32af3cff4edf955d05} 
+void Unit\+::regenerate\+Health (\begin{DoxyParamCaption}\item[{unsigned}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_unit}{IUnit}}.
+
+\Hypertarget{class_unit_a7efa0eacfb017a0b9dc384009af4fac0}\index{Unit@{Unit}!regenerateMana@{regenerateMana}}
+\index{regenerateMana@{regenerateMana}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{regenerateMana()}{regenerateMana()}}
+{\footnotesize\ttfamily \label{class_unit_a7efa0eacfb017a0b9dc384009af4fac0} 
+void Unit\+::regenerate\+Mana (\begin{DoxyParamCaption}\item[{unsigned}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_unit}{IUnit}}.
+
+\Hypertarget{class_unit_ab99139ef56fb2df2898f28ecb9fbc15e}\index{Unit@{Unit}!takeDamage@{takeDamage}}
+\index{takeDamage@{takeDamage}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{takeDamage()}{takeDamage()}}
+{\footnotesize\ttfamily \label{class_unit_ab99139ef56fb2df2898f28ecb9fbc15e} 
+void Unit\+::take\+Damage (\begin{DoxyParamCaption}\item[{unsigned}]{raw\+Damage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_unit}{IUnit}}.
+
+\Hypertarget{class_unit_a2960cb2fc5f641374b15b1b65d70d74e}\index{Unit@{Unit}!useAbility@{useAbility}}
+\index{useAbility@{useAbility}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{useAbility()}{useAbility()}}
+{\footnotesize\ttfamily \label{class_unit_a2960cb2fc5f641374b15b1b65d70d74e} 
+void Unit\+::use\+Ability (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_i_unit}{IUnit}} \texorpdfstring{$\ast$}{*} $>$}]{targets}{, }\item[{\mbox{\hyperlink{class_battle_context}{Battle\+Context}} \&}]{ctx}{, }\item[{size\+\_\+t}]{ability\+Index}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_unit}{IUnit}}.
+
+\Hypertarget{class_unit_a43f62e7a46cc7cdc757499d0c1ededc9}\index{Unit@{Unit}!useMana@{useMana}}
+\index{useMana@{useMana}!Unit@{Unit}}
+\doxysubsubsection{\texorpdfstring{useMana()}{useMana()}}
+{\footnotesize\ttfamily \label{class_unit_a43f62e7a46cc7cdc757499d0c1ededc9} 
+void Unit\+::use\+Mana (\begin{DoxyParamCaption}\item[{unsigned}]{mana}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_unit}{IUnit}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Header\+Files/\+System/\+Game\+Engine/\+Units/Unit.\+h\item 
+C\+:/\+Users/boian/source/repos/\+Game\+V2/\+Game\+V2/\+Source\+Files/\+System/\+Game\+Engine/\+Units/Unit.\+cpp\end{DoxyCompactItemize}
