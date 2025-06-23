@@ -2,24 +2,22 @@
 #ifndef EXIT_COMMAND_H
 #define EXIT_COMMAND_H
 
+#include "../ICommand.h"
+#include "../../HeaderFiles/System/Control/Invoker/IInvoker.h"
+#include "../../HeaderFiles/Communication/UI/IUserInterFace.h"
 #include <vector>
 #include <string>
 
-#include "../ICommand.h"
-
-class IUserInterface;
-
-class ExitCmd : public ICommand {
+class ExitCommand : public ICommand {
 public:
-	ExitCmd(IUserInterface& ui);
-	virtual bool isThisMe(const std::vector<std::string>& args) const override;
-	virtual void execute(const std::vector<std::string>& args) const override;
-	virtual ICommand* clone() const override;
+    ExitCommand(IInvoker& invoker, IUserInterface& ui);
+    ~ExitCommand() override = default;
+    bool isThisMe(const std::vector<std::string>& args) const override;
+    bool execute(const std::vector<std::string>& args) const override;
+    ICommand* clone() const override;
 private:
-	static constexpr const char* myName = "Exit";
-	IUserInterface& ui;
+    IUserInterface& ui;
+    IInvoker& invoker;
 };
 
-
-
-#endif // !EXIT_COMMAND_H
+#endif // EXIT_COMMAND_H

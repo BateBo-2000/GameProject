@@ -22,6 +22,7 @@ public:
     const std::vector<IUnit*>& getUnits() const override;
     std::vector<IUnit*>& getUnits() override;
     void addUnit(IUnit* u) override;
+    //removes its pointer
     void removeUnit(IUnit* u) override;
     IUnit* getUnit(size_t index) override;
     size_t getUnitCount() const override;
@@ -29,6 +30,7 @@ public:
     const std::vector<IUnit*>& getCommanders() const override;
     std::vector<IUnit*>& getCommanders() override;
     void addCommander(IUnit* c) override;
+    //removes its pointer
     void removeCommander(IUnit* c) override;
     IUnit* getCommander(size_t index) override;
     size_t getCommanderCount() const override;

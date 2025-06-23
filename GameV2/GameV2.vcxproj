@@ -133,11 +133,14 @@
     <ClCompile Include="SourceFiles\Communication\UserUI.cpp" />
     <ClCompile Include="SourceFiles\GameV2.cpp" />
     <ClCompile Include="SourceFiles\System\Control\CommandInvoker.cpp" />
+    <ClCompile Include="SourceFiles\System\Control\Commands\System\Exit.cpp" />
     <ClCompile Include="SourceFiles\System\Control\Controller.cpp" />
+    <ClCompile Include="SourceFiles\System\GameEngine\GameEngine.cpp" />
     <ClCompile Include="SourceFiles\System\GameEngine\GameStateStructure\BaseState.cpp" />
     <ClCompile Include="SourceFiles\System\GameEngine\GameStateStructure\GameState.cpp" />
     <ClCompile Include="SourceFiles\System\Services\Files\ConfigParsing\AbilityParser.cpp" />
     <ClCompile Include="SourceFiles\System\Services\Files\ConfigParsing\ArmorParser.cpp" />
+    <ClCompile Include="SourceFiles\System\Services\Files\ConfigParsing\SettingParser.cpp" />
     <ClCompile Include="SourceFiles\System\Services\Files\ConfigParsing\TextConfigParser.cpp" />
     <ClCompile Include="SourceFiles\System\Services\Files\ConfigParsing\UnitParser.cpp" />
     <ClCompile Include="SourceFiles\System\Services\Files\FileReading\BasicFileReader.cpp" />
@@ -199,6 +202,8 @@
     <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\ArmorParsing\ArmorParser.h" />
     <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\ArmorParsing\IArmorParser.h" />
     <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\ICongifgParser.h" />
+    <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\SettingsParsing\ISettingParser.h" />
+    <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\SettingsParsing\SettingParser.h" />
     <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\TextConfigParser.h" />
     <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\UnitParsing\IUnitParser.h" />
     <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\UnitParsing\UnitParser.h" />
@@ -212,6 +217,10 @@
     <ClInclude Include="HeaderFiles\System\Services\Registries\Unit\IUnitRegistry.h" />
     <ClInclude Include="HeaderFiles\System\GameEngine\Units\IUnit.h" />
     <ClInclude Include="HeaderFiles\System\GameEngine\Units\Unit.h" />
+    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\BasicFstreamFileHadnler.h" />
+    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\IGameLoader.h" />
+    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\IGameSaverFile.h" />
+    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\ISaveLoadFile.h" />
     <ClInclude Include="HeaderFiles\Util\Split.h" />
     <ClCompile Include="SourceFiles\Communication\RandomAIPlayer.cpp" />
   </ItemGroup>

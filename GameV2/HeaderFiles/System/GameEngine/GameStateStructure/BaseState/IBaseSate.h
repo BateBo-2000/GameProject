@@ -21,6 +21,7 @@ public:
     virtual std::vector<IUnit*>& getUnits() = 0;
     //takes ownership
     virtual void addUnit(IUnit* u) = 0;
+    //untakes ownership
     virtual void removeUnit(IUnit* u) = 0;
     virtual IUnit* getUnit(size_t index) = 0;
     virtual size_t getUnitCount() const = 0;
@@ -30,6 +31,7 @@ public:
     virtual std::vector<IUnit*>& getCommanders() = 0;
     //takes ownership
     virtual void addCommander(IUnit* c) = 0;
+    //untakes ownership
     virtual void removeCommander(IUnit* c) = 0;
     virtual IUnit* getCommander(size_t index) = 0;
     virtual size_t getCommanderCount() const = 0;

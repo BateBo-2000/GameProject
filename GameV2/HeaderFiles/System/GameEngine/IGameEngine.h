@@ -1,12 +1,12 @@
 #pragma once
+#ifndef I_GAME_ENGINE_H
+#define I_GAME_ENGINE_H
 
 #include <string>
 #include <vector>
 
-class IUnit;
-class IUnitFactory;
 enum class Faction;
-
+class IGameState;
 
 /*
     this is the actual game and everything else is here to support it or use it
@@ -15,26 +15,26 @@ class IGameEngine {
 public:
     virtual ~IGameEngine() = default;
 
-    // --- for the invoker ---
-    virtual Faction getWhoseTurnItIsNow() = 0;
+    // duel preparation
+    virtual void create(const std::string& unitType) = 0;
+    virtual void selectBoss(const std::string& bossType) = 0;
+    virtual void selectUnits(const std::string& unitType, unsigned count) = 0;
+    virtual void startDuel() = 0;
 
-    // --- system controls ---
-    virtual bool Save(const std::string& filepath) = 0;
-    virtual bool Load(const std::string& filepath) = 0;
-    virtual void Restart() = 0;
-    virtual void Exit() = 0;
+    // duel combat
+    virtual void skipTurn() = 0;
+    virtual void attackTarget(const std::string& targetName) = 0;
+    virtual void useAbility(const std::vector<std::string>& targetNames, size_t abilityIndex = 0) = 0;
 
-    // --- fighting controls ---
-    virtual void SkipTurn() = 0;
-    virtual bool Target(const std::string& unitName) = 0;
-    virtual bool UseAbility(const std::string& abilityName) = 0;
-
-    // --- gameplay controls ---
-    virtual bool Create(const std::string& unitName) = 0;
-    virtual bool Select(const std::string& unitName) = 0;
-    virtual bool SelectBoss(const std::string& bossName) = 0;
-    virtual void Start() = 0;
-    virtual void Status() const = 0;
+    // information
+    virtual const IGameState& getGameState() const =0;
+    virtual IGameState& getGameState() = 0;
 
 
+    // turns
+    virtual Faction getWhoseTurnItIsNow() const = 0;
+    virtual bool isGameWon() const = 0;
 };
+
+
+#endif // I_GAME_ENGINE_H

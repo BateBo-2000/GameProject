@@ -5,6 +5,8 @@
 struct EngineConfig {
     unsigned startingGoldLiving;
     unsigned startingGoldUndead;
+    unsigned healthRegenPerRound;
+    unsigned manaRegenPerRound;
 
     unsigned maxAliveUnits;
     unsigned maxCommanders;

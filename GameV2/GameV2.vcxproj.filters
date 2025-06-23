@@ -90,6 +90,15 @@
     <ClCompile Include="SourceFiles\System\GameEngine\GameStateStructure\GameState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SourceFiles\System\Services\Files\ConfigParsing\SettingParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\System\GameEngine\GameEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\System\Control\Commands\System\Exit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HeaderFiles\System\Control\Controller.h">
@@ -270,6 +279,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="HeaderFiles\System\GameEngine\GameStateStructure\BaseState\IBaseSate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\SettingsParsing\ISettingParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\SettingsParsing\SettingParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\IGameSaverFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\ISaveLoadFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\IGameLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\BasicFstreamFileHadnler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
