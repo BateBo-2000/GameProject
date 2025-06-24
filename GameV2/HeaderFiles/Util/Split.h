@@ -8,6 +8,7 @@
 inline std::vector<std::string> split(const std::string& input, char delim) {
     std::vector<std::string> result;
     std::string current;
+
     for (char c : input) {
         if (c == delim) {
             if (!current.empty())
@@ -18,7 +19,7 @@ inline std::vector<std::string> split(const std::string& input, char delim) {
             current.push_back(c);
         }
     }
-    result.push_back(current);
+    if (!current.empty()) result.push_back(current);
     return result;
 }
 

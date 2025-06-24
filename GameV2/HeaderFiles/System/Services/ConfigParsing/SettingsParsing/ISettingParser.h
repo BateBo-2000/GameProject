@@ -9,7 +9,7 @@ struct EngineConfig;
 class ISettingsParser {
 public:
     virtual ~ISettingsParser() = default;
-    virtual const EngineConfig* parse(const std::vector<std::string>& lines) const = 0;
+    virtual EngineConfig* parse(const std::vector<std::string>& lines) const = 0;
 };
 
 #endif // I_SETTINGS_PARSER_H

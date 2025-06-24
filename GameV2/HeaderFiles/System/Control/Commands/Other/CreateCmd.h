@@ -11,13 +11,13 @@ class IUserInterface;
 
 class CreateUnitCmd : public ICommand {
 public:
-    CreateUnitCmd(IGameEngine& engine, IUserInterface& ui);
+    CreateUnitCmd(IGameEngine& engine);
     ~CreateUnitCmd() override = default;
 
     ICommand* clone() const override;
 
     bool isThisMe(const std::vector<std::string>& args) const override;
-    bool execute(const std::vector<std::string>& args) const override;
+    bool execute(const std::vector<std::string>& args, IUserInterface& ui) const override;
 
     const std::string& getName() const override;
     const std::string& getDescription() const override;
@@ -27,7 +27,6 @@ private:
     static const std::string DESCRIPTION;
 
     IGameEngine& engine;
-    IUserInterface& ui;
 };
 
 #endif // CREATE_UNIT_CMD_H

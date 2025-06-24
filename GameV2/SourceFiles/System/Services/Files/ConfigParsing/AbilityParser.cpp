@@ -27,7 +27,7 @@ IAbility* AbilityParser::parse(const std::string& raw) const {
 
     try
     {
-        if (type == "Damage" && args.size() == 5) {
+        if (type == "Damage" && args.size() >= 5) {
             const std::string& manaStr = args[3];
             const std::string& damageStr = args[4];
             unsigned mana = std::stoul(manaStr);
@@ -35,7 +35,7 @@ IAbility* AbilityParser::parse(const std::string& raw) const {
             return new DamageAbility(abilityName, mana, damage);
         }
 
-        if (type == "Heal" && args.size() == 5) {
+        if (type == "Heal" && args.size() >= 5) {
             const std::string& manaStr = args[3];
             const std::string& healStr = args[4];
             unsigned mana = std::stoul(manaStr);
@@ -43,7 +43,7 @@ IAbility* AbilityParser::parse(const std::string& raw) const {
             return new HealAbility(abilityName, mana, heal);
         }
 
-        if (type == "Resurrect" && args.size() == 6) {
+        if (type == "Resurrect" && args.size() >= 6) {
             const std::string& manaStr = args[3];
             const std::string& targetType = args[4];
             const std::string& resultType = args[5];
@@ -51,7 +51,7 @@ IAbility* AbilityParser::parse(const std::string& raw) const {
             return new ResurrectAbility(abilityName, mana, targetType, resultType);
         }
 
-        if (type == "Summon" && args.size() == 6) {
+        if (type == "Summon" && args.size() >= 6) {
             const std::string& manaStr = args[3];
             const std::string& unitType = args[4];
             const std::string& countStr = args[5];

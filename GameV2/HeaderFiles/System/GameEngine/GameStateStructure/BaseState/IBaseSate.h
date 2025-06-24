@@ -3,6 +3,7 @@
 #define I_BASE_STATE_H
 
 #include <vector>
+#include <iostream>
 
 class IUnit;
 
@@ -35,6 +36,8 @@ public:
     virtual void removeCommander(IUnit* c) = 0;
     virtual IUnit* getCommander(size_t index) = 0;
     virtual size_t getCommanderCount() const = 0;
+
+    virtual void serialize(std::ostream& out) const = 0;
 };
 
 #endif // I_BASE_STATE_H

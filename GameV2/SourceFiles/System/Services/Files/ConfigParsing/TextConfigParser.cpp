@@ -8,23 +8,34 @@ void ConfigParser::parse(const std::string& fileContents, ConfigData& data) {
 
 	for (size_t i = 0; i < lines.size(); i++)
 	{
-		if (lines[i].starts_with("SETTINGS:")) {
-			data.settings.push_back(lines[i]);
+
+		const std::string& raw = lines[i];
+		size_t pos = raw.find_first_not_of(' ');
+		if (pos == std::string::npos)
+			continue;
+
+		std::string line = raw.substr(pos);
+
+		if (line.starts_with("#")) {
+			continue; //comments
 		}
-		else if (lines[i].starts_with("ARMOR:")) {
-			data.armors.push_back(lines[i]);
+		if (line.starts_with("SETTINGS:")) {
+			data.settings.push_back(line);
 		}
-		else if (lines[i].starts_with("ABILITY:")) {
-			data.abilities.push_back(lines[i]);
+		else if (line.starts_with("ARMOR:")) {
+			data.armors.push_back(line);
 		}
-		else if (lines[i].starts_with("UNIT:")) {
-			data.units.push_back(lines[i]);
+		else if (line.starts_with("ABILITY:")) {
+			data.abilities.push_back(line);
 		}
-		else if (lines[i].starts_with("COMMANDER:")) {
-			data.units.push_back(lines[i]);
+		else if (line.starts_with("UNIT:")) {
+			data.units.push_back(line);
+		}
+		else if (line.starts_with("COMMANDER:")) {
+			data.units.push_back(line);
 		}
 		else {
-			data.unknown.push_back(lines[i]);
+			data.unknown.push_back(line);
 		}
 	}
 	

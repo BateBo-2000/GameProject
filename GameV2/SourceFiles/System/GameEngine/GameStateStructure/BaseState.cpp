@@ -1,9 +1,19 @@
 #include "../../HeaderFiles/System/GameEngine/GameStateStructure/BaseState/BaseState.h"
 
+#include "../../HeaderFiles/System/GameEngine/Units/IUnit.h"
+#include "../../HeaderFiles/System/Services/Registries/Unit/IUnitRegistry.h"
+
+
 #include <stdexcept>
 
-BaseState::BaseState(unsigned maxCommandersPerType):MAX_COMMANDERS_FROM_THE_SAME_TYPE(maxCommandersPerType)
+BaseState::BaseState(unsigned maxCommandersPerType, unsigned startingGold)
+    :MAX_COMMANDERS_FROM_THE_SAME_TYPE(maxCommandersPerType), goldReserve(startingGold), wins(0)
 {
+}
+
+BaseState::BaseState(std::istream& in, IUnitRegistry& units, unsigned maxCommandersPerType): MAX_COMMANDERS_FROM_THE_SAME_TYPE(maxCommandersPerType)
+{
+    throw std::exception("Not implemented.");
 }
 
 BaseState::~BaseState() {
@@ -89,4 +99,9 @@ IUnit* BaseState::getCommander(size_t index) {
 
 size_t BaseState::getCommanderCount() const {
     return commanders.size();
+}
+
+void BaseState::serialize(std::ostream& out) const
+{
+    throw std::exception("Not implemented.");
 }

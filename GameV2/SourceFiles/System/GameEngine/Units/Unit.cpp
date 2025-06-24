@@ -144,3 +144,8 @@ void Unit::regenerateMana(unsigned amount) {
     mana += amount;
     if (mana > maxMana) mana = maxMana;
 }
+
+void Unit::serialize(std::ostream& out) const
+{
+    throw std::exception("Not implemented.");
+}

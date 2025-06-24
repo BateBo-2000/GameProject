@@ -11,13 +11,13 @@ class IUserInterface;
 
 class SkipTurnCmd : public ICommand {
 public:
-    SkipTurnCmd(IGameEngine& engine, IUserInterface& ui);
+    SkipTurnCmd(IGameEngine& engine);
     ~SkipTurnCmd() override = default;
 
     ICommand* clone() const override;
 
     bool isThisMe(const std::vector<std::string>& args) const override;
-    bool execute(const std::vector<std::string>& args) const override;
+    bool execute(const std::vector<std::string>& args, IUserInterface& ui) const override;
 
     const std::string& getName() const override;
     const std::string& getDescription() const override;
@@ -27,7 +27,6 @@ private:
     static const std::string DESCRIPTION;
         
     IGameEngine& engine;
-    IUserInterface& ui;
 };
 
 #endif // SKIP_TURN_CMD_H

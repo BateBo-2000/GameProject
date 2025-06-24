@@ -3,7 +3,7 @@
 #include "../../HeaderFiles/Util/Split.h"
 #include "../../HeaderFiles/System/Control/Commands/ICommand.h"
 #include "../../HeaderFiles/System/GameEngine/IGameEngine.h"
-
+#include "../../HeaderFiles/Communication/UI/IUserInterFace.h"
 
 #include <stdexcept>
 
@@ -39,13 +39,22 @@ CommandInvoker::~CommandInvoker() {
     commands.clear();
 }
 
-void CommandInvoker::registerCommand(ICommand* c) {
-    if (c) {
-        commands.push_back(c);
+void CommandInvoker::registerCommand(ICommand* c) { 
+    if (!c) return;
+
+    for (size_t i = 0; i < commands.size(); i++)
+    {
+        if (commands[i]->getName() == c->getName()) {
+            std::string name = c->getName();
+            delete c;
+            throw std::invalid_argument("Command " + name + " is already registered!");
+        }
+            
     }
+    commands.push_back(c);
 }
 
-bool CommandInvoker::executeCommandLine(const std::string& line) {
+bool CommandInvoker::executeCommandLine(const std::string& line, IUserInterface& executingPlayerUI) {
     std::vector<std::string> args = split(line, ' ');
     
     if (args.empty()) {
@@ -54,10 +63,11 @@ bool CommandInvoker::executeCommandLine(const std::string& line) {
 
     for (size_t i = 0; i < commands.size(); ++i) {
         if (commands[i]->isThisMe(args)) {
-            return commands[i]->execute(args);
+            return commands[i]->execute(args, executingPlayerUI);
         }
     }
     throw std::runtime_error("Unknown command: " + args[0]);
+    return false;
 }
 
 const std::vector<ICommand*> CommandInvoker::getCommands()

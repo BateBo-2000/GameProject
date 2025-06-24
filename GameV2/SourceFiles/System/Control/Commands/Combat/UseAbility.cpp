@@ -3,20 +3,20 @@
 #include "../../HeaderFiles/Communication/UI/IUserInterFace.h"
 #include "../../HeaderFiles/System/GameEngine/IGameEngine.h"
 
-UseAbilityCmd::UseAbilityCmd(IGameEngine& engine, IUserInterface& ui)
-    : engine(engine), ui(ui)
+UseAbilityCmd::UseAbilityCmd(IGameEngine& engine)
+    : engine(engine)
 {
 }
 
 ICommand* UseAbilityCmd::clone() const {
-    return new UseAbilityCmd(engine, ui);
+    return new UseAbilityCmd(*this);
 }
 
 bool UseAbilityCmd::isThisMe(const std::vector<std::string>& args) const {
     return args.size()>2 && args[0] == "use" && args[0] == "ability";
 }
 
-bool UseAbilityCmd::execute(const std::vector<std::string>& args) const {
+bool UseAbilityCmd::execute(const std::vector<std::string>& args, IUserInterface& ui) const {
     if (args.size() < 2) {
         ui.error("Usage: use ability <abilityIndex> [<target1>] [<target2> ...]");
         return false;

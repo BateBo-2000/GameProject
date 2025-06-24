@@ -10,17 +10,31 @@
 #include "../../HeaderFiles/System/GameEngine/Armor/IArmor.h"
 
 #include "../../HeaderFiles/System/Services/Registries/Unit/UnitRegistry.h"
-
+#include "../../HeaderFiles/System/Services/SaveLoadFiles/IGameSaveFileHandler.h"
 
 #include <stdexcept>
 
-GameEngine::GameEngine(IUnitRegistry& unitRegistry, const EngineConfig& settings, IGameState& state)
-    : settings(settings), unitRegister(unitRegistry), gameState(state)
+GameEngine::GameEngine(IUnitRegistry& unitRegistry, IGameSaveFileHandler* fileHandler, const std::string& savePath, InitMode mode)
+    : unitRegister(unitRegistry), gameState(nullptr), fileHandler(fileHandler), pathToSaveFile(savePath)
 {
+    if (mode == InitMode::NewGame) {
+        if (!restartWipeTheGame()) throw std::runtime_error("GameEngine: failed to create default game state from");
+    }
+    else {
+        if (!loadTheGameFromFile(pathToSaveFile)) {
+            throw std::runtime_error("GameEngine: failed to load game from " + pathToSaveFile);
+        }
+    }
+}
+
+GameEngine::~GameEngine()
+{
+    delete gameState;
+    delete fileHandler;
 }
 
 void GameEngine::create(const std::string& unitType) {
-    DuelStage stage = gameState.getStage();
+    DuelStage stage = gameState->getStage();
 
     if (stage != DuelStage::LivingSetup && stage != DuelStage::UndeadSetup) {
         throw std::runtime_error("Cannot create unit in current stage");
@@ -41,18 +55,18 @@ void GameEngine::create(const std::string& unitType) {
 
     if (stage == DuelStage::LivingSetup) {
         if (unit->isCommander()) {
-            gameState.getLivingBase().addCommander(unit);
+            gameState->getLivingBase().addCommander(unit);
         }
         else {
-            gameState.getLivingBase().addUnit(unit);
+            gameState->getLivingBase().addUnit(unit);
         }
     }
     else {
         if (unit->isCommander()) {
-            gameState.getUndeadBase().addCommander(unit);
+            gameState->getUndeadBase().addCommander(unit);
         }
         else {
-            gameState.getUndeadBase().addUnit(unit);
+            gameState->getUndeadBase().addUnit(unit);
         }
         
     }
@@ -60,13 +74,13 @@ void GameEngine::create(const std::string& unitType) {
 
 void GameEngine::selectBoss(const std::string& bossType)
 {
-    DuelStage stage = gameState.getStage();
+    DuelStage stage = gameState->getStage();
     if (stage != DuelStage::LivingSetup && stage != DuelStage::UndeadSetup) {
         throw std::runtime_error("Cannot select boss in current stage");
     }
 
-    IBaseState& base = (stage == DuelStage::LivingSetup) ? gameState.getLivingBase() : gameState.getUndeadBase();
-    std::vector<IUnit*>& team = (stage == DuelStage::LivingSetup) ? gameState.getLivingTeam(): gameState.getUndeadTeam();
+    IBaseState& base = (stage == DuelStage::LivingSetup) ? gameState->getLivingBase() : gameState->getUndeadBase();
+    std::vector<IUnit*>& team = (stage == DuelStage::LivingSetup) ? gameState->getLivingTeam(): gameState->getUndeadTeam();
 
     //searching for it
     IUnit* chosen = nullptr;
@@ -89,13 +103,13 @@ void GameEngine::selectBoss(const std::string& bossType)
 
 void GameEngine::selectUnits(const std::string& unitType, unsigned count)
 {
-    DuelStage stage = gameState.getStage();
+    DuelStage stage = gameState->getStage();
     if (stage != DuelStage::LivingSetup && stage != DuelStage::UndeadSetup) {
         throw std::runtime_error("Cannot select units in current stage");
     }
 
-    IBaseState& base = (stage == DuelStage::LivingSetup) ? gameState.getLivingBase() : gameState.getUndeadBase();
-    std::vector<IUnit*>& team = (stage == DuelStage::LivingSetup) ? gameState.getLivingTeam() : gameState.getUndeadTeam();
+    IBaseState& base = (stage == DuelStage::LivingSetup) ? gameState->getLivingBase() : gameState->getUndeadBase();
+    std::vector<IUnit*>& team = (stage == DuelStage::LivingSetup) ? gameState->getLivingTeam() : gameState->getUndeadTeam();
 
     std::vector<IUnit*> matches;
     const std::vector<IUnit*>& available = base.getUnits();
@@ -118,14 +132,14 @@ void GameEngine::selectUnits(const std::string& unitType, unsigned count)
 
 void GameEngine::startDuel()
 {
-    DuelStage stage = gameState.getStage();
+    DuelStage stage = gameState->getStage();
     if (stage == DuelStage::LivingSetup) {
-        gameState.setStage(DuelStage::UndeadSetup);
-        gameState.resetLivingTurnIndex();   //to set it up to 0
+        gameState->setStage(DuelStage::UndeadSetup);
+        gameState->resetLivingTurnIndex();   //to set it up to 0
     }
     else if (stage == DuelStage::UndeadSetup) {
-        gameState.setStage(DuelStage::UndeadAttack);
-        gameState.resetUndeadTurnIndex();
+        gameState->setStage(DuelStage::UndeadAttack);
+        gameState->resetUndeadTurnIndex();
     }
     else {
         throw std::runtime_error("Cannot start duel in current stage");
@@ -140,20 +154,20 @@ void GameEngine::skipTurn() {
 
 void GameEngine::attackTarget(const std::string& targetName)
 {
-    DuelStage stage = gameState.getStage();
+    DuelStage stage = gameState->getStage();
     
     std::vector<IUnit*>* targetTeam = nullptr;;
     IUnit* attacker = nullptr;;
 
     if (stage == DuelStage::LivingAttack) {
 
-        targetTeam = &gameState.getUndeadTeam();
-        attacker = gameState.getLivingTeam()[gameState.getLivingTurnIndex()];
+        targetTeam = &gameState->getUndeadTeam();
+        attacker = gameState->getLivingTeam()[gameState->getLivingTurnIndex()];
 
     }else if (stage == DuelStage::UndeadAttack) {
         
-        targetTeam = &gameState.getLivingTeam();
-        attacker = gameState.getUndeadTeam()[gameState.getUndeadTurnIndex()];
+        targetTeam = &gameState->getLivingTeam();
+        attacker = gameState->getUndeadTeam()[gameState->getUndeadTurnIndex()];
     }
     else {
         throw std::invalid_argument("Cannot attack targets in this stage.");
@@ -178,14 +192,14 @@ void GameEngine::attackTarget(const std::string& targetName)
 
 void GameEngine::useAbility(const std::vector<std::string>& targetNames, size_t abilityIndex)
 {
-    DuelStage stage = gameState.getStage();
+    DuelStage stage = gameState->getStage();
     if (stage != DuelStage::UndeadAttack && stage != DuelStage::LivingAttack)
         throw std::invalid_argument("Cannot use ability in this stage.");
 
     IUnit* caster;
     (stage == DuelStage::UndeadAttack) ? caster =
-        gameState.getUndeadTeam()[gameState.getUndeadTurnIndex()]
-        : caster = gameState.getLivingTeam()[gameState.getLivingTurnIndex()];
+        gameState->getUndeadTeam()[gameState->getUndeadTurnIndex()]
+        : caster = gameState->getLivingTeam()[gameState->getLivingTurnIndex()];
 
     std::vector<IUnit*> targets;
 
@@ -193,16 +207,16 @@ void GameEngine::useAbility(const std::vector<std::string>& targetNames, size_t 
 
     for (size_t i = 0; i < targetNames.size(); i++)
     {
-        for (size_t j = 0; j < gameState.getLivingTeam().size(); j++)
+        for (size_t j = 0; j < gameState->getLivingTeam().size(); j++)
         {
-            if (gameState.getLivingTeam()[i]->getType() == targetNames[i]) {
-                targets.push_back(gameState.getLivingTeam()[i]);
+            if (gameState->getLivingTeam()[i]->getType() == targetNames[i]) {
+                targets.push_back(gameState->getLivingTeam()[i]);
             }
         }
-        for (size_t j = 0; j < gameState.getUndeadTeam().size(); j++)
+        for (size_t j = 0; j < gameState->getUndeadTeam().size(); j++)
         {
-            if (gameState.getUndeadTeam()[i]->getType() == targetNames[i]) {
-                targets.push_back(gameState.getUndeadTeam()[i]);
+            if (gameState->getUndeadTeam()[i]->getType() == targetNames[i]) {
+                targets.push_back(gameState->getUndeadTeam()[i]);
             }
         }
     }
@@ -220,10 +234,10 @@ void GameEngine::useAbility(const std::vector<std::string>& targetNames, size_t 
             if (!cxt.spawnedUnitsToBeAdded[i]) continue;
 
             if (cxt.spawnedUnitsToBeAdded[i]->getFaction() == Faction::Living) {
-                gameState.getLivingTeam().push_back(cxt.spawnedUnitsToBeAdded[i]);
+                gameState->getLivingTeam().push_back(cxt.spawnedUnitsToBeAdded[i]);
             }
             else {
-                gameState.getUndeadTeam().push_back(cxt.spawnedUnitsToBeAdded[i]);
+                gameState->getUndeadTeam().push_back(cxt.spawnedUnitsToBeAdded[i]);
             }
         }
         catch (...)
@@ -242,17 +256,17 @@ void GameEngine::useAbility(const std::vector<std::string>& targetNames, size_t 
 
 const IGameState& GameEngine::getGameState() const
 {
-    return gameState;
+    return *gameState;
 }
 
 IGameState& GameEngine::getGameState()
 {
-    return gameState;
+    return *gameState;
 }
 
 Faction GameEngine::getWhoseTurnItIsNow() const
 {
-    DuelStage stage = gameState.getStage();
+    DuelStage stage = gameState->getStage();
     if (stage == DuelStage::LivingSetup || stage == DuelStage::LivingAttack)
         return Faction::Living;
 
@@ -261,43 +275,86 @@ Faction GameEngine::getWhoseTurnItIsNow() const
 
 bool GameEngine::isGameWon() const
 {
-    return gameState.getStage() == DuelStage::GameFinished;
+    return gameState->getStage() == DuelStage::GameFinished;
 }
 
-void GameEngine::restartTheGame()
+bool GameEngine::restartWipeTheGame()
 {
-    //TODO
+    try
+    {
+        IGameState * temp = fileHandler->restartFile(pathToSaveFile);
+        delete gameState;
+        gameState = temp;
+        return true;
+    }
+    catch (const std::exception&)
+    {
+        return false;
+    }
 }
 
-   
+bool GameEngine::saveTheGameToFile(const std::string& path)
+{
+    if (!path.empty()) {
+        pathToSaveFile = path;
+    }
+
+    try
+    {
+        fileHandler->saveToFile(pathToSaveFile, gameState);
+        return true;
+    }
+    catch (const std::exception&)
+    {
+        return false;
+    }
+}
+
+bool GameEngine::loadTheGameFromFile(const std::string& path)
+{
+    pathToSaveFile = path; //keeps the last location for other uses
+
+    try
+    {
+        
+        IGameState* temp = fileHandler->loadFromFile(pathToSaveFile);
+        delete gameState;
+        gameState = temp;
+        return true;
+    }
+    catch (const std::exception&)
+    {
+        return false;
+    }
+}
 
 void GameEngine::goNextTurnOrStageFighting()
 {
-    DuelStage stage = gameState.getStage();
+    DuelStage stage = gameState->getStage();
 
     if (stage == DuelStage::LivingAttack) {
-        gameState.LivingTurnIndexIncrement();
-        if (gameState.getLivingTurnIndex() == 0)    //it just looped to 0
-            if (gameState.getUndeadTeam().size() > 0) {     //if there is enemy to attack its his turn
-                gameState.setStage(DuelStage::UndeadAttack);
+        gameState->LivingTurnIndexIncrement();
+        if (gameState->getLivingTurnIndex() == 0)    //it just looped to 0
+            if (gameState->getUndeadTeam().size() > 0) {     //if there is enemy to attack its his turn
+                gameState->setStage(DuelStage::UndeadAttack);
                 return;
             }
             else {          //if no you win
-                gameState.setStage(DuelStage::Completed);
+                gameState->setStage(DuelStage::Completed);
                 cleanUpAfterCompletion();
                 return;
             }
     }
 
     if (stage == DuelStage::UndeadAttack) {
-        gameState.UndeadTurnIndexIncrement();
-        if (gameState.getUndeadTurnIndex() == 0)
-            if (gameState.getLivingTeam().size() > 0) {
-                gameState.setStage(DuelStage::LivingAttack);
+        gameState->UndeadTurnIndexIncrement();
+        if (gameState->getUndeadTurnIndex() == 0)
+            if (gameState->getLivingTeam().size() > 0) {
+                gameState->setStage(DuelStage::LivingAttack);
                 return;
             }
             else {
-                gameState.setStage(DuelStage::Completed);
+                gameState->setStage(DuelStage::Completed);
                 cleanUpAfterCompletion();
                 return;
             }
@@ -312,24 +369,24 @@ void GameEngine::goNextTurnOrStageFighting()
 
 void GameEngine::cleanUpAfterCompletion()
 {
-    if (gameState.getStage() != DuelStage::Completed) return;
+    if (gameState->getStage() != DuelStage::Completed) return;
 
 
-    size_t winsNeededForWin = gameState.getConfig().duelsToWin;
+    size_t winsNeededForWin = gameState->getConfig().duelsToWin;
 
-    Faction winnerFaction = (gameState.getLivingTeam().size() > gameState.getUndeadTeam().size()) ? Faction::Living : Faction::Undead;
+    Faction winnerFaction = (gameState->getLivingTeam().size() > gameState->getUndeadTeam().size()) ? Faction::Living : Faction::Undead;
         
-    std::vector<IUnit*>& winnerTeam = (winnerFaction == Faction::Living)? gameState.getLivingTeam() : gameState.getUndeadTeam();
-    IBaseState& winnerBase = (winnerFaction == Faction::Living) ? gameState.getLivingBase() : gameState.getUndeadBase();
-    IBaseState& loserBase = (winnerFaction != Faction::Living) ? gameState.getLivingBase() : gameState.getUndeadBase(); //the reverse
+    std::vector<IUnit*>& winnerTeam = (winnerFaction == Faction::Living)? gameState->getLivingTeam() : gameState->getUndeadTeam();
+    IBaseState& winnerBase = (winnerFaction == Faction::Living) ? gameState->getLivingBase() : gameState->getUndeadBase();
+    IBaseState& loserBase = (winnerFaction != Faction::Living) ? gameState->getLivingBase() : gameState->getUndeadBase(); //the reverse
         
     winnerBase.win();
 
     if (winnerBase.getWins() >= winsNeededForWin) {
-        gameState.setStage(DuelStage::GameFinished);
+        gameState->setStage(DuelStage::GameFinished);
     }
     else {
-        gameState.setStage(DuelStage::LivingSetup); //the first stage again
+        gameState->setStage(DuelStage::LivingSetup); //the first stage again
         for (size_t i = 0; i < winnerTeam.size(); i++)
         {
             try
@@ -347,7 +404,7 @@ void GameEngine::cleanUpAfterCompletion()
         }
         winnerTeam.clear();
 
-        winnerBase.setGoldReserve(winnerBase.getGoldReserve() + gameState.getConfig().goldPerWin);
-        loserBase.setGoldReserve(winnerBase.getGoldReserve() + gameState.getConfig().goldPerWin);
+        winnerBase.setGoldReserve(winnerBase.getGoldReserve() + gameState->getConfig().goldPerWin);
+        loserBase.setGoldReserve(winnerBase.getGoldReserve() + gameState->getConfig().goldPerWin);
     }
 }

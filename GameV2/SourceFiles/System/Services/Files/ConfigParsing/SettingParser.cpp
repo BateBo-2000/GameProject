@@ -5,8 +5,10 @@
 
 #include <stdexcept>
 
-const EngineConfig* SettingsParser::parse(const std::vector<std::string>& lines) const {
-    EngineConfig* cfg = new EngineConfig;  //really uncomfortable but trying to be consistent with the other parsers.
+EngineConfig* SettingsParser::parse(const std::vector<std::string>& lines) const {
+    EngineConfig* cfg = new(std::nothrow) EngineConfig;  //really uncomfortable but trying to be consistent with the other parsers.
+
+    if (!cfg) return nullptr;
 
 	try
 	{

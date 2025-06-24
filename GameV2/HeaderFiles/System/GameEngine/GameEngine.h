@@ -7,14 +7,17 @@
 class IGameState;
 class IUnitRegistry;
 struct EngineConfig;
-class IStatePersistence;
+class IGameSaveFileHandler;
+
+enum class InitMode { NewGame, LoadGame };
 
 class GameEngine : public IGameEngine {
 public:
-    GameEngine(IUnitRegistry& unitFactory, const EngineConfig& settings, IGameState& state);
+    //takes ownership of state
+    GameEngine(IUnitRegistry& unitFactory, IGameSaveFileHandler* fileHandler, const std::string& savePath, InitMode mode);
     GameEngine(const GameEngine& other) = delete;
     GameEngine& operator=(const GameEngine& other) = delete;
-    ~GameEngine() override = default;
+    ~GameEngine() override;
 
     void create(const std::string& unitType) override;
     void selectBoss(const std::string& bossType) override;
@@ -31,15 +34,19 @@ public:
     Faction getWhoseTurnItIsNow() const override;
     bool isGameWon() const override;
 
-    void restartTheGame() override;
+    //system
+    virtual bool restartWipeTheGame() override;
+    virtual bool saveTheGameToFile(const std::string& path) override;
+    virtual bool loadTheGameFromFile(const std::string& path) override;
 
 private:
     void goNextTurnOrStageFighting();
     void cleanUpAfterCompletion();
 
-    const EngineConfig& settings;
     IUnitRegistry& unitRegister;
-    IGameState& gameState;
+    IGameState* gameState;
+    IGameSaveFileHandler* fileHandler;
+    std::string pathToSaveFile;
 };
 
 #endif // GAME_ENGINE_H

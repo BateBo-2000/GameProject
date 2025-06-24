@@ -63,6 +63,8 @@ public:
     void regenerateHealth(unsigned amount) override;
     void regenerateMana(unsigned amount) override;
 
+    virtual void serialize(std::ostream& out) const override;
+
 private:
     std::string type;
     const unsigned maxHealth;

@@ -2,8 +2,8 @@
 #include "../../HeaderFiles/System/GameEngine/IGameEngine.h"
 #include "../../HeaderFiles/Communication/UI/IUserInterFace.h"
 
-CreateUnitCmd::CreateUnitCmd(IGameEngine& engine, IUserInterface& ui)
-    : engine(engine), ui(ui)
+CreateUnitCmd::CreateUnitCmd(IGameEngine& engine)
+    : engine(engine)
 {
 }
 
@@ -15,7 +15,7 @@ bool CreateUnitCmd::isThisMe(const std::vector<std::string>& args) const {
     return !args.empty() && args[0] == NAME;
 }
 
-bool CreateUnitCmd::execute(const std::vector<std::string>& args) const {
+bool CreateUnitCmd::execute(const std::vector<std::string>& args, IUserInterface& ui) const {
     if (args.size() != 2) {
         ui.error("Usage: create <unitType>");
         return false;

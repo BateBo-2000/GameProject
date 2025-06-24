@@ -1,15 +1,27 @@
 #include "../../HeaderFiles/System/GameEngine/GameStateStructure/GameState/GameState.h"
 
 #include "../../HeaderFiles/System/GameEngine/GameStateStructure/BaseState/IBaseSate.h"
+#include "../../HeaderFiles/System/Services/Registries/Unit/IUnitRegistry.h"
+#include "../../HeaderFiles/System/GameEngine/Units/IUnit.h"
 #include <stdexcept>
 
 
-GameState::GameState(const EngineConfig& cfg, IBaseState& livingBase, IBaseState& undeadBase)
+GameState::GameState(const EngineConfig& cfg, IBaseState* livingBase, IBaseState* undeadBase)
     : livingBase(livingBase)
     , undeadBase(undeadBase)
     , config(cfg)
     , currentStage(DuelStage::Completed)
+    , livingTurnIndex(0)
+    , undeadTurnIndex(0)
+
 {
+    if (!livingBase || !undeadBase) throw std::invalid_argument("BaseStates cannot be null.");
+}
+
+GameState::GameState(std::istream& in, IUnitRegistry& units, IBaseState* livingBase, IBaseState* undeadBase, const EngineConfig& cfg): livingBase(livingBase), undeadBase(undeadBase), config(cfg), currentStage(DuelStage::Completed)
+{
+    throw std::exception("Not implemented.");
+
 }
 
 GameState::~GameState()
@@ -22,21 +34,23 @@ GameState::~GameState()
     {
         delete undeadTeam[i];
     }
+    delete livingBase;
+    delete undeadBase;
 }
 
 IBaseState& GameState::getLivingBase() {
-    return livingBase;
+    return *livingBase;
 }
 const IBaseState& GameState::getLivingBase() const {
-    return livingBase;
+    return *livingBase;
 }
 
 
 IBaseState& GameState::getUndeadBase() {
-    return undeadBase;
+    return *undeadBase;
 }
 const IBaseState& GameState::getUndeadBase() const {
-    return undeadBase;
+    return *undeadBase;
 }
 
 const EngineConfig& GameState::getConfig() const {
@@ -45,10 +59,10 @@ const EngineConfig& GameState::getConfig() const {
 
 size_t GameState::countAllUnits() const {
     size_t total = 0;
-    total += livingBase.getUnitCount();
-    total += livingBase.getCommanderCount();
-    total += undeadBase.getUnitCount();
-    total += undeadBase.getCommanderCount();
+    total += livingBase->getUnitCount();
+    total += livingBase->getCommanderCount();
+    total += undeadBase->getUnitCount();
+    total += undeadBase->getCommanderCount();
     return total;
 }
 
@@ -118,5 +132,10 @@ void GameState::UndeadTurnIndexIncrement()
 void GameState::resetUndeadTurnIndex()
 {
     undeadTurnIndex = 0;
+}
+
+void GameState::serialize(std::ofstream& out) const
+{
+    throw std::exception("Not implemented.");
 }
 

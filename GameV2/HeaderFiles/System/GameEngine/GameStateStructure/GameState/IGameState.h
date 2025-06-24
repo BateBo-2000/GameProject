@@ -5,6 +5,7 @@
 #include "../EngineConfig.h"
 
 #include <vector>
+#include <fstream>
 
 enum class DuelStage {
     LivingSetup,   // Living picks team for duel
@@ -55,7 +56,7 @@ public:
     virtual void resetUndeadTurnIndex() = 0;
     
     //data
-
+    virtual void serialize(std::ofstream& out) const = 0;
 };
 
 #endif // I_GAME_STATE_H

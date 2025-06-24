@@ -2,8 +2,8 @@
 #include "../../HeaderFiles/System/GameEngine/IGameEngine.h"
 #include "../../HeaderFiles/Communication/UI/IUserInterFace.h"
 
-SelectBossCmd::SelectBossCmd(IGameEngine& engine, IUserInterface& ui)
-    : engine(engine), ui(ui)
+SelectBossCmd::SelectBossCmd(IGameEngine& engine)
+    : engine(engine)
 {
 }
 
@@ -15,7 +15,7 @@ bool SelectBossCmd::isThisMe(const std::vector<std::string>& args) const {
     return args.size() >= 2 && args[0] == "select" && args[1] == "boss";
 }
 
-bool SelectBossCmd::execute(const std::vector<std::string>& args) const {
+bool SelectBossCmd::execute(const std::vector<std::string>& args, IUserInterface& ui) const {
     if (args.size() != 3) {
         ui.error("Usage: select boss <bossType>");
         return false;

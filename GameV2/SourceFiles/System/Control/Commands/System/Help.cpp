@@ -3,8 +3,8 @@
 #include "../../HeaderFiles/Communication/UI/IUserInterFace.h"
 #include "../../HeaderFiles/System/Control/Invoker/IInvoker.h"
 
-HelpCmd::HelpCmd(IUserInterface& ui, IInvoker& invoker)
-    : ui(ui), invoker(invoker)
+HelpCmd::HelpCmd(IInvoker& invoker)
+    : invoker(invoker)
 {
 }
 
@@ -12,7 +12,7 @@ bool HelpCmd::isThisMe(const std::vector<std::string>& args) const {
     return !args.empty() && args[0] == NAME;
 }
 
-bool HelpCmd::execute(const std::vector<std::string>& args) const {
+bool HelpCmd::execute(const std::vector<std::string>& args, IUserInterface& ui) const {
 
     ui.inform("=============User Manual=============");
 

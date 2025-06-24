@@ -38,7 +38,6 @@ void ArmorRegistry::registerPrototype(IArmor* armor) {
 
     for (size_t i = 0; i < prototypes.size(); ++i) {
         if (prototypes[i]->getName() == name) {
-            delete armor;
             throw std::invalid_argument("ArmorRegistry: duplicate armor name '" + name + "'");
         }
     }

@@ -42,9 +42,6 @@
     <ClCompile Include="SourceFiles\System\GameEngine\Units\Unit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\System\GameEngine\Units\Commander.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SourceFiles\System\GameEngine\Abilities\DamageAbility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

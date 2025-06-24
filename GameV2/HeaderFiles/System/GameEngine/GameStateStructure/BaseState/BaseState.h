@@ -4,11 +4,15 @@
 
 #include <vector>
 #include "../../HeaderFiles/System/GameEngine/GameStateStructure/BaseState/IBaseSate.h"
-#include "../../HeaderFiles/System/GameEngine/Units/IUnit.h"
+
+class IUnit;
+class IUnitRegistry;
 
 class BaseState : public IBaseState {
 public:
-    BaseState(unsigned maxCommandersPerType);
+    BaseState(unsigned maxCommandersPerType, unsigned startingGold);
+    BaseState(std::istream& in, IUnitRegistry& units, unsigned maxCommandersPerType); //deserialize
+
     BaseState(const BaseState& other) = delete;
     BaseState& operator=(const BaseState& other) = delete ;
     ~BaseState() override;
@@ -34,6 +38,8 @@ public:
     void removeCommander(IUnit* c) override;
     IUnit* getCommander(size_t index) override;
     size_t getCommanderCount() const override;
+
+    virtual void serialize(std::ostream& out) const override;
 
 private:
     const size_t MAX_COMMANDERS_FROM_THE_SAME_TYPE;

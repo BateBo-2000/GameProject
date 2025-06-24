@@ -32,7 +32,7 @@ IUnit* UnitParser::parse(const std::string& raw) const {
 
     const std::string& type = args[1];
     const std::string& faction = args[2];
-    const std::string& armorName = args[6];
+    const std::string& armorName = args[4];
 
     unsigned health, attack, goldCost, armorDurability, mana = 0;
 
@@ -40,9 +40,9 @@ IUnit* UnitParser::parse(const std::string& raw) const {
 
     try {
         health = std::stoul(args[3]);
-        attack = std::stoul(args[4]);
-        goldCost = std::stoul(args[5]);
-        armorDurability = std::stoul(args[7]);
+        attack = std::stoul(args[6]);
+        goldCost = std::stoul(args[7]);
+        armorDurability = std::stoul(args[5]);
         if (args.size() > 8) {
             mana = std::stoul(args[8]);
         }

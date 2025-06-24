@@ -8,10 +8,11 @@
 
 #include <string>
 #include <vector>
+#include <fstream>
 
 class IArmor;
 class IAbility;
-struct BattleContext;
+class BattleContext;
 
 class IUnit {
 public:
@@ -45,6 +46,9 @@ public:
     virtual bool isAlive() const = 0;
     virtual void regenerateHealth(unsigned amount) = 0;
     virtual void regenerateMana(unsigned amount) = 0;
+
+    //saving
+    virtual void serialize(std::ostream& out) const = 0;
 };
 
 #endif // !IUNIT_H

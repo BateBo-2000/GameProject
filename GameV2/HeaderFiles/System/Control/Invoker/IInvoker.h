@@ -8,13 +8,13 @@
 #include <vector>
 
 class ICommand;
-
+class IUserInterface;
 
 class IInvoker {
 public:
 	virtual ~IInvoker() = default;
 	virtual void registerCommand(ICommand* c) = 0;
-	virtual bool executeCommandLine(const std::string& line) = 0;
+	virtual bool executeCommandLine(const std::string& line, IUserInterface& executingPlayerUI) = 0;
 	
 	//used to get the description
 	virtual const std::vector<ICommand*> getCommands() = 0; 

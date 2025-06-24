@@ -7,16 +7,19 @@
 
 class IUnit;
 class IBaseState;
+class IUnitRegistry;
 
 class GameState : public IGameState {
 public:
-    GameState(const EngineConfig& cfg, IBaseState& livingBase, IBaseState& undeadBase);
+    GameState(const EngineConfig& cfg, IBaseState* livingBase, IBaseState* undeadBase);
+    //deserialize
+    GameState(std::istream& in, IUnitRegistry& units, IBaseState* livingBase, IBaseState* undeadBase, const EngineConfig& cfg);
     ~GameState() override;
 
-    virtual IBaseState& getLivingBase() = 0;
-    virtual const IBaseState& getLivingBase() const = 0;
-    virtual IBaseState& getUndeadBase() = 0;
-    virtual const IBaseState& getUndeadBase() const = 0;
+    virtual IBaseState& getLivingBase() override;
+    virtual const IBaseState& getLivingBase() const override;
+    virtual IBaseState& getUndeadBase() override;
+    virtual const IBaseState& getUndeadBase() const override;
 
     const EngineConfig& getConfig()   const override;
 
@@ -41,18 +44,21 @@ public:
     void UndeadTurnIndexIncrement() override;
     void resetUndeadTurnIndex() override;
 
+    void serialize(std::ofstream& out) const override;
+
 private:
-    IBaseState& livingBase;
-    IBaseState& undeadBase;
+    IBaseState* livingBase;
+    IBaseState* undeadBase;
     const EngineConfig& config;
     DuelStage currentStage;
 
     //owning them
     std::vector<IUnit*> livingTeam;
     std::vector<IUnit*> undeadTeam;
+
     //tracking how many of the team have passed this turn
-    size_t livingTurnIndex = 0;
-    size_t undeadTurnIndex = 0;
+    size_t livingTurnIndex;
+    size_t undeadTurnIndex;
 };
 
 #endif // GAME_STATE_H

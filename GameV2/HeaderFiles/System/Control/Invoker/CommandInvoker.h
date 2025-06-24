@@ -18,8 +18,8 @@ public:
     CommandInvoker& operator=(const CommandInvoker& other);
     ~CommandInvoker() override;
 
-    void registerCommand(ICommand* c) override;
-    bool executeCommandLine(const std::string& line) override;
+    void registerCommand(ICommand* c) override; //takes ownership
+    bool executeCommandLine(const std::string& line, IUserInterface& executingPlayerUI) override;
 
     const std::vector<ICommand*> getCommands() override;
 

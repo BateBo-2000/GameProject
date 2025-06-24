@@ -1,12 +1,10 @@
 #include "../../HeaderFiles/System/Control/Commands/System/RestartCmd.h"
 
 #include "../../HeaderFiles/Communication/UI/IUserInterFace.h"
-#include "../../HeaderFiles/System/Services/SaveLoadFiles/IGameSaveFileHandler.h"
 #include "../../HeaderFiles/System/GameEngine/IGameEngine.h"
 
-RestartCommand::RestartCommand(IGameEngine& engine, IUserInterface& ui)
-    : gameEngine(engine)
-    , ui(ui)
+RestartCommand::RestartCommand(IGameEngine& engine, IUserInterface& adminPlayer)
+    : gameEngine(engine), adminUI(adminPlayer)
 {
 }
 
@@ -18,7 +16,13 @@ bool RestartCommand::isThisMe(const std::vector<std::string>& args) const {
     return !args.empty() && args[0] == NAME;
 }
 
-bool RestartCommand::execute(const std::vector<std::string>& args) const {
+bool RestartCommand::execute(const std::vector<std::string>& args, IUserInterface& ui) const {
+
+    if (&ui != &adminUI) {
+        ui.inform("You don't have administrator privileges.");
+        return false;
+    }
+
     if (args.size() != 1) {
         ui.printInvalidArg("Usage: restart");
         return true;
@@ -28,18 +32,15 @@ bool RestartCommand::execute(const std::vector<std::string>& args) const {
         return true;
     }
 
-    try
-    {
-        gameEngine.restartTheGame();
-        ui.inform("Game has been restarted.");
-    }
-    catch (const std::exception& e)
-    {
-        ui.error(string("Game restart failed:\n") + e.what());
-    }
 
-   
-    return true;
+    if (gameEngine.restartWipeTheGame()) {
+        ui.inform("Game restarted.");
+        return true;
+    }
+    else {
+        ui.error("Game restart failed.");
+        return false;
+    }
 }
 
 const std::string& RestartCommand::getDescription() const {

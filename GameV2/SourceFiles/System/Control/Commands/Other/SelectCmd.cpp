@@ -6,8 +6,8 @@
 const std::string SelectUnitsCmd::NAME = "select";
 const std::string SelectUnitsCmd::DESCRIPTION = "Select units for the duel: select units <unitType> <count>";
 
-SelectUnitsCmd::SelectUnitsCmd(IGameEngine& engine, IUserInterface& ui)
-    : engine(engine), ui(ui)
+SelectUnitsCmd::SelectUnitsCmd(IGameEngine& engine)
+    : engine(engine)
 {
 }
 
@@ -19,7 +19,7 @@ bool SelectUnitsCmd::isThisMe(const std::vector<std::string>& args) const {
     return args.size() >= 2 && args[0] == "select" && args[1] != "boss";
 }
 
-bool SelectUnitsCmd::execute(const std::vector<std::string>& args) const {
+bool SelectUnitsCmd::execute(const std::vector<std::string>& args, IUserInterface& ui) const {
     if (args.size() != 3) {
         ui.error("Usage: select <unitType> <count>");
         return false;

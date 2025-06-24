@@ -14,8 +14,8 @@
 const std::string StatusCmd::NAME = "status";
 const std::string StatusCmd::DESCRIPTION = "Display detailed information about the game state.";
 
-StatusCmd::StatusCmd(IGameEngine& engine, IUserInterface& ui)
-    : engine(engine), ui(ui)
+StatusCmd::StatusCmd(IGameEngine& engine)
+    : engine(engine)
 {
 }
 
@@ -27,7 +27,7 @@ bool StatusCmd::isThisMe(const std::vector<std::string>& args) const {
     return args.size() == 1 && args[0] == NAME;
 }
 
-std::string stageToString(DuelStage stage) {
+static std::string stageToString(DuelStage stage) {
     switch (stage) {
     case DuelStage::LivingSetup: return "Living Setup (Pick Team)";
     case DuelStage::UndeadSetup:return "Undead Setup (Pick Team)";
@@ -39,7 +39,7 @@ std::string stageToString(DuelStage stage) {
     }
 }
 
-void printUnits(const std::string& title, const std::vector<IUnit*>& units, IUserInterface& ui) {
+static void printUnits(const std::string& title, const std::vector<IUnit*>& units, IUserInterface& ui) {
     ui.inform("\n--- " + title + " ---");
     for (size_t i = 0; i < units.size(); ++i) {
         const IUnit* u = units[i];
@@ -66,7 +66,7 @@ void printUnits(const std::string& title, const std::vector<IUnit*>& units, IUse
     }
 }
 
-void printCurrentTurnUnit(const IGameState& state, IUserInterface& ui) {
+static void printCurrentTurnUnit(const IGameState& state, IUserInterface& ui) {
     DuelStage stage = state.getStage();
     const IUnit* currentUnit = nullptr;
 
@@ -115,7 +115,7 @@ void printCurrentTurnUnit(const IGameState& state, IUserInterface& ui) {
 
 
 
-bool StatusCmd::execute(const std::vector<std::string>& args) const
+bool StatusCmd::execute(const std::vector<std::string>& args, IUserInterface& ui) const
 {
     if (args.size() != 1) {
         ui.error("Usage: status");

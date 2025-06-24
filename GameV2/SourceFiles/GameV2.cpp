@@ -8,14 +8,12 @@
 #include "../HeaderFiles/Communication/UI/ConsoleUserInterface.h"
 #include "../HeaderFiles/Communication/UI/RandomAIPlayer.h"
 #include "../HeaderFiles/System/Services/Files/FileReading/BasicFileReader.h"
-#include "../HeaderFiles/System/Services/SaveLoadFiles/BinaryGameSaveFileHandler.h"
 
 
 
 int main()
 {
 	TextFileReader textIO;
-	BinaryGameSaveFileHandler binIO;
 	ConsoleUI player1;
 	ConsoleLogger logger;
 
@@ -26,5 +24,8 @@ int main()
 	RandomUserInterface bot(commands);
 
 
-	App app(player1, bot, logger,textIO,binIO);
+	App app(player1, bot, logger,textIO);
+
+	app.run();
+
 }

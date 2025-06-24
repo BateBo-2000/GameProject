@@ -13,8 +13,8 @@ Controller::Controller(ILogger& logger, IUserInterface& livingUi, IUserInterface
 
 Controller::~Controller() {}
 
-void normalizeInput(std::string& input) {
-    //TODO
+static void normalizeInput(std::string& input) {
+    //TODO someday
 }
 
 void Controller::run() {
@@ -35,7 +35,7 @@ void Controller::run() {
         
         try
         {
-            ok = invoker.executeCommandLine(line);
+            ok = invoker.executeCommandLine(line, ui);
         }
         catch (const std::exception& e)
         {

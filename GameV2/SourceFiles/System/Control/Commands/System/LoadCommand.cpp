@@ -1,11 +1,10 @@
 #include "../../HeaderFiles/System/Control/Commands/System/LoadCmd.h"
 
 #include "../../HeaderFiles/Communication/UI/IUserInterFace.h"
-#include "../../HeaderFiles/System/Services/SaveLoadFiles/IGameSaveFileHandler.h"
 #include "../../HeaderFiles/System/GameEngine/IGameEngine.h"
 
-LoadCommand::LoadCommand(IGameSaveFileHandler& handler, IUserInterface& ui, IGameEngine& gameEngine)
-    : handler(handler), ui(ui), gameEngine(gameEngine)
+LoadCommand::LoadCommand(IGameEngine& gameEngine, IUserInterface& adminPlayer)
+    :gameEngine(gameEngine), adminUI(adminPlayer)
 {
 }
 
@@ -17,21 +16,25 @@ bool LoadCommand::isThisMe(const std::vector<std::string>& args) const {
     return !args.empty() && args[0] == NAME;
 }
 
-bool LoadCommand::execute(const std::vector<std::string>& args) const {
-    if (args.size() < 2) {
-        ui.printInvalidArg("Usage: load <filepath>");
-        return true;    // command recognized, but missing args
+bool LoadCommand::execute(const std::vector<std::string>& args, IUserInterface& ui) const {
+    if (&ui != &adminUI) {
+        ui.inform("You dont have administrator privileges.");
+        return false;
     }
 
-    if (ui.confirm("Any unsaved progress will be lost!\Do you want to continoue?"))  return true;
+    if (args.size() < 2) {
+        ui.printInvalidArg("Usage: load <filepath>");
+        return false;
+    }
 
-    try {
-        handler.loadFromFile(args[1], gameEngine.getGameState());
+    if (!ui.confirm("Any unsaved progress will be lost!\nDo you want to continue?"))  return true;
+
+    if (gameEngine.loadTheGameFromFile(args[1])) {
         ui.inform("Game loaded from " + args[1]);
         return true;
     }
-    catch (const std::exception& e) {
-        ui.error("Failed to load game: " + std::string(e.what()));
+    else {
+        ui.error("Failed to load game.");
         return false;
     }
 }

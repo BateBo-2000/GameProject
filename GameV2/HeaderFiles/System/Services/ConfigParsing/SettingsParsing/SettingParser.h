@@ -6,7 +6,7 @@
 
 class SettingsParser : public ISettingsParser {
 public:
-    const EngineConfig* parse(const std::vector<std::string>& lines) const override;
+    EngineConfig* parse(const std::vector<std::string>& lines) const override;
 };
 
 #endif // SETTINGS_PARSER_H

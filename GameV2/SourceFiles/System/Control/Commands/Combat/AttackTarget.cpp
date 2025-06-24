@@ -4,8 +4,8 @@
 #include "../../HeaderFiles/System/GameEngine/IGameEngine.h"
 
 
-AttackTargetCmd::AttackTargetCmd(IGameEngine& engine, IUserInterface& ui)
-    : engine(engine), ui(ui)
+AttackTargetCmd::AttackTargetCmd(IGameEngine& engine)
+    : engine(engine)
 {
 }
 
@@ -20,7 +20,7 @@ bool AttackTargetCmd::isThisMe(const std::vector<std::string>& args) const {
         (args.size() == 2 || (args.size() > 2 && args[1] == "target"));
 }
 
-bool AttackTargetCmd::execute(const std::vector<std::string>& args) const {
+bool AttackTargetCmd::execute(const std::vector<std::string>& args, IUserInterface& ui) const {
     if (args.size() != 2 && args.size() != 3 ) {
         ui.error("Usage: attack <name> or attack target <name>");
         return true;

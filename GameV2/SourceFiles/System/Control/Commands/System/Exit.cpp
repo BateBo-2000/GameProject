@@ -3,7 +3,7 @@
 #include "../../HeaderFiles/System/Control/Invoker/IInvoker.h"
 #include "../../HeaderFiles/Communication/UI/IUserInterFace.h"
 
-ExitCommand::ExitCommand(IInvoker& invoker, IUserInterface& ui):invoker(invoker), ui(ui)
+ExitCommand::ExitCommand(IInvoker& invoker, IUserInterface& adminPlayer):invoker(invoker), adminUI(adminPlayer)
 {
 }
 
@@ -15,11 +15,20 @@ bool ExitCommand::isThisMe(const std::vector<std::string>& args) const {
     return !args.empty() && args[0] == NAME;
 }
 
-bool ExitCommand::execute(const std::vector<std::string>& args) const {
-    if (ui.confirm("Are you sure you want to exit?\nAll your unsaved progress will be lost.")) {
-        invoker.requestExit();
+bool ExitCommand::execute(const std::vector<std::string>& args, IUserInterface& ui) const {
+
+    if (&ui != &adminUI) {
+        ui.inform("You dont have administrator privilidges.");
+        return false;
     }
-    return true;
+
+    if (adminUI.confirm("Are you sure you want to exit?\nAll your unsaved progress will be lost.")) {
+        invoker.requestExit();
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 const std::string& ExitCommand::getDescription() const

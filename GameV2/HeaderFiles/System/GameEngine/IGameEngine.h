@@ -35,7 +35,10 @@ public:
     virtual Faction getWhoseTurnItIsNow() const = 0;
     virtual bool isGameWon() const = 0;
 
-    virtual void restartTheGame() = 0;
+    //system
+    virtual bool restartWipeTheGame() = 0;
+    virtual bool saveTheGameToFile(const std::string& path) = 0;
+    virtual bool loadTheGameFromFile(const std::string& path) = 0;
 };
 
 

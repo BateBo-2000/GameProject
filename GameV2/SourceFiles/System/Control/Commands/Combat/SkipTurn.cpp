@@ -4,8 +4,8 @@
 #include "../../HeaderFiles/System/GameEngine/IGameEngine.h"
 
 
-SkipTurnCmd::SkipTurnCmd(IGameEngine& engine, IUserInterface& ui)
-    : engine(engine), ui(ui)
+SkipTurnCmd::SkipTurnCmd(IGameEngine& engine)
+    : engine(engine)
 {
 }
 
@@ -18,7 +18,7 @@ bool SkipTurnCmd::isThisMe(const std::vector<std::string>& args) const {
     return !args.empty() && args[0] == "skip" && (args.size() == 1 || (args.size() > 1 && args[1] == "turn"));
 }
 
-bool SkipTurnCmd::execute(const std::vector<std::string>& args) const {
+bool SkipTurnCmd::execute(const std::vector<std::string>& args, IUserInterface& ui) const {
 
     if (args.size() >= 2) {
         ui.error("Usage: 'skip turn' with no arguments");

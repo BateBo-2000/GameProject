@@ -165,7 +165,6 @@
     <ClCompile Include="SourceFiles\System\GameEngine\Abilities\ResurrectAbilit.cpp" />
     <ClCompile Include="SourceFiles\System\GameEngine\Abilities\SummonAbility.cpp" />
     <ClCompile Include="SourceFiles\System\GameEngine\Armor\Armor.cpp" />
-    <ClCompile Include="SourceFiles\System\GameEngine\Units\Commander.cpp" />
     <ClCompile Include="SourceFiles\System\GameEngine\Units\Unit.cpp" />
   </ItemGroup>
   <ItemGroup>

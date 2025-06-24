@@ -1,11 +1,10 @@
 #include "../../HeaderFiles/System/Control/Commands/System/SaveCmd.h"
 
 #include "../../HeaderFiles/Communication/UI/IUserInterFace.h"
-#include "../../HeaderFiles/System/Services/SaveLoadFiles/IGameSaveFileHandler.h"
 #include "../../HeaderFiles/System/GameEngine/IGameEngine.h"
 
-SaveCommand::SaveCommand(IGameSaveFileHandler& handler, IUserInterface& ui, IGameEngine& gameEngine)
-    : handler(handler), ui(ui), gameEngine(gameEngine)
+SaveCommand::SaveCommand(IGameEngine& gameEngine, IUserInterface& adminPlayer)
+    :gameEngine(gameEngine), adminUI(adminPlayer)
 {
 }
 
@@ -17,22 +16,28 @@ bool SaveCommand::isThisMe(const std::vector<std::string>& args) const {
     return !args.empty() && args[0] == NAME;
 }
 
-bool SaveCommand::execute(const std::vector<std::string>& args) const {
+bool SaveCommand::execute(const std::vector<std::string>& args, IUserInterface& ui) const {
 
-    if (args.size() < 2) {
-        ui.printInvalidArg("Usage: save <filepath>");
+    if (&ui != &adminUI) {
+        ui.inform("You dont have administrator privileges.");
         return false;
     }
 
-    const std::string& filepath = args[1];
+    std::string filepath;
 
-    try {
-        handler.saveToFile(filepath, gameEngine.getGameState());
-        ui.inform("Game saved to " + filepath);
+    if (args.size() < 2) {
+        filepath = "";
+    }
+    else {
+        filepath = args[1];
+    }
+
+    if (gameEngine.saveTheGameToFile(filepath)) {
+        ui.inform("Game saved to " + (filepath.empty()? string("the same location."): filepath));
         return true;
     }
-    catch (const std::exception& ex) {
-        ui.error(std::string("Failed to save game: ") + ex.what());
+    else {
+        ui.error(std::string("Failed to save game."));
         return false;
     }
 }

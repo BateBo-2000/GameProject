@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 class IUnit;
-struct BattleContext;
+class BattleContext;
 
 class IAbility {
 public:
