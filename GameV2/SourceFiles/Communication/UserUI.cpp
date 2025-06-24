@@ -1,6 +1,6 @@
 #include "../../HeaderFiles/Communication/UI/ConsoleUserInterface.h"
 
-IUserInterface* ConsoleUI::clone() const
+ConsoleUI* ConsoleUI::clone() const
 {
 	return new ConsoleUI(*this);
 }

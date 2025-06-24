@@ -6,13 +6,10 @@
 #include <string>
 
 
-class TextFileReader : public IFileReader {
+class TextFileReader : public ITextFileReader {
 public:
-	TextFileReader(const std::string& path);
-	bool readFileContents(std::string& destination) override;
-
-private:
-	std::string path;
+	~TextFileReader() override = default;
+	bool readFileContents(const std::string& path, std::string& destination) override;
 };
 
 

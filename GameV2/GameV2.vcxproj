@@ -136,6 +136,11 @@
     <ClCompile Include="SourceFiles\System\Control\Commands\Combat\AttackTarget.cpp" />
     <ClCompile Include="SourceFiles\System\Control\Commands\Combat\SkipTurn.cpp" />
     <ClCompile Include="SourceFiles\System\Control\Commands\Combat\UseAbility.cpp" />
+    <ClCompile Include="SourceFiles\System\Control\Commands\Other\CreteCmd.cpp" />
+    <ClCompile Include="SourceFiles\System\Control\Commands\Other\SelectBossCmd.cpp" />
+    <ClCompile Include="SourceFiles\System\Control\Commands\Other\SelectCmd.cpp" />
+    <ClCompile Include="SourceFiles\System\Control\Commands\Other\StartCmd.cpp" />
+    <ClCompile Include="SourceFiles\System\Control\Commands\Other\StatusCmd.cpp" />
     <ClCompile Include="SourceFiles\System\Control\Commands\System\Exit.cpp" />
     <ClCompile Include="SourceFiles\System\Control\Commands\System\Help.cpp" />
     <ClCompile Include="SourceFiles\System\Control\Commands\System\LoadCommand.cpp" />
@@ -151,6 +156,7 @@
     <ClCompile Include="SourceFiles\System\Services\Files\ConfigParsing\TextConfigParser.cpp" />
     <ClCompile Include="SourceFiles\System\Services\Files\ConfigParsing\UnitParser.cpp" />
     <ClCompile Include="SourceFiles\System\Services\Files\FileReading\BasicFileReader.cpp" />
+    <ClCompile Include="SourceFiles\System\Services\Files\SaveFiles\BinaryGameSaveFileHandler.cpp" />
     <ClCompile Include="SourceFiles\System\Services\Registers\AbilityRegistry.cpp" />
     <ClCompile Include="SourceFiles\System\Services\Registers\ArmorRegistry.cpp" />
     <ClCompile Include="SourceFiles\System\Services\Registers\UnitRegistry.cpp" />
@@ -224,10 +230,8 @@
     <ClInclude Include="HeaderFiles\System\Services\Registries\Unit\IUnitRegistry.h" />
     <ClInclude Include="HeaderFiles\System\GameEngine\Units\IUnit.h" />
     <ClInclude Include="HeaderFiles\System\GameEngine\Units\Unit.h" />
-    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\GameSaveFileHandler.h" />
-    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\IGameLoader.h" />
-    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\IGameSaverFile.h" />
-    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\ISaveLoadFile.h" />
+    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\BinaryGameSaveFileHandler.h" />
+    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\IGameSaveFileHandler.h" />
     <ClInclude Include="HeaderFiles\Util\Split.h" />
     <ClCompile Include="SourceFiles\Communication\RandomAIPlayer.cpp" />
   </ItemGroup>

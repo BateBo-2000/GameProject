@@ -1,7 +1,7 @@
 #include "../../HeaderFiles/System/Control/Commands/System/SaveCmd.h"
 
 #include "../../HeaderFiles/Communication/UI/IUserInterFace.h"
-#include "../../HeaderFiles/System/Services/SaveLoadFiles/ISaveLoadFile.h"
+#include "../../HeaderFiles/System/Services/SaveLoadFiles/IGameSaveFileHandler.h"
 #include "../../HeaderFiles/System/GameEngine/IGameEngine.h"
 
 SaveCommand::SaveCommand(IGameSaveFileHandler& handler, IUserInterface& ui, IGameEngine& gameEngine)
@@ -46,5 +46,5 @@ const std::string& SaveCommand::getName() const {
 }
 
 
-static const std::string  NAME = "save";
-static const std::string  DESCRIPTION = "Save the current game state to a file: save <filepath>";
+const std::string  SaveCommand::NAME = "save";
+const std::string  SaveCommand::DESCRIPTION = "Save the current game state to a file: save <filepath>";

@@ -8,6 +8,7 @@
 
 class ConsoleUI : public IUserInterface {
 public:
+	virtual ~ConsoleUI() override = default;
 	virtual ConsoleUI* clone() const override;
 
 	virtual void inform(const string& msg)const override;

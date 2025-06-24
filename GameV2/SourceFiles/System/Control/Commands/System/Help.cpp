@@ -37,5 +37,5 @@ const std::string& HelpCmd::getName() const
 ICommand* HelpCmd::clone() const {
     return new HelpCmd(*this);
 }
-static const std::string  NAME = "help";
-static const std::string  DESCRIPTION = "Used to pull out the descrioption for the other commands.";
+const std::string  HelpCmd::NAME = "help";
+const std::string  HelpCmd::DESCRIPTION = "Used to pull out the descrioption for the other commands.";

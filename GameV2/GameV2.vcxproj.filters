@@ -120,6 +120,24 @@
     <ClCompile Include="SourceFiles\System\Control\Commands\Combat\UseAbility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SourceFiles\System\Control\Commands\Other\CreteCmd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\System\Control\Commands\Other\SelectCmd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\System\Control\Commands\Other\SelectBossCmd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\System\Control\Commands\Other\StartCmd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\System\Control\Commands\Other\StatusCmd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\System\Services\Files\SaveFiles\BinaryGameSaveFileHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HeaderFiles\System\Control\Controller.h">
@@ -308,16 +326,10 @@
     <ClInclude Include="HeaderFiles\System\Services\ConfigParsing\SettingsParsing\SettingParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\IGameSaverFile.h">
+    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\IGameSaveFileHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\ISaveLoadFile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\IGameLoader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\GameSaveFileHandler.h">
+    <ClInclude Include="HeaderFiles\System\Services\SaveLoadFiles\BinaryGameSaveFileHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

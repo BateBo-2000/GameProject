@@ -4,10 +4,10 @@
 
 #include <string>
 
-class IFileReader {
+class ITextFileReader {
 public:
-	virtual ~IFileReader() = default;
-	virtual bool readFileContents(std::string& destination) = 0;
+	virtual ~ITextFileReader() = default;
+	virtual bool readFileContents(const std::string& path, std::string& destination) = 0;
 };
 
 #endif //I_FILE_READER_H

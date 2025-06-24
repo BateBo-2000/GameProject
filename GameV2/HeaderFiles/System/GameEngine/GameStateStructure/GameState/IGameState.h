@@ -24,7 +24,9 @@ public:
 
     //access bases
     virtual IBaseState& getLivingBase() = 0;
+    virtual const IBaseState& getLivingBase() const = 0;
     virtual IBaseState& getUndeadBase() = 0;
+    virtual const IBaseState& getUndeadBase() const = 0;
 
     //game settings
     virtual const EngineConfig& getConfig() const = 0;
@@ -51,6 +53,9 @@ public:
     virtual size_t getUndeadTurnIndex() const = 0;
     virtual void UndeadTurnIndexIncrement() = 0;
     virtual void resetUndeadTurnIndex() = 0;
+    
+    //data
+
 };
 
 #endif // I_GAME_STATE_H

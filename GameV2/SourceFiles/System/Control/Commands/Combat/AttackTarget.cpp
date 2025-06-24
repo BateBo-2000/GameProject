@@ -47,5 +47,5 @@ const std::string& AttackTargetCmd::getDescription() const {
     return DESCRIPTION;
 }
 
-static const std::string  NAME = "attack";
-static const std::string  DESCRIPTION = "Attack a named enemy: attack <name> or attack target <name>.";
+const std::string  AttackTargetCmd::NAME = "attack";
+const std::string  AttackTargetCmd::DESCRIPTION = "Attack a named enemy: attack <name> or attack target <name>.";

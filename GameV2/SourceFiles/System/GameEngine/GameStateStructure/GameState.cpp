@@ -27,8 +27,15 @@ GameState::~GameState()
 IBaseState& GameState::getLivingBase() {
     return livingBase;
 }
+const IBaseState& GameState::getLivingBase() const {
+    return livingBase;
+}
+
 
 IBaseState& GameState::getUndeadBase() {
+    return undeadBase;
+}
+const IBaseState& GameState::getUndeadBase() const {
     return undeadBase;
 }
 

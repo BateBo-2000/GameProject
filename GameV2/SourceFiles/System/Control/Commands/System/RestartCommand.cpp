@@ -1,7 +1,7 @@
 #include "../../HeaderFiles/System/Control/Commands/System/RestartCmd.h"
 
 #include "../../HeaderFiles/Communication/UI/IUserInterFace.h"
-#include "../../HeaderFiles/System/Services/SaveLoadFiles/ISaveLoadFile.h"
+#include "../../HeaderFiles/System/Services/SaveLoadFiles/IGameSaveFileHandler.h"
 #include "../../HeaderFiles/System/GameEngine/IGameEngine.h"
 
 RestartCommand::RestartCommand(IGameEngine& engine, IUserInterface& ui)
@@ -50,5 +50,5 @@ const std::string& RestartCommand::getName() const {
     return NAME;
 }
 
-static const std::string  NAME = "restart";
-static const std::string  DESCRIPTION = "Restarts the whole game from scratch. Wipes all progress.";
+const std::string  RestartCommand::NAME = "restart";
+const std::string  RestartCommand::DESCRIPTION = "Restarts the whole game from scratch. Wipes all progress.";

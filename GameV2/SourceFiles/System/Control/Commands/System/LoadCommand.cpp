@@ -1,7 +1,7 @@
 #include "../../HeaderFiles/System/Control/Commands/System/LoadCmd.h"
 
 #include "../../HeaderFiles/Communication/UI/IUserInterFace.h"
-#include "../../HeaderFiles/System/Services/SaveLoadFiles/ISaveLoadFile.h"
+#include "../../HeaderFiles/System/Services/SaveLoadFiles/IGameSaveFileHandler.h"
 #include "../../HeaderFiles/System/GameEngine/IGameEngine.h"
 
 LoadCommand::LoadCommand(IGameSaveFileHandler& handler, IUserInterface& ui, IGameEngine& gameEngine)
@@ -44,5 +44,5 @@ const std::string& LoadCommand::getName() const {
     return NAME;
 }
 
-static const std::string  NAME = "load";
-static const std::string  DESCRIPTION = "Load a saved game state from a file: load <filepath>";
+const std::string  LoadCommand::NAME = "load";
+const std::string  LoadCommand::DESCRIPTION = "Load a saved game state from a file: load <filepath>";

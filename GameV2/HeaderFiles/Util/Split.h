@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-std::vector<std::string> split(const std::string& input, char delim) {
+inline std::vector<std::string> split(const std::string& input, char delim) {
     std::vector<std::string> result;
     std::string current;
     for (char c : input) {

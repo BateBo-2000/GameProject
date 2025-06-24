@@ -31,5 +31,5 @@ const std::string& ExitCommand::getName() const
 {
     return NAME;
 }
-static const std::string  NAME = "exit";
-static const std::string  DESCRIPTION = "Exit the application immediately; unsaved progress will be lost.";
+const std::string  ExitCommand::NAME = "exit";
+const std::string  ExitCommand::DESCRIPTION = "Exit the application immediately; unsaved progress will be lost.";

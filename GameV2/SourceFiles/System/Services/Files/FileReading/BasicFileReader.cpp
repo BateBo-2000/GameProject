@@ -2,10 +2,7 @@
 
 #include <fstream>
 
-TextFileReader::TextFileReader(const std::string& path) : path(path)
-{}
-
-bool TextFileReader::readFileContents(std::string& destination)
+bool TextFileReader::readFileContents(const std::string& path, std::string& destination)
 {
     std::ifstream in(path, std::ios::in);
     if (!in) {

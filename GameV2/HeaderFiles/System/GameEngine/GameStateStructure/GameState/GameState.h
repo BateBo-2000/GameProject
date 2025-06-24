@@ -12,8 +12,11 @@ class GameState : public IGameState {
 public:
     GameState(const EngineConfig& cfg, IBaseState& livingBase, IBaseState& undeadBase);
     ~GameState() override;
-    IBaseState& getLivingBase()  override;
-    IBaseState& getUndeadBase()  override;
+
+    virtual IBaseState& getLivingBase() = 0;
+    virtual const IBaseState& getLivingBase() const = 0;
+    virtual IBaseState& getUndeadBase() = 0;
+    virtual const IBaseState& getUndeadBase() const = 0;
 
     const EngineConfig& getConfig()   const override;
 
