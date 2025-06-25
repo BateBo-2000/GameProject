@@ -23,7 +23,7 @@ int main()
 
 	RandomUserInterface bot(commands);
 
-	ConsoleUI player2;
+	ConsoleUI player2; //Used for testing and examples.
 
 	App app(player1, player2, logger,textIO);
 

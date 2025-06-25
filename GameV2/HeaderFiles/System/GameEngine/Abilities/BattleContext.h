@@ -7,7 +7,6 @@
 class IUnit;
 #include "../../Services/Registries/Unit/IUnitRegistry.h"
 
-/// context passed into abilities to allow spawning a collection of new units 
 class BattleContext {
 public:
     explicit BattleContext(IUnitRegistry& registry)

@@ -7,10 +7,6 @@ class IAbility;
 
 #include <string>
 
-
-/*
-    Simple Paraser that just creates an ability from text line.
-*/
 class AbilityParser : public IAbilityParser {
 public:
     IAbility* parse(const std::string& raw) const override;

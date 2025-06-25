@@ -30,7 +30,7 @@ bool ConsoleUI::confirm(const string& q) const
 	std::cout << "\033[35m[CONFIRM]\033[0m " << q << " (y/n): ";
 	char input;
 	std::cin >> input;
-	std::cin.ignore();  // clear newline
+	std::cin.ignore();
 	return input == 'y' || input == 'Y' || input == '1';
 }
 

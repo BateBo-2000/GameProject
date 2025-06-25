@@ -6,7 +6,7 @@ bool TextFileReader::readFileContents(const std::string& path, std::string& dest
 {
     std::ifstream in(path, std::ios::in);
     if (!in) {
-        return false;  // could not open
+        return false;
     }
 
     destination.clear();

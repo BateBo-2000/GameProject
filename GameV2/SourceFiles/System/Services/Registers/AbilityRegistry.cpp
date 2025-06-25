@@ -33,12 +33,11 @@ AbilityRegistry::~AbilityRegistry() {
 void AbilityRegistry::registerPrototype(IAbility* ability) {
     if (!ability) return;
 
-    // check for name collision
     const std::string& name = ability->getName();
 
     for (size_t i = 0; i < prototypes.size(); ++i) {
         if (prototypes[i]->getName() == name) {
-            delete ability;  // avoid leaking
+            delete ability;
             throw std::invalid_argument("AbilityRegistry: duplicate ability name '" + name + "'");
         }
     }

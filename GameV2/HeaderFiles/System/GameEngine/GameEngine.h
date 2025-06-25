@@ -34,7 +34,6 @@ public:
     Faction getWhoseTurnItIsNow() const override;
     bool isGameWon() const override;
 
-    //system
     virtual bool restartWipeTheGame() override;
     virtual bool saveTheGameToFile(const std::string& path) override;
     virtual bool loadTheGameFromFile(const std::string& path) override;

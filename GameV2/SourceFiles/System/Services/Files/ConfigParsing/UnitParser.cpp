@@ -75,7 +75,6 @@ IUnit* UnitParser::parse(const std::string& raw) const {
             }
         }
 
-        // construct unit
         IUnit* unit = new Unit(type,
             (faction == "undead" ? Faction::Undead : Faction::Living),
             health,
@@ -88,7 +87,6 @@ IUnit* UnitParser::parse(const std::string& raw) const {
         return unit;
     }
     catch (...) {
-        // cleanup on any failure
         delete armor;
 
         for (size_t i = 0; i < abilities.size(); ++i) {

@@ -6,7 +6,6 @@
 #include "IController.h"
 #include "Invoker/IInvoker.h"
 
-//Comunication
 class ILogger;
 class IUserInterface;
 
