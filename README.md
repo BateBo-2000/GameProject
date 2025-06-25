@@ -1,3 +1,4 @@
+Note: Config file was edited for the Small example. 
 #Task
 Походова игра
 
