@@ -77,7 +77,7 @@ IUnit* UnitParser::parse(const std::string& raw) const {
 
         // construct unit
         IUnit* unit = new Unit(type,
-            (faction == "Undead" ? Faction::Undead : Faction::Living),
+            (faction == "undead" ? Faction::Undead : Faction::Living),
             health,
             attack,
             goldCost,

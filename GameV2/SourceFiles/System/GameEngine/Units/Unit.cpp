@@ -83,7 +83,7 @@ bool Unit::isCommander() const
 
 Faction Unit::getFaction() const
 {
-    return Faction();
+    return faction;
 }
 
 const IArmor& Unit::getArmor() const {
@@ -125,9 +125,6 @@ void Unit::attack(IUnit& target) {
 void Unit::useAbility(std::vector<IUnit*> targets, BattleContext& ctx, size_t abilityIndex) {
     if (abilityIndex >= abilities.size()) throw std::out_of_range(std::string("There is no ability with index ") + std::to_string(abilityIndex));
     IAbility* ab = abilities[abilityIndex];
-
-    unsigned cost = ab->getManaCost(); //just a ptr not copy/cloning
-
     ab->apply(this, targets, ctx);
 }
 

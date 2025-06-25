@@ -114,6 +114,23 @@ static void printCurrentTurnUnit(const IGameState& state, IUserInterface& ui) {
 }
 
 
+static void printBases(const IGameState& state, IUserInterface& ui) {
+    ui.inform("\n--- Base Status ---");
+
+    const IBaseState& living = state.getLivingBase();
+    ui.inform("Living Base: Gold=" + std::to_string(living.getGoldReserve())
+        + " | Wins=" + std::to_string(living.getWins()));
+    printUnits("Living Base Units", living.getUnits(), ui);
+    printUnits("Living Base Commanders", living.getCommanders(), ui);
+
+    const IBaseState& undead = state.getUndeadBase();
+    ui.inform("\nUndead Base: Gold=" + std::to_string(undead.getGoldReserve())
+        + " | Wins=" + std::to_string(undead.getWins()));
+    printUnits("Undead Base Units", undead.getUnits(), ui);
+    printUnits("Undead Base Commanders", undead.getCommanders(), ui);
+}
+
+
 
 bool StatusCmd::execute(const std::vector<std::string>& args, IUserInterface& ui) const
 {
@@ -147,6 +164,27 @@ bool StatusCmd::execute(const std::vector<std::string>& args, IUserInterface& ui
     printCurrentTurnUnit(state, ui);
 
     ui.inform("=================================");
+    
+    printBases(state, ui);
+    
+    ui.inform("=================================");
+
+    if (state.getStage() == DuelStage::GameFinished) {
+        ui.inform("=================================");
+        ui.inform("=================================");
+        ui.inform("=================================");
+        ui.inform("=================================");
+        ui.inform("The " + 
+            (state.getLivingBase().getWins() > state.getUndeadBase().getWins()? std::string("LIVING") : std::string("UNDEAD"))
+            + " team has won the game.");
+        ui.inform("=================================");
+        ui.inform("=================================");
+        ui.inform("=================================");
+        ui.inform("=================================");
+        ui.inform("=============Credits:============");
+        ui.inform("=========One lazy student.=======");
+    }
+
     return true;
 
 

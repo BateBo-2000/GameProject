@@ -10,7 +10,7 @@ GameState::GameState(const EngineConfig& cfg, IBaseState* livingBase, IBaseState
     : livingBase(livingBase)
     , undeadBase(undeadBase)
     , config(cfg)
-    , currentStage(DuelStage::Completed)
+    , currentStage(DuelStage::LivingSetup)
     , livingTurnIndex(0)
     , undeadTurnIndex(0)
 

@@ -23,8 +23,9 @@ int main()
 
 	RandomUserInterface bot(commands);
 
+	ConsoleUI player2;
 
-	App app(player1, bot, logger,textIO);
+	App app(player1, player2, logger,textIO);
 
 	app.run();
 

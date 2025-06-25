@@ -31,8 +31,6 @@ void ResurrectAbility::apply(IUnit* user, const std::vector<IUnit*>& targets, Ba
 {
     if (!user) throw std::invalid_argument(name + ": user is null");
 
-    if (targets.size() != 1) throw std::invalid_argument(name + ": requires exactly one target, got " + std::to_string(targets.size()));
-
     if (!targets[0]) throw std::invalid_argument(name + ": target is undefined");
 
     if (user->getFaction() == targets[0]->getFaction()) throw std::invalid_argument(name + ": cannot resurrect from the same faction");
@@ -40,7 +38,7 @@ void ResurrectAbility::apply(IUnit* user, const std::vector<IUnit*>& targets, Ba
     if (targets[0]->isAlive()) throw std::invalid_argument(name + ": target is not dead");
 
     if (targets[0]->getType() != targetType) throw std::invalid_argument(name + ": can only work on " + targetType);
-
+    if (!user->isAlive()) throw std::invalid_argument(name + ": caster is dead");
     user->useMana(manaCost);
 
     IUnit* newUnit = ctx.unitRegistry.createByName(resultType);

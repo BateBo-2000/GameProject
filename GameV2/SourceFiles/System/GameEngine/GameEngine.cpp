@@ -25,6 +25,9 @@ GameEngine::GameEngine(IUnitRegistry& unitRegistry, IGameSaveFileHandler* fileHa
             throw std::runtime_error("GameEngine: failed to load game from " + pathToSaveFile);
         }
     }
+
+    if (gameState->getStage() == DuelStage::Completed)
+        gameState->setStage(DuelStage::LivingSetup);
 }
 
 GameEngine::~GameEngine()
@@ -41,35 +44,37 @@ void GameEngine::create(const std::string& unitType) {
     }
     IUnit* unit = unitRegister.createByName(unitType);
 
+
     if (!unit) throw std::runtime_error("Unknown unit type: " + unitType);
 
-    if (stage == DuelStage::LivingSetup && unit->getFaction() != Faction::Living) {
+    IBaseState & base = (stage == DuelStage::LivingSetup) ? gameState->getLivingBase() : gameState->getUndeadBase();
+
+    if (stage == DuelStage::LivingSetup && unit->getFaction() == Faction::Undead) {
         delete unit;
         throw std::invalid_argument("Living faction can only create living units.");
     }
 
-    if (stage == DuelStage::UndeadSetup && unit->getFaction() != Faction::Undead) {
+    if (stage == DuelStage::UndeadSetup && unit->getFaction() == Faction::Living) {
         delete unit;
         throw std::invalid_argument("Undead faction can only create undead units.");
     }
 
-    if (stage == DuelStage::LivingSetup) {
-        if (unit->isCommander()) {
-            gameState->getLivingBase().addCommander(unit);
-        }
-        else {
-            gameState->getLivingBase().addUnit(unit);
-        }
+    unsigned unitCost = unit->getGoldCost();
+
+    if (base.getGoldReserve() < unitCost) {
+        delete unit;
+        throw std::invalid_argument("Not eough money.");
+    }
+
+    if (unit->isCommander()) {
+        base.addCommander(unit);
     }
     else {
-        if (unit->isCommander()) {
-            gameState->getUndeadBase().addCommander(unit);
-        }
-        else {
-            gameState->getUndeadBase().addUnit(unit);
-        }
-        
+        base.addUnit(unit);
     }
+
+    base.setGoldReserve(base.getGoldReserve() - unitCost);
+
 }
 
 void GameEngine::selectBoss(const std::string& bossType)
@@ -209,14 +214,15 @@ void GameEngine::useAbility(const std::vector<std::string>& targetNames, size_t 
     {
         for (size_t j = 0; j < gameState->getLivingTeam().size(); j++)
         {
-            if (gameState->getLivingTeam()[i]->getType() == targetNames[i]) {
-                targets.push_back(gameState->getLivingTeam()[i]);
+            if (gameState->getLivingTeam()[j]->getType() == targetNames[i]) {
+                
+                targets.push_back(gameState->getLivingTeam()[j]);
             }
         }
         for (size_t j = 0; j < gameState->getUndeadTeam().size(); j++)
         {
-            if (gameState->getUndeadTeam()[i]->getType() == targetNames[i]) {
-                targets.push_back(gameState->getUndeadTeam()[i]);
+            if (gameState->getUndeadTeam()[j]->getType() == targetNames[i]) {
+                targets.push_back(gameState->getUndeadTeam()[j]);
             }
         }
     }
@@ -267,7 +273,7 @@ IGameState& GameEngine::getGameState()
 Faction GameEngine::getWhoseTurnItIsNow() const
 {
     DuelStage stage = gameState->getStage();
-    if (stage == DuelStage::LivingSetup || stage == DuelStage::LivingAttack)
+    if (stage == DuelStage::LivingSetup || stage == DuelStage::LivingAttack || stage == DuelStage::GameFinished)
         return Faction::Living;
 
     return Faction::Undead;
@@ -330,11 +336,28 @@ bool GameEngine::loadTheGameFromFile(const std::string& path)
 
 void GameEngine::goNextTurnOrStageFighting()
 {
+    //clean up for the dead
+    for (size_t i = 0; i < gameState->getLivingTeam().size(); i++)
+    {
+        if (!gameState->getLivingTeam()[i]->isAlive()) {
+            delete gameState->getLivingTeam()[i];
+            gameState->getLivingTeam().erase(gameState->getLivingTeam().begin() + i);
+        }
+    }
+    for (size_t i = 0; i < gameState->getUndeadTeam().size(); i++)
+    {
+        if (!gameState->getUndeadTeam()[i]->isAlive()) {
+            delete gameState->getUndeadTeam()[i];
+            gameState->getUndeadTeam().erase(gameState->getUndeadTeam().begin() + i);
+        }
+    }
+
+    //switch stage
     DuelStage stage = gameState->getStage();
 
     if (stage == DuelStage::LivingAttack) {
         gameState->LivingTurnIndexIncrement();
-        if (gameState->getLivingTurnIndex() == 0)    //it just looped to 0
+        if (gameState->getLivingTurnIndex() == 0) {    //it just looped to 0
             if (gameState->getUndeadTeam().size() > 0) {     //if there is enemy to attack its his turn
                 gameState->setStage(DuelStage::UndeadAttack);
                 return;
@@ -344,11 +367,15 @@ void GameEngine::goNextTurnOrStageFighting()
                 cleanUpAfterCompletion();
                 return;
             }
+        }
+        else {
+            return;
+        }
     }
 
     if (stage == DuelStage::UndeadAttack) {
         gameState->UndeadTurnIndexIncrement();
-        if (gameState->getUndeadTurnIndex() == 0)
+        if (gameState->getUndeadTurnIndex() == 0) {
             if (gameState->getLivingTeam().size() > 0) {
                 gameState->setStage(DuelStage::LivingAttack);
                 return;
@@ -358,6 +385,10 @@ void GameEngine::goNextTurnOrStageFighting()
                 cleanUpAfterCompletion();
                 return;
             }
+        }
+        else {
+            return;
+        }
     }
 
     if(stage==DuelStage::Completed){
@@ -394,6 +425,9 @@ void GameEngine::cleanUpAfterCompletion()
                 if (winnerTeam[i]->isAlive())
                     if (winnerTeam[i]->isCommander()) {
                         winnerBase.addCommander(winnerTeam[i]);
+                    }
+                    else {
+                        winnerBase.addUnit(winnerTeam[i]);
                     }
             }
             catch (const std::exception&)

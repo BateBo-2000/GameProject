@@ -32,5 +32,6 @@ void Armor::use()
 
 unsigned Armor::calculateMitigatedDamage(unsigned rawDamage) const
 {
-    return rawDamage * defensePercentage / 100;
+    unsigned absorbed = rawDamage * defensePercentage / 100;
+    return (rawDamage > absorbed) ? (rawDamage - absorbed) : 0;
 }

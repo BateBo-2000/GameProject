@@ -20,7 +20,7 @@ bool SkipTurnCmd::isThisMe(const std::vector<std::string>& args) const {
 
 bool SkipTurnCmd::execute(const std::vector<std::string>& args, IUserInterface& ui) const {
 
-    if (args.size() >= 2) {
+    if (args.size() > 2) {
         ui.error("Usage: 'skip turn' with no arguments");
         return false;
     }

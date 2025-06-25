@@ -30,8 +30,7 @@ void SummonAbility::apply(IUnit* user, const std::vector<IUnit*>& targets, Battl
 {
     if (!user) throw std::invalid_argument(name + ": user is null");
 
-    if (!targets.empty()) throw std::invalid_argument(name + ": does not accept targets");
-
+    if (!user->isAlive()) throw std::invalid_argument(name + ": caster is dead");
     user->useMana(manaCost);
 
     std::vector<IUnit*> buffer;

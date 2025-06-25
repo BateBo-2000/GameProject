@@ -1,0 +1,75 @@
+Game.config
+n
+n
+create Healer
+create Archer
+select Healer 1
+select Archer 1
+start
+create Necromancer
+create Dybbuk
+select Dybbuk 1
+select Necromancer 1
+start
+status
+attack Archer
+status
+attack Archer
+status
+use ability 0 Archer
+status
+skip turn
+status
+use ability 0 Healer
+status
+use ability 0
+status
+attack Archer
+attack Archer
+attack Archer
+status
+attack Necromancer
+status
+use ability 0 Archer
+status
+skip
+skip
+skip
+skip
+status
+create AntiUndead
+status
+select boss AntiUndead
+start
+create Lich
+select boss Lich
+start
+status
+use ability 0
+status
+skip
+skip
+skip
+use ability 0 Lich
+status
+attack AntiUndead
+attack AntiUndead
+attack AntiUndead
+status
+use ability 0 Skeleton
+status
+attack AntiUndead
+attack AntiUndead
+status
+use ability 0 Skeleton
+status
+attack AntiUndead
+status
+use ability 0 Skeleton
+status
+start
+select Skeleton 2
+start
+skip
+skip
+status

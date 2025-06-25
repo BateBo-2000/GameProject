@@ -13,7 +13,7 @@ ICommand* UseAbilityCmd::clone() const {
 }
 
 bool UseAbilityCmd::isThisMe(const std::vector<std::string>& args) const {
-    return args.size()>2 && args[0] == "use" && args[0] == "ability";
+    return args.size()>2 && args[0] == "use" && args[1] == "ability";
 }
 
 bool UseAbilityCmd::execute(const std::vector<std::string>& args, IUserInterface& ui) const {
